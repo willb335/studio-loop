@@ -1,26 +1,231 @@
 ---
 /**
- * Navigation component - Sticky header with logo and CTA button
+ * Navigation component - Duna-style navigation with responsive mobile menu
  * 
  * Features:
- * - Sticky positioning for constant visibility
- * - Backdrop blur effect for modern glass morphism look
- * - Smooth scroll to waitlist section on CTA click
+ * - Desktop: Logo left, centered nav links, CTA button right
+ * - Mobile: Hamburger menu with full-screen dark overlay
+ * - Smooth scroll to all sections
+ * - No hover effects on nav links
+ * - Logo click scrolls to top
+ * - Backdrop blur effect for modern look
  */
 ---
 
 <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-neutral-200">
   <div class="max-w-7xl mx-auto px-5 sm:px-10 lg:px-20">
     <div class="flex justify-between items-center h-16 sm:h-20">
-      <div class="flex items-center">
-        <span class="text-2xl font-semibold text-neutral-900">StudioLoop</span>
+      <!-- Logo -->
+      <button
+        onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+        class="text-2xl font-semibold text-neutral-900 hover:opacity-80 transition-opacity focus:outline-none"
+        aria-label="Scroll to top"
+      >
+        StudioLoop
+      </button>
+
+      <!-- Desktop Navigation Links (centered) -->
+      <div class="hidden lg:flex items-center justify-center flex-1 mx-12">
+        <div class="flex items-center gap-8">
+          <button
+            onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})"
+            class="text-base text-neutral-700 focus:outline-none focus:text-neutral-900 transition-colors"
+          >
+            Features
+          </button>
+          <button
+            onclick="document.getElementById('how-it-works').scrollIntoView({behavior: 'smooth'})"
+            class="text-base text-neutral-700 focus:outline-none focus:text-neutral-900 transition-colors"
+          >
+            How It Works
+          </button>
+          <button
+            onclick="document.getElementById('pricing').scrollIntoView({behavior: 'smooth'})"
+            class="text-base text-neutral-700 focus:outline-none focus:text-neutral-900 transition-colors"
+          >
+            Pricing
+          </button>
+          <button
+            onclick="document.getElementById('comparison').scrollIntoView({behavior: 'smooth'})"
+            class="text-base text-neutral-700 focus:outline-none focus:text-neutral-900 transition-colors"
+          >
+            Comparison
+          </button>
+        </div>
       </div>
+
+      <!-- Desktop CTA Button -->
       <button
         onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})"
-        class="inline-flex items-center px-6 py-3 bg-neutral-900 text-white text-base font-semibold rounded-lg hover:bg-neutral-800 transition-all hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2"
+        class="hidden lg:inline-flex items-center px-6 py-3 bg-neutral-900 text-white text-base font-semibold rounded-lg hover:bg-neutral-800 transition-all hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2"
       >
         Join Waitlist
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </button>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-button"
+        class="lg:hidden p-2 focus:outline-none focus:ring-2 focus:ring-neutral-900 rounded-lg relative z-[60]"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <!-- Hamburger Icon -->
+        <svg 
+          id="hamburger-icon" 
+          class="w-6 h-6 transition-all duration-300"
+          xmlns="http://www.w3.org/2000/svg" 
+          viewBox="0 0 24 24" 
+          fill="none"
+        >
+          <path opacity="0.4" d="M4 8.5L20 8.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path opacity="0.4" d="M4 15.5L20 15.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <!-- Close Icon (hidden by default) -->
+        <svg 
+          id="close-icon" 
+          class="w-6 h-6 absolute top-2 right-2 opacity-0 transition-all duration-300"
+          xmlns="http://www.w3.org/2000/svg" 
+          viewBox="0 0 24 24" 
+          fill="none"
+        >
+          <path d="M18 6L6.00081 17.9992M17.9992 18L6 6.00085" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
       </button>
     </div>
   </div>
 </nav>
+
+<!-- Mobile Menu Overlay -->
+<div
+  id="mobile-menu"
+  class="fixed inset-0 bg-black/90 z-[55] opacity-0 invisible transition-all duration-300 lg:hidden"
+>
+  <div class="flex flex-col items-center justify-center h-full px-8 space-y-8">
+    <!-- Mobile Navigation Links -->
+    <button
+      class="mobile-menu-link text-2xl text-white font-medium focus:outline-none focus:text-neutral-300 transition-colors"
+      data-section="features"
+    >
+      Features
+    </button>
+    <button
+      class="mobile-menu-link text-2xl text-white font-medium focus:outline-none focus:text-neutral-300 transition-colors"
+      data-section="how-it-works"
+    >
+      How It Works
+    </button>
+    <button
+      class="mobile-menu-link text-2xl text-white font-medium focus:outline-none focus:text-neutral-300 transition-colors"
+      data-section="pricing"
+    >
+      Pricing
+    </button>
+    <button
+      class="mobile-menu-link text-2xl text-white font-medium focus:outline-none focus:text-neutral-300 transition-colors"
+      data-section="comparison"
+    >
+      Comparison
+    </button>
+
+    <!-- Mobile CTA Button -->
+    <button
+      class="mobile-menu-link mt-8 inline-flex items-center px-8 py-4 bg-white text-neutral-900 text-lg font-semibold rounded-lg hover:bg-neutral-100 transition-all shadow-lg focus:outline-none focus:ring-2 focus:ring-white"
+      data-section="waitlist"
+    >
+      Join Waitlist
+      <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  /**
+   * Mobile menu toggle functionality
+   * Handles opening/closing the mobile menu with animation
+   */
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+  let isMenuOpen = false;
+
+  /**
+   * Toggles the mobile menu open/closed state
+   */
+  const toggleMenu = (): void => {
+    isMenuOpen = !isMenuOpen;
+    
+    if (isMenuOpen) {
+      // Open menu
+      mobileMenu?.classList.remove('invisible', 'opacity-0');
+      mobileMenu?.classList.add('opacity-100');
+      hamburgerIcon?.classList.add('opacity-0');
+      closeIcon?.classList.remove('opacity-0');
+      closeIcon?.classList.add('opacity-100');
+      mobileMenuButton?.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+    } else {
+      // Close menu
+      mobileMenu?.classList.add('opacity-0');
+      mobileMenu?.classList.remove('opacity-100');
+      setTimeout(() => {
+        mobileMenu?.classList.add('invisible');
+      }, 300); // Wait for fade-out animation
+      hamburgerIcon?.classList.remove('opacity-0');
+      closeIcon?.classList.add('opacity-0');
+      closeIcon?.classList.remove('opacity-100');
+      mobileMenuButton?.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = ''; // Restore scrolling
+    }
+  };
+
+  /**
+   * Scrolls to a section and closes the mobile menu
+   * @param {string} sectionId - The ID of the section to scroll to
+   */
+  const scrollToSection = (sectionId: string): void => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      // Close menu after clicking
+      if (isMenuOpen) {
+        toggleMenu();
+      }
+    }
+  };
+
+  // Add click event listener to menu button
+  mobileMenuButton?.addEventListener('click', toggleMenu);
+
+  // Add click event listeners to all mobile menu links
+  mobileMenuLinks.forEach((link) => {
+    link.addEventListener('click', (e: Event) => {
+      const target = e.currentTarget as HTMLElement;
+      const sectionId = target.getAttribute('data-section');
+      if (sectionId) {
+        scrollToSection(sectionId);
+      }
+    });
+  });
+
+  // Close menu when clicking outside (on the overlay)
+  mobileMenu?.addEventListener('click', (e: Event) => {
+    if (e.target === mobileMenu && isMenuOpen) {
+      toggleMenu();
+    }
+  });
+
+  // Close menu on escape key
+  document.addEventListener('keydown', (e: KeyboardEvent) => {
+    if (e.key === 'Escape' && isMenuOpen) {
+      toggleMenu();
+    }
+  });
+</script>
