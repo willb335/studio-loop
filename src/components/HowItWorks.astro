@@ -45,13 +45,13 @@ const steps = [
 ];
 ---
 
-<section class="bg-gray-50 py-16 sm:py-24 lg:py-32">
+<section class="bg-neutral-50 py-16 sm:py-24 lg:py-32">
   <div class="max-w-7xl mx-auto px-5 sm:px-10 lg:px-20">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+    <div class="text-center mb-12 sm:mb-16">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-neutral-900 mb-6">
         How StudioLoop Works
       </h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+      <p class="text-lg sm:text-xl text-neutral-600 leading-relaxed max-w-3xl mx-auto">
         Get started in minutes and automate your member engagement forever.
       </p>
     </div>
@@ -62,15 +62,15 @@ const steps = [
           <div class="relative">
             {/* Connector Line (except for last step) */}
             {index < steps.length - 1 && (
-              <div class="absolute left-8 top-20 bottom-0 w-0.5 bg-indigo-200 -mb-8" aria-hidden="true"></div>
+              <div class="absolute left-8 top-20 bottom-0 w-0.5 bg-neutral-200 -mb-8" aria-hidden="true"></div>
             )}
 
             {/* Step Card */}
-            <div class="relative bg-white rounded-xl shadow-sm border border-gray-100 p-8 hover:shadow-md transition-shadow">
+            <div class="relative bg-white rounded-xl shadow-sm border border-neutral-200 p-6 sm:p-8 hover:shadow-md transition-shadow">
               <div class="flex items-start gap-6">
                 {/* Step Number Badge */}
                 <div class="flex-shrink-0">
-                  <div class="w-16 h-16 bg-indigo-600 text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg">
+                  <div class="w-16 h-16 bg-neutral-900 text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg">
                     {step.number}
                   </div>
                 </div>
@@ -79,11 +79,11 @@ const steps = [
                 <div class="flex-1 pt-2">
                   <div class="flex items-center gap-3 mb-3">
                     <span class="text-3xl" aria-hidden="true">{step.icon}</span>
-                    <h3 class="text-2xl font-semibold text-gray-900">
+                    <h3 class="text-xl sm:text-2xl font-semibold text-neutral-900">
                       {step.title}
                     </h3>
                   </div>
-                  <p class="text-lg text-gray-600 leading-relaxed">
+                  <p class="text-base text-neutral-600 leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -95,14 +95,14 @@ const steps = [
     </div>
 
     {/* Call to Action */}
-    <div class="mt-16 text-center">
+    <div class="mt-12 sm:mt-16 text-center">
       <button
         onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})"
-        class="bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-indigo-700 transition-colors shadow-lg hover:shadow-xl"
+        class="inline-flex items-center justify-center px-8 py-4 bg-neutral-900 text-white text-base font-semibold rounded-lg hover:bg-neutral-800 transition-all hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2"
       >
         Get Started Today
       </button>
-      <p class="text-sm text-gray-500 mt-4">
+      <p class="text-sm text-neutral-500 mt-4">
         Setup takes less than 5 minutes • No technical skills required
       </p>
     </div>
