@@ -101,45 +101,74 @@
 <!-- Mobile Menu Overlay -->
 <div
   id="mobile-menu"
-  class="fixed inset-0 bg-black/90 z-[55] opacity-0 invisible transition-all duration-300 lg:hidden"
+  class="fixed inset-0 bg-neutral-800/95 backdrop-blur-md z-[55] opacity-0 invisible transition-all duration-300 lg:hidden"
 >
-  <div class="flex flex-col items-center justify-center h-full px-8 space-y-8">
-    <!-- Mobile Navigation Links -->
-    <button
-      class="mobile-menu-link text-2xl text-white font-medium focus:outline-none focus:text-neutral-300 transition-colors"
-      data-section="features"
-    >
-      Features
-    </button>
-    <button
-      class="mobile-menu-link text-2xl text-white font-medium focus:outline-none focus:text-neutral-300 transition-colors"
-      data-section="how-it-works"
-    >
-      How It Works
-    </button>
-    <button
-      class="mobile-menu-link text-2xl text-white font-medium focus:outline-none focus:text-neutral-300 transition-colors"
-      data-section="pricing"
-    >
-      Pricing
-    </button>
-    <button
-      class="mobile-menu-link text-2xl text-white font-medium focus:outline-none focus:text-neutral-300 transition-colors"
-      data-section="comparison"
-    >
-      Comparison
-    </button>
+  <div class="flex flex-col h-full">
+    <!-- Header with Logo and Close Button -->
+    <div class="flex justify-between items-center px-5 sm:px-10 h-16 sm:h-20 border-b border-white/10">
+      <!-- Logo -->
+      <button
+        onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+        class="text-xl font-semibold text-white hover:opacity-80 transition-opacity focus:outline-none flex items-center gap-2"
+        aria-label="Scroll to top"
+      >
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        STUDIOLOOP
+      </button>
+      
+      <!-- Close Button -->
+      <button
+        id="mobile-menu-close"
+        class="p-2 focus:outline-none focus:ring-2 focus:ring-white/20 rounded-lg"
+        aria-label="Close menu"
+      >
+        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
 
-    <!-- Mobile CTA Button -->
-    <button
-      class="mobile-menu-link mt-8 inline-flex items-center px-8 py-4 bg-white text-neutral-900 text-lg font-semibold rounded-lg hover:bg-neutral-100 transition-all shadow-lg focus:outline-none focus:ring-2 focus:ring-white"
-      data-section="waitlist"
-    >
-      Join Waitlist
-      <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-      </svg>
-    </button>
+    <!-- Navigation Links (left-aligned) -->
+    <div class="flex flex-col flex-1 px-5 sm:px-10 py-8 space-y-1">
+      <button
+        class="mobile-menu-link py-4 text-2xl text-white font-normal text-left focus:outline-none transition-colors"
+        data-section="features"
+      >
+        Features
+      </button>
+      <button
+        class="mobile-menu-link py-4 text-2xl text-white font-normal text-left focus:outline-none transition-colors"
+        data-section="how-it-works"
+      >
+        How It Works
+      </button>
+      <button
+        class="mobile-menu-link py-4 text-2xl text-white font-normal text-left focus:outline-none transition-colors"
+        data-section="pricing"
+      >
+        Pricing
+      </button>
+      <button
+        class="mobile-menu-link py-4 text-2xl text-white font-normal text-left focus:outline-none transition-colors"
+        data-section="comparison"
+      >
+        Comparison
+      </button>
+    </div>
+
+    <!-- Mobile CTA Button (at bottom) -->
+    <div class="px-5 sm:px-10 pb-8">
+      <button
+        class="mobile-menu-link w-full py-4 bg-white text-neutral-900 text-lg font-medium rounded-full hover:bg-neutral-100 transition-all focus:outline-none focus:ring-2 focus:ring-white"
+        data-section="waitlist"
+      >
+        Join the Waitlist
+      </button>
+    </div>
   </div>
 </div>
 
@@ -149,9 +178,9 @@
    * Handles opening/closing the mobile menu with animation
    */
   const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenuCloseButton = document.getElementById('mobile-menu-close');
   const mobileMenu = document.getElementById('mobile-menu');
   const hamburgerIcon = document.getElementById('hamburger-icon');
-  const closeIcon = document.getElementById('close-icon');
   const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
 
   let isMenuOpen = false;
@@ -166,9 +195,6 @@
       // Open menu
       mobileMenu?.classList.remove('invisible', 'opacity-0');
       mobileMenu?.classList.add('opacity-100');
-      hamburgerIcon?.classList.add('opacity-0');
-      closeIcon?.classList.remove('opacity-0');
-      closeIcon?.classList.add('opacity-100');
       mobileMenuButton?.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
     } else {
@@ -178,9 +204,6 @@
       setTimeout(() => {
         mobileMenu?.classList.add('invisible');
       }, 300); // Wait for fade-out animation
-      hamburgerIcon?.classList.remove('opacity-0');
-      closeIcon?.classList.add('opacity-0');
-      closeIcon?.classList.remove('opacity-100');
       mobileMenuButton?.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = ''; // Restore scrolling
     }
@@ -201,8 +224,11 @@
     }
   };
 
-  // Add click event listener to menu button
+  // Add click event listener to hamburger menu button
   mobileMenuButton?.addEventListener('click', toggleMenu);
+
+  // Add click event listener to close button in mobile menu
+  mobileMenuCloseButton?.addEventListener('click', toggleMenu);
 
   // Add click event listeners to all mobile menu links
   mobileMenuLinks.forEach((link) => {
