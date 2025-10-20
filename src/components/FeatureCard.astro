@@ -1,0 +1,31 @@
+---
+/**
+ * FeatureCard component - Reusable card for displaying individual features
+ * 
+ * A presentational component that displays a feature with an icon, title, and description.
+ * Used by the Features component to create a consistent feature grid.
+ * 
+ * @component
+ */
+
+/**
+ * Props interface for FeatureCard component
+ * 
+ * @property {string} icon - Emoji icon to display (e.g., "🎯")
+ * @property {string} title - Feature title
+ * @property {string} description - Feature description text
+ */
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const { icon, title, description } = Astro.props;
+---
+
+<div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+  <div class="text-4xl mb-4">{icon}</div>
+  <h3 class="text-2xl font-semibold text-gray-900 mb-3">{title}</h3>
+  <p class="text-gray-600 leading-relaxed">{description}</p>
+</div>

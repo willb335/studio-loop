@@ -1,0 +1,72 @@
+---
+/**
+ * Features component - Three-column feature grid showcasing key product benefits
+ * 
+ * Displays the main features of StudioLoop using the FeatureCard component.
+ * Features are arranged in a responsive grid that adapts from 1 column on mobile
+ * to 3 columns on desktop.
+ * 
+ * @requires FeatureCard component for rendering individual features
+ */
+import FeatureCard from './FeatureCard.astro';
+
+/**
+ * Feature data array
+ * Each feature contains an icon (emoji), title, and description
+ */
+const features = [
+  {
+    icon: '✉️',
+    title: 'Automated Follow-Ups',
+    description: 'Send personalized post-class emails automatically after every session. Keep members engaged without manual effort.'
+  },
+  {
+    icon: '🔗',
+    title: 'MindBody Integration',
+    description: 'Seamlessly connects with your existing MindBody account. No complicated setup or data migration required.'
+  },
+  {
+    icon: '💰',
+    title: 'Affordable Pricing',
+    description: 'Just $29/month with no annual contract. Cancel anytime. 10x cheaper than FitGrid with the features you actually need.'
+  },
+  {
+    icon: '📊',
+    title: 'Member Insights',
+    description: 'Track engagement metrics and see which members are responding to your follow-ups. Make data-driven decisions.'
+  },
+  {
+    icon: '⚡',
+    title: 'Quick Setup',
+    description: 'Get started in minutes, not hours. Simple configuration with immediate results. No technical expertise needed.'
+  },
+  {
+    icon: '🎯',
+    title: 'Built for Studios',
+    description: 'Designed specifically for boutique fitness studios. Every feature solves real studio owner problems.'
+  }
+];
+---
+
+<section id="features" class="bg-gray-50 py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+        Everything You Need to Connect with Members
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Simple, powerful features that help you build stronger relationships with your fitness community.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {features.map((feature) => (
+        <FeatureCard
+          icon={feature.icon}
+          title={feature.title}
+          description={feature.description}
+        />
+      ))}
+    </div>
+  </div>
+</section>

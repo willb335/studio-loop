@@ -1,0 +1,112 @@
+---
+/**
+ * ComparisonTable component - Side-by-side comparison of StudioLoop vs FitGrid
+ * 
+ * Displays a detailed feature comparison table showing how StudioLoop
+ * provides better value than FitGrid for boutique fitness studios.
+ * Highlights pricing differences and feature availability.
+ */
+---
+
+<section id="comparison" class="bg-white py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+        StudioLoop vs FitGrid
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Get the features you need without breaking the bank. Here's how we compare.
+      </p>
+    </div>
+
+    <div class="overflow-x-auto">
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="bg-gray-50">
+            <th class="text-left py-4 px-6 font-semibold text-gray-900 border-b-2 border-gray-200">
+              Feature
+            </th>
+            <th class="text-center py-4 px-6 font-semibold text-indigo-600 border-b-2 border-indigo-200 bg-indigo-50">
+              StudioLoop
+            </th>
+            <th class="text-center py-4 px-6 font-semibold text-gray-600 border-b-2 border-gray-200">
+              FitGrid
+            </th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="py-4 px-6 font-medium text-gray-900">Monthly Price</td>
+            <td class="text-center py-4 px-6 text-indigo-600 font-bold">$29</td>
+            <td class="text-center py-4 px-6 text-gray-600">$299+</td>
+          </tr>
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="py-4 px-6 font-medium text-gray-900">Annual Contract Required</td>
+            <td class="text-center py-4 px-6">
+              <span class="text-emerald-600 text-2xl">✓</span>
+              <span class="block text-sm text-gray-600">No contract</span>
+            </td>
+            <td class="text-center py-4 px-6">
+              <span class="text-red-500 text-2xl">✗</span>
+              <span class="block text-sm text-gray-600">Required</span>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="py-4 px-6 font-medium text-gray-900">Post-Class Emails</td>
+            <td class="text-center py-4 px-6 text-emerald-600 text-2xl">✓</td>
+            <td class="text-center py-4 px-6 text-emerald-600 text-2xl">✓</td>
+          </tr>
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="py-4 px-6 font-medium text-gray-900">MindBody Integration</td>
+            <td class="text-center py-4 px-6 text-emerald-600 text-2xl">✓</td>
+            <td class="text-center py-4 px-6 text-emerald-600 text-2xl">✓</td>
+          </tr>
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="py-4 px-6 font-medium text-gray-900">Simple Setup</td>
+            <td class="text-center py-4 px-6">
+              <span class="text-emerald-600 text-2xl">✓</span>
+              <span class="block text-sm text-gray-600">5 minutes</span>
+            </td>
+            <td class="text-center py-4 px-6">
+              <span class="text-gray-400 text-2xl">~</span>
+              <span class="block text-sm text-gray-600">Complex</span>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="py-4 px-6 font-medium text-gray-900">Member Insights</td>
+            <td class="text-center py-4 px-6 text-emerald-600 text-2xl">✓</td>
+            <td class="text-center py-4 px-6 text-emerald-600 text-2xl">✓</td>
+          </tr>
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="py-4 px-6 font-medium text-gray-900">Built for Boutique Studios</td>
+            <td class="text-center py-4 px-6">
+              <span class="text-emerald-600 text-2xl">✓</span>
+              <span class="block text-sm text-gray-600">Purpose-built</span>
+            </td>
+            <td class="text-center py-4 px-6">
+              <span class="text-gray-400 text-2xl">~</span>
+              <span class="block text-sm text-gray-600">Enterprise focus</span>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-50 transition-colors bg-indigo-50">
+            <td class="py-4 px-6 font-bold text-gray-900">Annual Cost</td>
+            <td class="text-center py-4 px-6 text-indigo-600 font-bold text-lg">$348/year</td>
+            <td class="text-center py-4 px-6 text-gray-600 font-bold text-lg">$3,588+/year</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-12 text-center">
+      <p class="text-lg text-gray-600 mb-6">
+        <span class="font-bold text-indigo-600">Save $3,240+ per year</span> with StudioLoop
+      </p>
+      <button
+        onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})"
+        class="bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-indigo-700 transition-colors shadow-lg hover:shadow-xl"
+      >
+        Start Saving Today
+      </button>
+    </div>
+  </div>
+</section>

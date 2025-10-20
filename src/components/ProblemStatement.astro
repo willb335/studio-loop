@@ -1,0 +1,122 @@
+---
+/**
+ * ProblemStatement component - Visual cost comparison highlighting the problem
+ * 
+ * Displays a compelling cost comparison between FitGrid and StudioLoop,
+ * emphasizing the significant savings and value proposition.
+ * Uses visual design to make the price difference immediately obvious.
+ */
+---
+
+<section class="bg-white py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+        Member Engagement Shouldn't Cost a Fortune
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Most boutique studios can't justify FitGrid's enterprise pricing. We built a solution that works for your budget.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <!-- FitGrid Card -->
+      <div class="bg-gray-50 rounded-2xl p-8 border-2 border-gray-200">
+        <div class="text-center">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">FitGrid</h3>
+          <div class="mb-6">
+            <div class="flex items-baseline justify-center">
+              <span class="text-5xl font-bold text-red-600">$299+</span>
+              <span class="text-xl ml-2 text-gray-600">/month</span>
+            </div>
+            <p class="text-sm text-gray-500 mt-2">Starting price, annual contract required</p>
+          </div>
+          
+          <div class="space-y-3 mb-6">
+            <div class="flex items-start text-left">
+              <span class="text-red-500 text-xl mr-3 mt-0.5">✗</span>
+              <span class="text-gray-700">$3,588+/year minimum commitment</span>
+            </div>
+            <div class="flex items-start text-left">
+              <span class="text-red-500 text-xl mr-3 mt-0.5">✗</span>
+              <span class="text-gray-700">Can't cancel without penalty</span>
+            </div>
+            <div class="flex items-start text-left">
+              <span class="text-red-500 text-xl mr-3 mt-0.5">✗</span>
+              <span class="text-gray-700">Complex setup and learning curve</span>
+            </div>
+            <div class="flex items-start text-left">
+              <span class="text-red-500 text-xl mr-3 mt-0.5">✗</span>
+              <span class="text-gray-700">Enterprise features you don't need</span>
+            </div>
+          </div>
+
+          <div class="bg-red-100 border border-red-200 rounded-lg p-4">
+            <p class="text-sm font-semibold text-red-800">
+              Too expensive for most boutique studios
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- StudioLoop Card (Highlighted) -->
+      <div class="bg-gradient-to-br from-indigo-50 to-pink-50 rounded-2xl p-8 border-2 border-indigo-300 relative">
+        <!-- Best Value Badge -->
+        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+          <span class="bg-emerald-500 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+            Best Value 🎉
+          </span>
+        </div>
+
+        <div class="text-center pt-4">
+          <h3 class="text-2xl font-bold text-indigo-600 mb-4">StudioLoop</h3>
+          <div class="mb-6">
+            <div class="flex items-baseline justify-center">
+              <span class="text-5xl font-bold text-indigo-600">$29</span>
+              <span class="text-xl ml-2 text-gray-700">/month</span>
+            </div>
+            <p class="text-sm text-gray-600 mt-2">No contract, cancel anytime</p>
+          </div>
+          
+          <div class="space-y-3 mb-6">
+            <div class="flex items-start text-left">
+              <span class="text-emerald-600 text-xl mr-3 mt-0.5">✓</span>
+              <span class="text-gray-700">Just $348/year, pay monthly</span>
+            </div>
+            <div class="flex items-start text-left">
+              <span class="text-emerald-600 text-xl mr-3 mt-0.5">✓</span>
+              <span class="text-gray-700">Cancel anytime, no penalties</span>
+            </div>
+            <div class="flex items-start text-left">
+              <span class="text-emerald-600 text-xl mr-3 mt-0.5">✓</span>
+              <span class="text-gray-700">Setup in 5 minutes</span>
+            </div>
+            <div class="flex items-start text-left">
+              <span class="text-emerald-600 text-xl mr-3 mt-0.5">✓</span>
+              <span class="text-gray-700">Features built for boutique studios</span>
+            </div>
+          </div>
+
+          <div class="bg-emerald-100 border border-emerald-200 rounded-lg p-4">
+            <p class="text-sm font-semibold text-emerald-800">
+              Save $3,240+ per year vs FitGrid
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="mt-12 text-center">
+      <button
+        onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})"
+        class="bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-indigo-700 transition-colors shadow-lg hover:shadow-xl"
+      >
+        Join the Waitlist
+      </button>
+      <p class="text-sm text-gray-500 mt-4">
+        No credit card required • Launch special pricing
+      </p>
+    </div>
+  </div>
+</section>

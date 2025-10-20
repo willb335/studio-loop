@@ -1,0 +1,26 @@
+---
+/**
+ * Navigation component - Sticky header with logo and CTA button
+ * 
+ * Features:
+ * - Sticky positioning for constant visibility
+ * - Backdrop blur effect for modern glass morphism look
+ * - Smooth scroll to waitlist section on CTA click
+ */
+---
+
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex items-center">
+        <span class="text-2xl font-semibold text-indigo-600">StudioLoop</span>
+      </div>
+      <button
+        onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})"
+        class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition-colors"
+      >
+        Join Waitlist
+      </button>
+    </div>
+  </div>
+</nav>
