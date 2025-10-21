@@ -1,75 +1,30 @@
 ---
 /**
- * Footer component - Simple footer with copyright and links
- * 
+ * Footer component - Ultra-minimal footer
+ *
  * Features:
- * - Basic footer with copyright information
- * - Links to social media or additional pages
- * - Clean, minimal design
+ * - Clean white background
+ * - Brand name/logo
+ * - Built with love message for boutique studios
+ * - Copyright notice
  */
 ---
 
-<footer class="bg-neutral-900 text-white py-12 sm:py-16 lg:py-20">
+<footer class="bg-white py-12 sm:py-16 border-t border-neutral-200">
   <div class="max-w-7xl mx-auto px-5 sm:px-10 lg:px-20">
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 mb-12">
-      <!-- Logo/Company Column -->
-      <div class="col-span-2 sm:col-span-3 lg:col-span-1">
-        <span class="text-2xl font-semibold text-white mb-4 block">StudioLoop</span>
-        <p class="text-sm text-neutral-400 leading-relaxed">
-          Affordable member engagement for boutique fitness studios.
-        </p>
-      </div>
-
-      <!-- Product Column -->
+    <div class="flex flex-col items-center text-center space-y-4">
+      <!-- Logo/Brand -->
       <div>
-        <h3 class="font-semibold text-white text-sm mb-4">Product</h3>
-        <ul class="space-y-3">
-          <li>
-            <button
-              onclick="document.getElementById('features')?.scrollIntoView({behavior: 'smooth'})"
-              class="text-sm text-neutral-400 hover:text-white transition-colors focus:outline-none focus:text-white focus:underline"
-            >
-              Features
-            </button>
-          </li>
-          <li>
-            <button
-              onclick="document.getElementById('pricing')?.scrollIntoView({behavior: 'smooth'})"
-              class="text-sm text-neutral-400 hover:text-white transition-colors focus:outline-none focus:text-white focus:underline"
-            >
-              Pricing
-            </button>
-          </li>
-          <li>
-            <button
-              onclick="document.getElementById('comparison')?.scrollIntoView({behavior: 'smooth'})"
-              class="text-sm text-neutral-400 hover:text-white transition-colors focus:outline-none focus:text-white focus:underline"
-            >
-              Compare
-            </button>
-          </li>
-        </ul>
+        <span class="text-2xl font-bold font-heading text-neutral-900">StudioLoop</span>
       </div>
 
-      <!-- Company Column -->
-      <div>
-        <h3 class="font-semibold text-white text-sm mb-4">Company</h3>
-        <ul class="space-y-3">
-          <li>
-            <button
-              onclick="document.getElementById('waitlist')?.scrollIntoView({behavior: 'smooth'})"
-              class="text-sm text-neutral-400 hover:text-white transition-colors focus:outline-none focus:text-white focus:underline"
-            >
-              Join Waitlist
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
+      <!-- Built with love -->
+      <p class="text-sm text-neutral-600">
+        Built with love for boutique fitness studios
+      </p>
 
-    <!-- Bottom Bar -->
-    <div class="pt-8 border-t border-neutral-800">
-      <p class="text-sm text-neutral-400 text-center">
+      <!-- Copyright -->
+      <p class="text-sm text-neutral-500">
         © {new Date().getFullYear()} StudioLoop. All rights reserved.
       </p>
     </div>
