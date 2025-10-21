@@ -1,71 +1,145 @@
 ---
 /**
- * Features component - Three-column feature grid showcasing key product benefits
+ * Features component - Alternating layout with app screenshots
  * 
- * Displays the main features of StudioLoop using the FeatureCard component.
- * Features are arranged in a responsive grid that adapts from 1 column on mobile
- * to 3 columns on desktop.
+ * Displays main features with large images alternating between left and right,
+ * followed by a grid of smaller feature cards. Implements the redesign from
+ * REDESIGN_PLAN.md Phase 2 Task 3.
  * 
- * @requires FeatureCard component for rendering individual features
+ * Layout pattern:
+ * - Row 1: Text left, image right (white background)
+ * - Row 2: Image left, text right (pink-50 background)
+ * - Row 3: Text left, image right (white background)
+ * - Grid of 3 smaller feature cards below
+ * 
+ * @see docs/REDESIGN_PLAN.md - Features Section (lines 257-323)
  */
-import FeatureCard from './FeatureCard.astro';
 
 /**
- * Feature data array
- * Each feature contains an icon (emoji), title, and description
+ * Main feature data for alternating rows
+ * Each feature includes emoji, title, description, image path, and layout direction
  */
-const features = [
+const mainFeatures = [
   {
-    icon: '✉️',
-    title: 'Automated Follow-Ups',
-    description: 'Send personalized post-class emails automatically after every session. Keep members engaged without manual effort.'
+    emoji: '📧',
+    title: 'Automated Post-Class Emails',
+    description: 'Send personalized follow-ups automatically after every class. Your members feel valued without any manual work.',
+    image: '/src/assets/app/email-followup.png.svg',
+    imageAlt: 'Email follow-up editor interface showing personalized message templates',
+    layout: 'text-left' // text on left, image on right
   },
   {
-    icon: '🔗',
-    title: 'MindBody Integration',
-    description: 'Seamlessly connects with your existing MindBody account. No complicated setup or data migration required.'
+    emoji: '⭐',
+    title: 'Detailed Member Feedback',
+    description: 'Collect meaningful insights with our 10-star rating system. Understand what your members love and where to improve.',
+    image: '/src/assets/app/client-feedback.png.svg',
+    imageAlt: 'Member feedback page showing 10-star ratings and reviews',
+    layout: 'image-left' // image on left, text on right
   },
   {
-    icon: '💰',
+    emoji: '🔗',
+    title: 'One-Click MindBody Sync',
+    description: 'Connect your MindBody account in minutes. We automatically sync classes, instructors, and member lists.',
+    image: '/src/assets/app/instructor-dashboard.png.svg',
+    imageAlt: 'Dashboard showing MindBody integration status and sync controls',
+    layout: 'text-left' // text on left, image on right
+  }
+];
+
+/**
+ * Additional features displayed as smaller cards
+ * Simple icon + title + description format in a grid
+ */
+const additionalFeatures = [
+  {
+    emoji: '💰',
     title: 'Affordable Pricing',
-    description: 'Just $29/month with no annual contract. Cancel anytime. 10x cheaper than FitGrid with the features you actually need.'
+    description: 'Just $29/month. No contracts, no surprises.'
   },
   {
-    icon: '📊',
-    title: 'Member Insights',
-    description: 'Track engagement metrics and see which members are responding to your follow-ups. Make data-driven decisions.'
+    emoji: '⚡',
+    title: '5-Minute Setup',
+    description: 'Get started faster than brewing coffee.'
   },
   {
-    icon: '⚡',
-    title: 'Quick Setup',
-    description: 'Get started in minutes, not hours. Simple configuration with immediate results. No technical expertise needed.'
-  },
-  {
-    icon: '🎯',
-    title: 'Built for Studios',
-    description: 'Designed specifically for boutique fitness studios. Every feature solves real studio owner problems.'
+    emoji: '📊',
+    title: 'Simple Analytics',
+    description: 'Track engagement without complexity.'
   }
 ];
 ---
 
-<section id="features" class="bg-neutral-50 py-16 sm:py-24 lg:py-32">
+<section id="features" class="bg-white py-20 sm:py-24 lg:py-32">
   <div class="max-w-7xl mx-auto px-5 sm:px-10 lg:px-20">
-    <div class="text-center mb-12 sm:mb-16 lg:mb-20">
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-neutral-900 mb-6">
+    <!-- Section Header -->
+    <div class="text-center mb-16 sm:mb-20 lg:mb-24">
+      <h2 class="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold text-neutral-900 mb-6 leading-tight">
         Everything You Need to Connect with Members
       </h2>
-      <p class="text-lg sm:text-xl text-neutral-600 leading-relaxed max-w-3xl mx-auto">
+      <p class="font-body text-lg sm:text-xl text-neutral-600 leading-relaxed max-w-3xl mx-auto">
         Simple, powerful features that help you build stronger relationships with your fitness community.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-      {features.map((feature) => (
-        <FeatureCard
-          icon={feature.icon}
-          title={feature.title}
-          description={feature.description}
-        />
+    <!-- Main Features - Alternating Layout -->
+    <div class="space-y-20 lg:space-y-24 mb-20 lg:mb-32">
+      {mainFeatures.map((feature, index) => {
+        const isImageLeft = feature.layout === 'image-left';
+        const bgClass = index === 1 ? 'bg-pink-50' : 'bg-white';
+        
+        return (
+          <div class={`${bgClass} rounded-2xl p-8 sm:p-12 lg:p-16 -mx-5 sm:mx-0`}>
+            <div class={`max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center ${isImageLeft ? 'lg:grid-flow-dense' : ''}`}>
+              
+              {/* Text Content */}
+              <div class={isImageLeft ? 'lg:col-start-2' : ''}>
+                <div class="mb-6">
+                  <span class="text-5xl sm:text-6xl inline-block" role="img" aria-label={feature.title}>
+                    {feature.emoji}
+                  </span>
+                </div>
+                <h3 class="font-heading text-2xl sm:text-3xl lg:text-[2rem] font-semibold text-neutral-900 mb-4 leading-tight">
+                  {feature.title}
+                </h3>
+                <p class="font-body text-base sm:text-lg text-neutral-600 leading-relaxed max-w-md">
+                  {feature.description}
+                </p>
+              </div>
+
+              {/* Image */}
+              <div class={isImageLeft ? 'lg:col-start-1 lg:row-start-1' : ''}>
+                <div class="relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <img 
+                    src={feature.image} 
+                    alt={feature.imageAlt}
+                    class="w-full h-auto object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+    <!-- Additional Features Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {additionalFeatures.map((feature) => (
+        <div class="bg-white border border-neutral-200 rounded-2xl p-8 hover:border-pink-200 hover:shadow-md transition-all duration-300">
+          <div class="mb-4">
+            <span class="text-4xl inline-block" role="img" aria-label={feature.title}>
+              {feature.emoji}
+            </span>
+          </div>
+          <h4 class="font-heading text-xl font-semibold text-neutral-900 mb-3">
+            {feature.title}
+          </h4>
+          <p class="font-body text-base text-neutral-600 leading-relaxed">
+            {feature.description}
+          </p>
+        </div>
       ))}
     </div>
   </div>
