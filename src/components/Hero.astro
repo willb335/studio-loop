@@ -1,48 +1,129 @@
 ---
 /**
- * Hero component - Main landing section with headline and CTA
- *
- * Features:
- * - Full viewport height background image
- * - Large, centered headline in bottom half of screen
- * - Clear call-to-action button
- * - Pixel-perfect match to duna.com hero
- * - Fully responsive typography
+ * Hero Section - Redesigned to match aboardhr.com aesthetic
+ * 
+ * Design Philosophy:
+ * - Large, benefit-focused headline that speaks to member value
+ * - Prominent app screenshot as the hero visual (show, don't just tell)
+ * - Clean, centered layout with generous white space
+ * - Rose pink accent color for CTAs
+ * - Responsive typography and spacing
+ * 
+ * Layout Structure:
+ * - Headline and subheadline centered at top
+ * - Two CTAs (primary pink, secondary outline)
+ * - Large app screenshot below with pink shadow treatment
+ * - Clean white background with optional subtle pink gradient
  */
-import { Image } from 'astro:assets';
-import heroImage from '../assets/hero.png';
+
+// Import the placeholder instructor dashboard image
+const instructorDashboard = '/src/assets/app/instructor-dashboard.png.svg';
 ---
 
-<section class="relative h-screen w-full overflow-hidden">
-  <!-- Background Image - Full viewport coverage -->
-  <div class="absolute inset-0 z-0">
-    <Image
-      src={heroImage}
-      alt="Hero background"
-      class="w-full h-full object-cover"
-      loading="eager"
-      quality={90}
-    />
-  </div>
-
-  <!-- Content - Positioned in bottom half only -->
-  <div class="relative z-10 h-full flex flex-col justify-end pb-16 sm:pb-20 lg:pb-24">
-    <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-normal text-neutral-900 leading-[1.15] mb-6 sm:mb-8">
-        The Affordable FitGrid Alternative
-      </h1>
+<section class="relative w-full bg-white overflow-hidden">
+  <!-- Optional: Subtle radial gradient background -->
+  <div class="absolute inset-0 bg-gradient-radial-pink opacity-40"></div>
+  
+  <!-- Main Content Container -->
+  <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <!-- Top Padding: 120px desktop, 80px mobile -->
+    <div class="pt-20 sm:pt-24 lg:pt-[120px]">
       
-      <p class="text-lg sm:text-xl lg:text-2xl text-neutral-600 leading-relaxed mb-10 sm:mb-12 max-w-3xl mx-auto">
-        Connect with your members through automated post-class follow-ups.
-        Just $29/month. No annual contract.
-      </p>
+      <!-- Headline Section -->
+      <div class="text-center max-w-4xl mx-auto">
+        <!-- Main Headline -->
+        <h1 class="font-heading font-bold text-[2.25rem] sm:text-5xl lg:text-[3.5rem] leading-[1.1] mb-6 sm:mb-8" style="color: var(--neutral-900); max-width: 900px; margin-left: auto; margin-right: auto;">
+          Your Members Deserve Better Follow-Ups
+        </h1>
+        
+        <!-- Subheadline -->
+        <p class="font-body text-lg sm:text-xl lg:text-[1.25rem] leading-relaxed mb-10 sm:mb-12" style="color: var(--neutral-600); max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+          Strengthen connections with automated, personalized post-class emails. Built for boutique fitness studios. Just $29/month.
+        </p>
+        
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <!-- Primary CTA: Join Waitlist -->
+          <button
+            onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})"
+            class="inline-flex items-center justify-center px-8 py-4 font-body font-semibold text-lg text-white rounded-xl transition-all duration-200 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2"
+            style="background-color: var(--pink-400); border-radius: 12px; padding: 16px 32px;"
+            onmouseover="this.style.backgroundColor='var(--pink-500)'"
+            onmouseout="this.style.backgroundColor='var(--pink-400)'"
+          >
+            Join the Waitlist
+          </button>
+          
+          <!-- Secondary CTA: See How It Works -->
+          <button
+            onclick="document.getElementById('how-it-works').scrollIntoView({behavior: 'smooth'})"
+            class="inline-flex items-center justify-center px-8 py-4 font-body font-semibold text-lg rounded-xl transition-all duration-200 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2"
+            style="background-color: transparent; border: 2px solid var(--neutral-200); color: var(--neutral-700); border-radius: 12px; padding: 16px 32px;"
+            onmouseover="this.style.borderColor='var(--neutral-300)'"
+            onmouseout="this.style.borderColor='var(--neutral-200)'"
+          >
+            See How It Works
+          </button>
+        </div>
+      </div>
       
-      <button
-        onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})"
-        class="inline-flex items-center justify-center px-8 py-3.5 sm:px-10 sm:py-4 bg-neutral-900 text-white text-base sm:text-lg font-medium rounded-full hover:bg-neutral-800 transition-all hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2"
-      >
-        Join Waitlist
-      </button>
+      <!-- App Screenshot -->
+      <div class="mt-12 sm:mt-16 lg:mt-[60px]">
+        <div class="app-screenshot-hero">
+          <img
+            src={instructorDashboard}
+            alt="Instructor Dashboard - Manage classes, view member feedback, and track engagement"
+            class="w-full h-auto rounded-2xl"
+            style="border-radius: 1rem; box-shadow: 0 25px 70px rgba(251, 113, 133, 0.2); max-width: 1100px; margin: 0 auto; display: block;"
+            loading="eager"
+          />
+        </div>
+      </div>
+      
     </div>
+    
+    <!-- Bottom Padding: 100px desktop, 60px mobile -->
+    <div class="pb-16 sm:pb-20 lg:pb-[100px]"></div>
   </div>
 </section>
+
+<style>
+  /* Additional hover states and transitions */
+  button {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* Ensure proper font rendering */
+  h1 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+  
+  p {
+    font-family: var(--font-body);
+  }
+  
+  /* Mobile-specific adjustments */
+  @media (max-width: 640px) {
+    h1 {
+      font-size: 2.25rem; /* 36px */
+      line-height: 1.1;
+    }
+    
+    p {
+      font-size: 1.125rem; /* 18px */
+    }
+  }
+  
+  /* Responsive image treatment */
+  .app-screenshot-hero img {
+    width: 100%;
+    height: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .app-screenshot-hero {
+      padding: 0 20px;
+    }
+  }
+</style>
