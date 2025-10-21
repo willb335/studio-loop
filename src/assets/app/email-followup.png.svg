@@ -1,0 +1,64 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#ffe4e6"/>
+  
+  <!-- Border -->
+  <rect x="2" y="2" width="1196" height="796" stroke="#fb7185" stroke-width="4" fill="none" rx="16"/>
+  
+  <!-- Placeholder Text -->
+  <text x="600" y="340" font-family="Inter, system-ui, sans-serif" font-size="36" font-weight="600" fill="#525252" text-anchor="middle">
+    Email Follow-Up Editor Screenshot
+  </text>
+  <text x="600" y="390" font-family="Inter, system-ui, sans-serif" font-size="20" fill="#737373" text-anchor="middle">
+    1200 × 800 px
+  </text>
+  <text x="600" y="430" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#a3a3a3" text-anchor="middle">
+    Features & How It Works Section Image
+  </text>
+  
+  <!-- Mock Email Editor -->
+  <rect x="100" y="100" width="1000" height="600" fill="white" rx="12" opacity="0.6"/>
+  
+  <!-- Toolbar -->
+  <rect x="120" y="120" width="960" height="60" fill="#fb7185" rx="8" opacity="0.2"/>
+  <circle cx="160" cy="150" r="12" fill="#fb7185" opacity="0.4"/>
+  <circle cx="200" cy="150" r="12" fill="#fb7185" opacity="0.4"/>
+  <circle cx="240" cy="150" r="12" fill="#fb7185" opacity="0.4"/>
+  <circle cx="280" cy="150" r="12" fill="#fb7185" opacity="0.4"/>
+  
+  <!-- Email Header Fields -->
+  <rect x="120" y="200" width="200" height="30" fill="#f5f5f5" rx="6" opacity="0.6"/>
+  <rect x="340" y="200" width="740" height="30" fill="#fecdd3" rx="6" opacity="0.4"/>
+  
+  <rect x="120" y="250" width="200" height="30" fill="#f5f5f5" rx="6" opacity="0.6"/>
+  <rect x="340" y="250" width="740" height="30" fill="#fecdd3" rx="6" opacity="0.4"/>
+  
+  <!-- Email Body Content -->
+  <rect x="140" y="310" width="900" height="16" fill="#d4d4d4" rx="4" opacity="0.3"/>
+  <rect x="140" y="340" width="800" height="16" fill="#d4d4d4" rx="4" opacity="0.3"/>
+  <rect x="140" y="370" width="850" height="16" fill="#d4d4d4" rx="4" opacity="0.3"/>
+  <rect x="140" y="400" width="700" height="16" fill="#d4d4d4" rx="4" opacity="0.3"/>
+  <rect x="140" y="430" width="750" height="16" fill="#d4d4d4" rx="4" opacity="0.3"/>
+  
+  <!-- Personalization Tags -->
+  <rect x="140" y="480" width="150" height="30" fill="#fb7185" rx="6" opacity="0.3"/>
+  <text x="215" y="501" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#525252" text-anchor="middle" opacity="0.6">
+    {member_name}
+  </text>
+  
+  <rect x="310" y="480" width="150" height="30" fill="#fb7185" rx="6" opacity="0.3"/>
+  <text x="385" y="501" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#525252" text-anchor="middle" opacity="0.6">
+    {class_name}
+  </text>
+  
+  <!-- Send Button -->
+  <rect x="880" y="630" width="200" height="50" fill="#fb7185" rx="8" opacity="0.5"/>
+  <text x="980" y="660" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="white" text-anchor="middle">
+    Send Email
+  </text>
+  
+  <!-- Image Generation Prompt -->
+  <text x="600" y="760" font-family="monospace" font-size="14" fill="#a3a3a3" text-anchor="middle">
+    AI Prompt: Email template editor with personalization tags, rose pink accents, rich text toolbar, and send button
+  </text>
+</svg>
