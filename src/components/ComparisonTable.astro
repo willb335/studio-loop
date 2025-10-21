@@ -1,70 +1,70 @@
 ---
 /**
  * ComparisonTable component - Side-by-side comparison of StudioLoop vs FitGrid
- * 
+ *
  * Displays a detailed feature comparison table showing how StudioLoop
  * provides better value than FitGrid for boutique fitness studios.
- * Highlights pricing differences and feature availability.
+ * Highlights pricing differences and feature availability with Rose Pink accents.
  */
 ---
 
-<section id="comparison" class="bg-neutral-50 py-16 sm:py-24 lg:py-32">
-  <div class="max-w-7xl mx-auto px-5 sm:px-10 lg:px-20">
+<section id="comparison" class="bg-white py-20 sm:py-24 lg:py-28">
+  <div class="max-w-[1100px] mx-auto px-5 sm:px-10 lg:px-20">
     <div class="text-center mb-12 sm:mb-16">
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-neutral-900 mb-6">
-        Why Choose StudioLoop?
+      <h2 class="text-3xl sm:text-4xl lg:text-[2.75rem] font-heading font-semibold text-neutral-900 mb-6 leading-tight">
+        The Smart Choice for Boutique Studios
       </h2>
       <p class="text-lg sm:text-xl text-neutral-600 leading-relaxed max-w-3xl mx-auto">
-        Get the essential features boutique studios need without the enterprise price tag.
+        All the features you need, none of the complexity you don't.
       </p>
     </div>
 
     <!-- Desktop Table -->
-    <div class="hidden lg:block overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-lg">
+    <div class="hidden lg:block overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-lg">
       <table class="w-full">
         <thead>
           <tr class="border-b border-neutral-200">
-            <th class="px-6 py-4 text-left text-sm font-semibold text-neutral-900">Feature</th>
-            <th class="px-6 py-4 text-center text-sm font-semibold text-neutral-600">FitGrid</th>
-            <th class="px-6 py-4 text-center text-sm font-semibold text-white bg-neutral-900">
+            <th class="px-6 py-5 text-left text-sm font-semibold text-neutral-900">Feature</th>
+            <th class="px-6 py-5 text-center text-sm font-semibold text-neutral-600">FitGrid</th>
+            <th class="px-6 py-5 text-center text-sm font-semibold text-white bg-pink-400">
               StudioLoop
-              <span class="block text-xs font-normal text-neutral-300 mt-1">Recommended</span>
+              <span class="block text-xs font-normal text-white/90 mt-1">Recommended</span>
             </th>
           </tr>
         </thead>
         <tbody class="divide-y divide-neutral-200">
-          <tr>
+          <tr class="hover:bg-pink-50/30 transition-colors">
             <td class="px-6 py-4 text-sm text-neutral-700">Monthly Price</td>
             <td class="px-6 py-4 text-center text-sm text-neutral-600">$169-325</td>
-            <td class="px-6 py-4 text-center text-lg font-bold text-pink-600 bg-neutral-50">$29</td>
+            <td class="px-6 py-4 text-center text-2xl font-bold text-pink-400 bg-pink-50">$29</td>
           </tr>
-          <tr>
+          <tr class="hover:bg-pink-50/30 transition-colors">
             <td class="px-6 py-4 text-sm text-neutral-700">Post-class emails</td>
             <td class="px-6 py-4 text-center">
               <svg class="w-5 h-5 text-neutral-400 mx-auto" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
             </td>
-            <td class="px-6 py-4 text-center bg-neutral-50">
-              <svg class="w-5 h-5 text-pink-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+            <td class="px-6 py-4 text-center bg-pink-50">
+              <svg class="w-5 h-5 text-pink-400 mx-auto" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
             </td>
           </tr>
-          <tr>
+          <tr class="hover:bg-pink-50/30 transition-colors">
             <td class="px-6 py-4 text-sm text-neutral-700">MindBody integration</td>
             <td class="px-6 py-4 text-center">
               <svg class="w-5 h-5 text-neutral-400 mx-auto" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
             </td>
-            <td class="px-6 py-4 text-center bg-neutral-50">
-              <svg class="w-5 h-5 text-pink-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+            <td class="px-6 py-4 text-center bg-pink-50">
+              <svg class="w-5 h-5 text-pink-400 mx-auto" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
             </td>
           </tr>
-          <tr>
+          <tr class="hover:bg-pink-50/30 transition-colors">
             <td class="px-6 py-4 text-sm text-neutral-700">Annual contract required</td>
             <td class="px-6 py-4 text-center">
               <svg class="w-5 h-5 text-red-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
@@ -72,23 +72,23 @@
               </svg>
               <span class="block text-xs text-neutral-500 mt-1">Required</span>
             </td>
-            <td class="px-6 py-4 text-center bg-neutral-50">
-              <svg class="w-5 h-5 text-pink-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+            <td class="px-6 py-4 text-center bg-pink-50">
+              <svg class="w-5 h-5 text-pink-400 mx-auto" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
-              <span class="block text-xs text-neutral-500 mt-1">No contract</span>
+              <span class="block text-xs text-pink-600 mt-1 font-medium">No contract</span>
             </td>
           </tr>
-          <tr>
+          <tr class="hover:bg-pink-50/30 transition-colors">
             <td class="px-6 py-4 text-sm text-neutral-700">Setup time</td>
             <td class="px-6 py-4 text-center text-sm text-neutral-600">Complex</td>
-            <td class="px-6 py-4 text-center text-sm font-semibold text-neutral-900 bg-neutral-50">5 minutes</td>
+            <td class="px-6 py-4 text-center text-sm font-semibold text-pink-600 bg-pink-50">5 minutes</td>
           </tr>
-          <tr>
+          <tr class="hover:bg-pink-50/30 transition-colors">
             <td class="px-6 py-4 text-sm text-neutral-700">Built for boutique studios</td>
             <td class="px-6 py-4 text-center text-sm text-neutral-500">Enterprise focus</td>
-            <td class="px-6 py-4 text-center bg-neutral-50">
-              <svg class="w-5 h-5 text-pink-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+            <td class="px-6 py-4 text-center bg-pink-50">
+              <svg class="w-5 h-5 text-pink-400 mx-auto" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
             </td>
@@ -97,13 +97,93 @@
       </table>
     </div>
 
+    <!-- Mobile Card-based Comparison -->
+    <div class="lg:hidden space-y-6">
+      <!-- FitGrid Card -->
+      <div class="rounded-xl border border-neutral-200 bg-white shadow-md overflow-hidden">
+        <div class="bg-neutral-100 px-6 py-4 border-b border-neutral-200">
+          <h3 class="text-lg font-semibold text-neutral-900">FitGrid</h3>
+        </div>
+        <div class="p-6 space-y-4">
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-neutral-700">Monthly Price</span>
+            <span class="text-lg font-semibold text-neutral-900">$169-325</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-neutral-700">Post-class emails</span>
+            <svg class="w-5 h-5 text-neutral-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-neutral-700">MindBody integration</span>
+            <svg class="w-5 h-5 text-neutral-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-neutral-700">Annual contract</span>
+            <span class="text-sm text-red-500 font-medium">Required</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-neutral-700">Setup time</span>
+            <span class="text-sm text-neutral-600">Complex</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-neutral-700">Built for boutique studios</span>
+            <span class="text-sm text-neutral-500">Enterprise focus</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- StudioLoop Card (Highlighted) -->
+      <div class="rounded-xl border-2 border-pink-400 bg-pink-50 shadow-lg overflow-hidden">
+        <div class="bg-pink-400 px-6 py-4 border-b border-pink-500">
+          <h3 class="text-lg font-semibold text-white">StudioLoop</h3>
+          <span class="text-xs text-white/90 mt-1 block">Recommended</span>
+        </div>
+        <div class="p-6 space-y-4 bg-white">
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-neutral-700">Monthly Price</span>
+            <span class="text-2xl font-bold text-pink-400">$29</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-neutral-700">Post-class emails</span>
+            <svg class="w-5 h-5 text-pink-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-neutral-700">MindBody integration</span>
+            <svg class="w-5 h-5 text-pink-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-neutral-700">Annual contract</span>
+            <span class="text-sm text-pink-600 font-semibold">No contract</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-neutral-700">Setup time</span>
+            <span class="text-sm text-pink-600 font-semibold">5 minutes</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-neutral-700">Built for boutique studios</span>
+            <svg class="w-5 h-5 text-pink-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="mt-12 text-center">
       <p class="text-lg text-neutral-600 mb-6">
-        <span class="font-bold text-pink-600">Save $1,800+ per year</span> with StudioLoop
+        <span class="font-bold text-pink-400">Save $1,800+ per year</span> with StudioLoop
       </p>
       <button
         onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})"
-        class="inline-flex items-center justify-center px-8 py-4 bg-neutral-900 text-white text-base font-semibold rounded-lg hover:bg-neutral-800 transition-all hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2"
+        class="inline-flex items-center justify-center px-8 py-4 bg-pink-400 text-white text-base font-semibold rounded-xl hover:bg-pink-500 transition-all hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2"
       >
         Start Saving Today
         <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

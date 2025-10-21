@@ -1,91 +1,126 @@
 ---
 /**
- * HowItWorks component - 5-step process visualization
+ * HowItWorks component - 3-step visual process flow
  * 
- * Explains the simple onboarding and usage process for StudioLoop.
- * Uses a numbered list with icons to guide users through the journey
- * from signup to automated member engagement.
+ * Redesigned with rose pink accents and visual journey through the product.
+ * Shows the actual process with app screenshot placeholders.
+ * Simplified from 5 steps to 3 for clearer messaging.
  */
 
 /**
  * Step data for the how-it-works process
- * Each step has a number, icon, title, and description
+ * Each step includes number, emoji placeholder (to be replaced with HugeIcons),
+ * title, description, and image placeholder information
  */
 const steps = [
   {
     number: 1,
-    icon: '📝',
-    title: 'Join the Waitlist',
-    description: 'Sign up with your email and studio details. We\'ll notify you when we launch.'
+    icon: '🔗', // Placeholder for HugeIcons: Plugin/Connect icon
+    title: 'Connect Your Studio',
+    description: 'Link your MindBody account with one click. We\'ll automatically import your classes, instructors, and member list. Setup takes just minutes.',
+    imagePlaceholder: 'Connection/Integration Interface',
+    imageAlt: 'MindBody integration connection interface showing one-click setup'
   },
   {
     number: 2,
-    icon: '🔗',
-    title: 'Connect MindBody',
-    description: 'Link your MindBody account with one click. We securely sync your class schedule and member roster.'
+    icon: '👥', // Placeholder for HugeIcons: Users/Instructors icon
+    title: 'Invite Your Instructors',
+    description: 'Notify your instructors to sign into the instructor email template dashboard. They can customize their follow-up messages and make them personal.',
+    imagePlaceholder: 'Instructor Dashboard/Template Editor',
+    imageAlt: 'Instructor dashboard showing email template customization interface'
   },
   {
     number: 3,
-    icon: '✏️',
-    title: 'Customize Your Messages',
-    description: 'Personalize your post-class follow-up templates. Add your studio\'s voice and branding.'
-  },
-  {
-    number: 4,
-    icon: '🚀',
-    title: 'Launch Automations',
-    description: 'Turn on automated follow-ups. Members receive emails after every class, automatically.'
-  },
-  {
-    number: 5,
-    icon: '📈',
-    title: 'Track Engagement',
-    description: 'Monitor open rates and responses. See which members are most engaged with your studio.'
+    icon: '📊', // Placeholder for HugeIcons: Chart/Analytics icon
+    title: 'Monitor Results',
+    description: 'Track all emails sent and member reviews via your dashboard. See engagement metrics, response rates, and member feedback in real-time.',
+    imagePlaceholder: 'Analytics Dashboard with Email Stats',
+    imageAlt: 'Analytics dashboard displaying email statistics and member feedback metrics'
   }
 ];
 ---
 
-<section id="how-it-works" class="bg-neutral-50 py-16 sm:py-24 lg:py-32">
+<section id="how-it-works" class="bg-gradient-to-b from-white to-pink-50 py-20 sm:py-28 lg:py-32">
   <div class="max-w-7xl mx-auto px-5 sm:px-10 lg:px-20">
-    <div class="text-center mb-12 sm:mb-16">
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-neutral-900 mb-6">
-        How StudioLoop Works
+    <!-- Section Header -->
+    <div class="text-center mb-16 sm:mb-20">
+      <h2 class="text-3xl sm:text-4xl lg:text-[2.75rem] font-heading font-semibold text-neutral-900 mb-6">
+        Get Started in Minutes
       </h2>
-      <p class="text-lg sm:text-xl text-neutral-600 leading-relaxed max-w-3xl mx-auto">
-        Get started in minutes and automate your member engagement forever.
+      <p class="text-lg sm:text-xl text-neutral-600 leading-relaxed max-w-2xl mx-auto">
+        Three simple steps to transform your member engagement.
       </p>
     </div>
 
-    <div class="max-w-4xl mx-auto">
-      <div class="space-y-8">
+    <!-- Steps Container -->
+    <div class="max-w-[900px] mx-auto">
+      <div class="space-y-12 sm:space-y-16">
         {steps.map((step, index) => (
           <div class="relative">
-            {/* Connector Line (except for last step) */}
+            {/* Connector Arrow/Line (except for last step) */}
             {index < steps.length - 1 && (
-              <div class="absolute left-8 top-20 bottom-0 w-0.5 bg-neutral-200 -mb-8" aria-hidden="true"></div>
+              <div 
+                class="absolute left-1/2 -translate-x-1/2 top-full mt-8 mb-8 flex flex-col items-center" 
+                aria-hidden="true"
+              >
+                <div class="w-0.5 h-8 bg-gradient-to-b from-neutral-200 to-pink-200"></div>
+                <svg 
+                  class="w-6 h-6 text-pink-400" 
+                  fill="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" transform="rotate(90 12 12)"/>
+                </svg>
+              </div>
             )}
 
             {/* Step Card */}
-            <div class="relative bg-white rounded-xl shadow-sm border border-neutral-200 p-6 sm:p-8 hover:shadow-md transition-shadow">
-              <div class="flex items-start gap-6">
+            <div class="relative bg-white rounded-2xl shadow-lg border border-neutral-100 p-6 sm:p-10 hover:shadow-xl transition-all duration-300">
+              <div class="flex flex-col items-center text-center">
                 {/* Step Number Badge */}
-                <div class="flex-shrink-0">
-                  <div class="w-16 h-16 bg-neutral-900 text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg">
+                <div class="mb-6">
+                  <div class="w-[60px] h-[60px] bg-pink-400 text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg">
                     {step.number}
                   </div>
                 </div>
 
                 {/* Step Content */}
-                <div class="flex-1 pt-2">
-                  <div class="flex items-center gap-3 mb-3">
-                    <span class="text-3xl" aria-hidden="true">{step.icon}</span>
-                    <h3 class="text-xl sm:text-2xl font-semibold text-neutral-900">
-                      {step.title}
-                    </h3>
+                <div class="mb-8">
+                  <div class="flex items-center justify-center gap-3 mb-4">
+                    <span class="text-[40px]" role="img" aria-hidden="true">{step.icon}</span>
                   </div>
-                  <p class="text-base text-neutral-600 leading-relaxed">
+                  <h3 class="text-2xl sm:text-[28px] font-heading font-semibold text-neutral-900 mb-4">
+                    {step.title}
+                  </h3>
+                  <p class="text-base sm:text-lg text-neutral-600 leading-[1.7] max-w-[600px] mx-auto">
                     {step.description}
                   </p>
+                </div>
+
+                {/* Image Placeholder */}
+                <div class="w-full max-w-[700px] aspect-video bg-pink-100 rounded-xl border-2 border-pink-200 flex items-center justify-center">
+                  <div class="text-center p-6">
+                    <svg 
+                      class="w-16 h-16 mx-auto mb-4 text-pink-400" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round" 
+                        stroke-width="2" 
+                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      />
+                    </svg>
+                    <p class="text-sm font-medium text-pink-600 mb-1">
+                      App Screenshot Placeholder
+                    </p>
+                    <p class="text-xs text-neutral-500">
+                      {step.imagePlaceholder}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -95,15 +130,16 @@ const steps = [
     </div>
 
     {/* Call to Action */}
-    <div class="mt-12 sm:mt-16 text-center">
+    <div class="mt-16 sm:mt-20 text-center">
       <button
         onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})"
-        class="inline-flex items-center justify-center px-8 py-4 bg-neutral-900 text-white text-base font-semibold rounded-lg hover:bg-neutral-800 transition-all hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2"
+        class="inline-flex items-center justify-center px-8 py-4 bg-pink-400 text-white text-base sm:text-lg font-semibold rounded-xl hover:bg-pink-500 transition-all hover:shadow-lg hover:shadow-pink-400/30 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2"
+        aria-label="Scroll to waitlist signup form"
       >
-        Get Started Today
+        Start Your Free Setup
       </button>
       <p class="text-sm text-neutral-500 mt-4">
-        Setup takes less than 5 minutes • No technical skills required
+        No credit card required • Setup in under 5 minutes
       </p>
     </div>
   </div>
