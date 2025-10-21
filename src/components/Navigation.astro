@@ -18,7 +18,7 @@
       <!-- Logo -->
       <button
         onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-        class="text-2xl font-heading font-semibold text-neutral-900 hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 rounded-lg"
+        class="text-2xl font-heading font-semibold text-neutral-900 hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 rounded-lg cursor-pointer"
         aria-label="StudioLoop - Scroll to top of page"
       >
         StudioLoop
@@ -29,21 +29,21 @@
         <div class="flex items-center gap-8">
           <button
             onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})"
-            class="text-base font-body text-neutral-700 hover:text-neutral-900 focus:outline-none focus:ring-2 focus:ring-pink-400 rounded focus:text-neutral-900 transition-colors"
+            class="text-base font-body text-neutral-700 hover:text-neutral-900 focus:outline-none focus:ring-2 focus:ring-pink-400 rounded focus:text-neutral-900 transition-colors cursor-pointer"
             aria-label="Navigate to Features section"
           >
             Features
           </button>
           <button
             onclick="document.getElementById('how-it-works').scrollIntoView({behavior: 'smooth'})"
-            class="text-base font-body text-neutral-700 hover:text-neutral-900 focus:outline-none focus:ring-2 focus:ring-pink-400 rounded focus:text-neutral-900 transition-colors"
+            class="text-base font-body text-neutral-700 hover:text-neutral-900 focus:outline-none focus:ring-2 focus:ring-pink-400 rounded focus:text-neutral-900 transition-colors cursor-pointer"
             aria-label="Navigate to How It Works section"
           >
             How It Works
           </button>
           <button
             onclick="document.getElementById('comparison').scrollIntoView({behavior: 'smooth'})"
-            class="text-base font-body text-neutral-700 hover:text-neutral-900 focus:outline-none focus:ring-2 focus:ring-pink-400 rounded focus:text-neutral-900 transition-colors"
+            class="text-base font-body text-neutral-700 hover:text-neutral-900 focus:outline-none focus:ring-2 focus:ring-pink-400 rounded focus:text-neutral-900 transition-colors cursor-pointer"
             aria-label="Navigate to Comparison section"
           >
             Comparison
@@ -54,7 +54,7 @@
       <!-- Desktop CTA Button -->
       <button
         onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})"
-        class="hidden lg:inline-flex items-center px-6 py-3 text-white text-base font-body font-semibold rounded-full transition-all hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2"
+        class="hidden lg:inline-flex items-center px-6 py-3 text-white text-base font-body font-semibold rounded-full transition-all hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 cursor-pointer"
         style="background-color: rgb(251, 113, 133);"
         onmouseover="this.style.backgroundColor='rgb(244, 63, 94)'"
         onmouseout="this.style.backgroundColor='rgb(251, 113, 133)'"
@@ -66,7 +66,7 @@
       <!-- Mobile Menu Button -->
       <button
         id="mobile-menu-button"
-        class="lg:hidden p-2 focus:outline-none rounded-lg relative z-[60]"
+        class="lg:hidden p-2 focus:outline-none rounded-lg relative z-[60] cursor-pointer"
         aria-label="Toggle menu"
         aria-expanded="false"
       >
@@ -102,7 +102,7 @@
       <!-- Logo -->
       <button
         onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-        class="text-2xl font-heading font-semibold text-neutral-900 hover:opacity-80 transition-opacity focus:outline-none"
+        class="text-2xl font-heading font-semibold text-neutral-900 hover:opacity-80 transition-opacity focus:outline-none cursor-pointer"
         aria-label="Scroll to top"
       >
         StudioLoop
@@ -111,7 +111,7 @@
       <!-- Close Button -->
       <button
         id="mobile-menu-close"
-        class="p-2 focus:outline-none rounded-lg"
+        class="p-2 focus:outline-none rounded-lg cursor-pointer"
         aria-label="Close menu"
       >
         <svg 
@@ -133,21 +133,21 @@
     <!-- Navigation Links (left-aligned, top of content area) -->
     <div class="flex flex-col px-5 sm:px-10 pt-8 space-y-2">
       <button
-        class="mobile-menu-link py-4 text-2xl font-body font-normal text-neutral-700 hover:text-neutral-900 text-left transition-colors focus:outline-none focus:ring-2 focus:ring-pink-400 rounded"
+        class="mobile-menu-link py-4 text-2xl font-body font-normal text-neutral-700 hover:text-neutral-900 text-left transition-colors focus:outline-none focus:ring-2 focus:ring-pink-400 rounded cursor-pointer"
         data-section="features"
         aria-label="Navigate to Features section"
       >
         Features
       </button>
       <button
-        class="mobile-menu-link py-4 text-2xl font-body font-normal text-neutral-700 hover:text-neutral-900 text-left transition-colors focus:outline-none focus:ring-2 focus:ring-pink-400 rounded"
+        class="mobile-menu-link py-4 text-2xl font-body font-normal text-neutral-700 hover:text-neutral-900 text-left transition-colors focus:outline-none focus:ring-2 focus:ring-pink-400 rounded cursor-pointer"
         data-section="how-it-works"
         aria-label="Navigate to How It Works section"
       >
         How It Works
       </button>
       <button
-        class="mobile-menu-link py-4 text-2xl font-body font-normal text-neutral-700 hover:text-neutral-900 text-left transition-colors focus:outline-none focus:ring-2 focus:ring-pink-400 rounded"
+        class="mobile-menu-link py-4 text-2xl font-body font-normal text-neutral-700 hover:text-neutral-900 text-left transition-colors focus:outline-none focus:ring-2 focus:ring-pink-400 rounded cursor-pointer"
         data-section="comparison"
         aria-label="Navigate to Comparison section"
       >
@@ -161,7 +161,7 @@
     <!-- Mobile Join Waitlist Button (at bottom) -->
     <div class="px-5 sm:px-10 pb-8">
       <button
-        class="mobile-menu-link w-full py-4 text-white text-lg font-body font-semibold rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 shadow-lg"
+        class="mobile-menu-link w-full py-4 text-white text-lg font-body font-semibold rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 shadow-lg cursor-pointer"
         style="background-color: rgb(251, 113, 133);"
         onmouseover="this.style.backgroundColor='rgb(244, 63, 94)'"
         onmouseout="this.style.backgroundColor='rgb(251, 113, 133)'"

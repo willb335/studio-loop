@@ -79,7 +79,7 @@ const steps = [
               <div class="flex flex-col items-center text-center">
                 {/* Step Number Badge */}
                 <div class="mb-6">
-                  <div class="w-[60px] h-[60px] bg-pink-400 text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg" aria-label={`Step ${step.number}`}>
+                  <div class="w-[60px] h-[60px] bg-[rgb(251,113,133)] text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg" aria-label={`Step ${step.number}`}>
                     {step.number}
                   </div>
                 </div>
@@ -133,7 +133,10 @@ const steps = [
     <div class="mt-16 sm:mt-20 text-center">
       <button
         onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})"
-        class="inline-flex items-center justify-center px-8 py-4 bg-pink-400 text-white text-base sm:text-lg font-semibold rounded-xl hover:bg-pink-500 transition-all hover:shadow-lg hover:shadow-pink-400/30 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2"
+        class="inline-flex items-center justify-center px-8 py-4 text-white text-base sm:text-lg font-semibold rounded-full transition-all hover:shadow-lg hover:shadow-pink-400/30 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 cursor-pointer"
+        style="background-color: rgb(251, 113, 133);"
+        onmouseover="this.style.backgroundColor='rgb(244, 63, 94)'"
+        onmouseout="this.style.backgroundColor='rgb(251, 113, 133)'"
         aria-label="Start your free setup - Navigate to waitlist signup form"
       >
         Start Your Free Setup
