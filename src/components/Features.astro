@@ -23,7 +23,7 @@ const mainFeatures = [
   {
     emoji: '📧',
     title: 'Automated Post-Class Emails',
-    description: 'Send personalized follow-ups automatically after every class. Your members feel valued without any manual work.',
+    description: 'Send personalized follow-ups automatically after every class. Make your members feel valued without lifting a finger.',
     image: '/src/assets/app/email-followup.png.svg',
     imageAlt: 'Email follow-up editor interface showing personalized message templates',
     layout: 'text-left' // text on left, image on right
@@ -31,15 +31,15 @@ const mainFeatures = [
   {
     emoji: '⭐',
     title: 'Detailed Member Feedback',
-    description: 'Collect meaningful insights with our 10-star rating system. Understand what your members love and where to improve.',
+    description: 'Collect actionable insights with our 10-star rating system. Know exactly what your members love and where to improve.',
     image: '/src/assets/app/client-feedback.png.svg',
     imageAlt: 'Member feedback page showing 10-star ratings and reviews',
     layout: 'image-left' // image on left, text on right
   },
   {
     emoji: '🔗',
-    title: 'One-Click MindBody Sync',
-    description: 'Connect your MindBody account in minutes. We automatically sync classes, instructors, and member lists.',
+    title: 'Seamless MindBody Integration',
+    description: 'Connect your MindBody account in one click. We automatically sync your classes, instructors, and member lists.',
     image: '/src/assets/app/instructor-dashboard.png.svg',
     imageAlt: 'Dashboard showing MindBody integration status and sync controls',
     layout: 'text-left' // text on left, image on right
@@ -53,27 +53,27 @@ const mainFeatures = [
 const additionalFeatures = [
   {
     emoji: '💰',
-    title: 'Affordable Pricing',
-    description: 'Just $29/month. No contracts, no surprises.'
+    title: 'Transparent Pricing',
+    description: 'Just $29/month. No contracts, no hidden fees, no surprises.'
   },
   {
     emoji: '⚡',
-    title: '5-Minute Setup',
-    description: 'Get started faster than brewing coffee.'
+    title: 'Lightning-Fast Setup',
+    description: "Get started in under 5 minutes. Seriously, it's that easy."
   },
   {
     emoji: '📊',
-    title: 'Simple Analytics',
-    description: 'Track engagement without complexity.'
+    title: 'Clear Analytics',
+    description: 'Track email performance and member engagement at a glance.'
   }
 ];
 ---
 
-<section id="features" class="bg-white py-20 sm:py-24 lg:py-32">
+<section id="features" class="bg-white py-20 sm:py-24 lg:py-32" aria-labelledby="features-heading">
   <div class="max-w-7xl mx-auto px-5 sm:px-10 lg:px-20">
     <!-- Section Header -->
     <div class="text-center mb-16 sm:mb-20 lg:mb-24">
-      <h2 class="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold text-neutral-900 mb-6 leading-tight">
+      <h2 id="features-heading" class="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold text-neutral-900 mb-6 leading-tight">
         Everything You Need to Connect with Members
       </h2>
       <p class="font-body text-lg sm:text-xl text-neutral-600 leading-relaxed max-w-3xl mx-auto">
@@ -93,8 +93,8 @@ const additionalFeatures = [
               
               {/* Text Content */}
               <div class={isImageLeft ? 'lg:col-start-2' : ''}>
-                <div class="mb-6">
-                  <span class="text-5xl sm:text-6xl inline-block" role="img" aria-label={feature.title}>
+                <div class="mb-6" aria-hidden="true">
+                  <span class="text-5xl sm:text-6xl inline-block">
                     {feature.emoji}
                   </span>
                 </div>
@@ -127,9 +127,9 @@ const additionalFeatures = [
     <!-- Additional Features Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
       {additionalFeatures.map((feature) => (
-        <div class="bg-white border border-neutral-200 rounded-2xl p-8 hover:border-pink-200 hover:shadow-md transition-all duration-300">
-          <div class="mb-4">
-            <span class="text-4xl inline-block" role="img" aria-label={feature.title}>
+        <article class="bg-white border border-neutral-200 rounded-2xl p-8 hover:border-pink-200 hover:shadow-md transition-all duration-300">
+          <div class="mb-4" aria-hidden="true">
+            <span class="text-4xl inline-block">
               {feature.emoji}
             </span>
           </div>
@@ -139,7 +139,7 @@ const additionalFeatures = [
           <p class="font-body text-base text-neutral-600 leading-relaxed">
             {feature.description}
           </p>
-        </div>
+        </article>
       ))}
     </div>
   </div>

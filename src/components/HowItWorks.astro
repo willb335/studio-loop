@@ -17,7 +17,7 @@ const steps = [
     number: 1,
     icon: '🔗', // Placeholder for HugeIcons: Plugin/Connect icon
     title: 'Connect Your Studio',
-    description: 'Link your MindBody account with one click. We\'ll automatically import your classes, instructors, and member list. Setup takes just minutes.',
+    description: "Link your MindBody account with one click. We'll automatically sync your classes, instructors, and members. Setup takes less than 5 minutes.",
     imagePlaceholder: 'Connection/Integration Interface',
     imageAlt: 'MindBody integration connection interface showing one-click setup'
   },
@@ -25,26 +25,26 @@ const steps = [
     number: 2,
     icon: '👥', // Placeholder for HugeIcons: Users/Instructors icon
     title: 'Invite Your Instructors',
-    description: 'Notify your instructors to sign into the instructor email template dashboard. They can customize their follow-up messages and make them personal.',
+    description: 'Let your instructors personalize their email templates. They can customize messages to match their teaching style and connect authentically with members.',
     imagePlaceholder: 'Instructor Dashboard/Template Editor',
     imageAlt: 'Instructor dashboard showing email template customization interface'
   },
   {
     number: 3,
     icon: '📊', // Placeholder for HugeIcons: Chart/Analytics icon
-    title: 'Monitor Results',
-    description: 'Track all emails sent and member reviews via your dashboard. See engagement metrics, response rates, and member feedback in real-time.',
+    title: 'Track Engagement',
+    description: 'Monitor email performance and member feedback in real-time. See what resonates with your community and continuously improve.',
     imagePlaceholder: 'Analytics Dashboard with Email Stats',
     imageAlt: 'Analytics dashboard displaying email statistics and member feedback metrics'
   }
 ];
 ---
 
-<section id="how-it-works" class="bg-gradient-to-b from-white to-pink-50 py-20 sm:py-28 lg:py-32">
+<section id="how-it-works" class="bg-gradient-to-b from-white to-pink-50 py-20 sm:py-28 lg:py-32" aria-labelledby="how-it-works-heading">
   <div class="max-w-7xl mx-auto px-5 sm:px-10 lg:px-20">
     <!-- Section Header -->
     <div class="text-center mb-16 sm:mb-20">
-      <h2 class="text-3xl sm:text-4xl lg:text-[2.75rem] font-heading font-semibold text-neutral-900 mb-6">
+      <h2 id="how-it-works-heading" class="text-3xl sm:text-4xl lg:text-[2.75rem] font-heading font-semibold text-neutral-900 mb-6">
         Get Started in Minutes
       </h2>
       <p class="text-lg sm:text-xl text-neutral-600 leading-relaxed max-w-2xl mx-auto">
@@ -54,9 +54,9 @@ const steps = [
 
     <!-- Steps Container -->
     <div class="max-w-[900px] mx-auto">
-      <div class="space-y-12 sm:space-y-16">
+      <ol class="space-y-12 sm:space-y-16" role="list" aria-label="Setup process steps">
         {steps.map((step, index) => (
-          <div class="relative">
+          <li class="relative">
             {/* Connector Arrow/Line (except for last step) */}
             {index < steps.length - 1 && (
               <div 
@@ -75,19 +75,19 @@ const steps = [
             )}
 
             {/* Step Card */}
-            <div class="relative bg-white rounded-2xl shadow-lg border border-neutral-100 p-6 sm:p-10 hover:shadow-xl transition-all duration-300">
+            <article class="relative bg-white rounded-2xl shadow-lg border border-neutral-100 p-6 sm:p-10 hover:shadow-xl transition-all duration-300">
               <div class="flex flex-col items-center text-center">
                 {/* Step Number Badge */}
                 <div class="mb-6">
-                  <div class="w-[60px] h-[60px] bg-pink-400 text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg">
+                  <div class="w-[60px] h-[60px] bg-pink-400 text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg" aria-label={`Step ${step.number}`}>
                     {step.number}
                   </div>
                 </div>
 
                 {/* Step Content */}
                 <div class="mb-8">
-                  <div class="flex items-center justify-center gap-3 mb-4">
-                    <span class="text-[40px]" role="img" aria-hidden="true">{step.icon}</span>
+                  <div class="flex items-center justify-center gap-3 mb-4" aria-hidden="true">
+                    <span class="text-[40px]">{step.icon}</span>
                   </div>
                   <h3 class="text-2xl sm:text-[28px] font-heading font-semibold text-neutral-900 mb-4">
                     {step.title}
@@ -123,10 +123,10 @@ const steps = [
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </article>
+          </li>
         ))}
-      </div>
+      </ol>
     </div>
 
     {/* Call to Action */}
@@ -134,7 +134,7 @@ const steps = [
       <button
         onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})"
         class="inline-flex items-center justify-center px-8 py-4 bg-pink-400 text-white text-base sm:text-lg font-semibold rounded-xl hover:bg-pink-500 transition-all hover:shadow-lg hover:shadow-pink-400/30 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2"
-        aria-label="Scroll to waitlist signup form"
+        aria-label="Start your free setup - Navigate to waitlist signup form"
       >
         Start Your Free Setup
       </button>

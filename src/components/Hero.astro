@@ -20,9 +20,9 @@
 const instructorDashboard = '/src/assets/app/instructor-dashboard.png.svg';
 ---
 
-<section class="relative w-full bg-white overflow-hidden">
+<section class="relative w-full bg-white overflow-hidden" aria-labelledby="hero-heading">
   <!-- Optional: Subtle radial gradient background -->
-  <div class="absolute inset-0 bg-gradient-radial-pink opacity-40"></div>
+  <div class="absolute inset-0 bg-gradient-radial-pink opacity-40" aria-hidden="true"></div>
   
   <!-- Main Content Container -->
   <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -32,13 +32,13 @@ const instructorDashboard = '/src/assets/app/instructor-dashboard.png.svg';
       <!-- Headline Section -->
       <div class="text-center max-w-4xl mx-auto">
         <!-- Main Headline -->
-        <h1 class="font-heading font-bold text-[2.25rem] sm:text-5xl lg:text-[3.5rem] leading-[1.1] mb-6 sm:mb-8" style="color: var(--neutral-900); max-width: 900px; margin-left: auto; margin-right: auto;">
+        <h1 id="hero-heading" class="font-heading font-bold text-[2.25rem] sm:text-5xl lg:text-[3.5rem] leading-[1.1] mb-6 sm:mb-8" style="color: var(--neutral-900); max-width: 900px; margin-left: auto; margin-right: auto;">
           Your Members Deserve Better Follow-Ups
         </h1>
         
         <!-- Subheadline -->
         <p class="font-body text-lg sm:text-xl lg:text-[1.25rem] leading-relaxed mb-10 sm:mb-12" style="color: var(--neutral-600); max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-          Strengthen connections with automated, personalized post-class emails. Built for boutique fitness studios. Just $29/month.
+          Automate personalized post-class emails that strengthen member relationships. Built exclusively for boutique fitness studios. Just $29/month.
         </p>
         
         <!-- CTA Buttons -->
@@ -46,10 +46,11 @@ const instructorDashboard = '/src/assets/app/instructor-dashboard.png.svg';
           <!-- Primary CTA: Join Waitlist (Pill-shaped) -->
           <button
             onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})"
-            class="inline-flex items-center justify-center px-8 py-4 font-body font-semibold text-lg text-white rounded-full transition-all duration-200 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2"
+            class="inline-flex items-center justify-center px-8 py-4 font-body font-semibold text-lg text-white rounded-full transition-all duration-200 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2"
             style="background-color: rgb(251, 113, 133); padding: 16px 32px;"
             onmouseover="this.style.backgroundColor='rgb(244, 63, 94)'"
             onmouseout="this.style.backgroundColor='rgb(251, 113, 133)'"
+            aria-label="Join the waitlist - Navigate to signup form"
           >
             Join the Waitlist
           </button>
@@ -57,10 +58,11 @@ const instructorDashboard = '/src/assets/app/instructor-dashboard.png.svg';
           <!-- Secondary CTA: See How It Works (Pill-shaped) -->
           <button
             onclick="document.getElementById('how-it-works').scrollIntoView({behavior: 'smooth'})"
-            class="inline-flex items-center justify-center px-8 py-4 font-body font-semibold text-lg rounded-full transition-all duration-200 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2"
+            class="inline-flex items-center justify-center px-8 py-4 font-body font-semibold text-lg rounded-full transition-all duration-200 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2"
             style="background-color: transparent; border: 2px solid var(--neutral-200); color: var(--neutral-700); padding: 16px 32px;"
             onmouseover="this.style.borderColor='var(--neutral-300)'"
             onmouseout="this.style.borderColor='var(--neutral-200)'"
+            aria-label="See how it works - Navigate to process section"
           >
             See How It Works
           </button>
@@ -69,10 +71,10 @@ const instructorDashboard = '/src/assets/app/instructor-dashboard.png.svg';
       
       <!-- App Screenshot -->
       <div class="mt-12 sm:mt-16 lg:mt-[60px]">
-        <div class="app-screenshot-hero">
+        <div class="app-screenshot-hero" role="img" aria-label="StudioLoop instructor dashboard interface">
           <img
             src={instructorDashboard}
-            alt="Instructor Dashboard - Manage classes, view member feedback, and track engagement"
+            alt="StudioLoop instructor dashboard showing class management, member feedback ratings, and engagement tracking features"
             class="w-full h-auto rounded-2xl"
             style="border-radius: 1rem; box-shadow: 0 25px 70px rgba(251, 113, 133, 0.2); max-width: 1100px; margin: 0 auto; display: block;"
             loading="eager"

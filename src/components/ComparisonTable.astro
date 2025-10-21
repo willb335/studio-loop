@@ -8,10 +8,10 @@
  */
 ---
 
-<section id="comparison" class="bg-white py-20 sm:py-24 lg:py-28">
+<section id="comparison" class="bg-white py-20 sm:py-24 lg:py-28" aria-labelledby="comparison-heading">
   <div class="max-w-[1100px] mx-auto px-5 sm:px-10 lg:px-20">
     <div class="text-center mb-12 sm:mb-16">
-      <h2 class="text-3xl sm:text-4xl lg:text-[2.75rem] font-heading font-semibold text-neutral-900 mb-6 leading-tight">
+      <h2 id="comparison-heading" class="text-3xl sm:text-4xl lg:text-[2.75rem] font-heading font-semibold text-neutral-900 mb-6 leading-tight">
         The Smart Choice for Boutique Studios
       </h2>
       <p class="text-lg sm:text-xl text-neutral-600 leading-relaxed max-w-3xl mx-auto">
@@ -21,12 +21,12 @@
 
     <!-- Desktop Table -->
     <div class="hidden lg:block overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-lg">
-      <table class="w-full">
+      <table class="w-full" role="table" aria-label="Feature comparison between FitGrid and StudioLoop">
         <thead>
           <tr class="border-b border-neutral-200">
-            <th class="px-6 py-5 text-left text-sm font-semibold text-neutral-900">Feature</th>
-            <th class="px-6 py-5 text-center text-sm font-semibold text-neutral-600">FitGrid</th>
-            <th class="px-6 py-5 text-center text-sm font-semibold text-white bg-pink-400">
+            <th scope="col" class="px-6 py-5 text-left text-sm font-semibold text-neutral-900">Feature</th>
+            <th scope="col" class="px-6 py-5 text-center text-sm font-semibold text-neutral-600">FitGrid</th>
+            <th scope="col" class="px-6 py-5 text-center text-sm font-semibold text-white bg-pink-400">
               StudioLoop
               <span class="block text-xs font-normal text-white/90 mt-1">Recommended</span>
             </th>
@@ -34,63 +34,68 @@
         </thead>
         <tbody class="divide-y divide-neutral-200">
           <tr class="hover:bg-pink-50/30 transition-colors">
-            <td class="px-6 py-4 text-sm text-neutral-700">Monthly Price</td>
+            <th scope="row" class="px-6 py-4 text-sm text-neutral-700 text-left font-normal">Monthly Price</th>
             <td class="px-6 py-4 text-center text-sm text-neutral-600">$169-325</td>
             <td class="px-6 py-4 text-center text-2xl font-bold text-pink-400 bg-pink-50">$29</td>
           </tr>
           <tr class="hover:bg-pink-50/30 transition-colors">
-            <td class="px-6 py-4 text-sm text-neutral-700">Post-class emails</td>
+            <th scope="row" class="px-6 py-4 text-sm text-neutral-700 text-left font-normal">Post-class emails</th>
             <td class="px-6 py-4 text-center">
-              <svg class="w-5 h-5 text-neutral-400 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-5 h-5 text-neutral-400 mx-auto" fill="currentColor" viewBox="0 0 20 20" aria-label="Available">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
+              <span class="sr-only">Available</span>
             </td>
             <td class="px-6 py-4 text-center bg-pink-50">
-              <svg class="w-5 h-5 text-pink-400 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-5 h-5 text-pink-400 mx-auto" fill="currentColor" viewBox="0 0 20 20" aria-label="Available">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
+              <span class="sr-only">Available</span>
             </td>
           </tr>
           <tr class="hover:bg-pink-50/30 transition-colors">
-            <td class="px-6 py-4 text-sm text-neutral-700">MindBody integration</td>
+            <th scope="row" class="px-6 py-4 text-sm text-neutral-700 text-left font-normal">MindBody integration</th>
             <td class="px-6 py-4 text-center">
-              <svg class="w-5 h-5 text-neutral-400 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-5 h-5 text-neutral-400 mx-auto" fill="currentColor" viewBox="0 0 20 20" aria-label="Available">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
+              <span class="sr-only">Available</span>
             </td>
             <td class="px-6 py-4 text-center bg-pink-50">
-              <svg class="w-5 h-5 text-pink-400 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-5 h-5 text-pink-400 mx-auto" fill="currentColor" viewBox="0 0 20 20" aria-label="Available">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
+              <span class="sr-only">Available</span>
             </td>
           </tr>
           <tr class="hover:bg-pink-50/30 transition-colors">
-            <td class="px-6 py-4 text-sm text-neutral-700">Annual contract required</td>
+            <th scope="row" class="px-6 py-4 text-sm text-neutral-700 text-left font-normal">Annual contract required</th>
             <td class="px-6 py-4 text-center">
-              <svg class="w-5 h-5 text-red-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-5 h-5 text-red-500 mx-auto" fill="currentColor" viewBox="0 0 20 20" aria-label="Required">
                 <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
               </svg>
               <span class="block text-xs text-neutral-500 mt-1">Required</span>
             </td>
             <td class="px-6 py-4 text-center bg-pink-50">
-              <svg class="w-5 h-5 text-pink-400 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-5 h-5 text-pink-400 mx-auto" fill="currentColor" viewBox="0 0 20 20" aria-label="No contract required">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
               <span class="block text-xs text-pink-600 mt-1 font-medium">No contract</span>
             </td>
           </tr>
           <tr class="hover:bg-pink-50/30 transition-colors">
-            <td class="px-6 py-4 text-sm text-neutral-700">Setup time</td>
+            <th scope="row" class="px-6 py-4 text-sm text-neutral-700 text-left font-normal">Setup time</th>
             <td class="px-6 py-4 text-center text-sm text-neutral-600">Complex</td>
             <td class="px-6 py-4 text-center text-sm font-semibold text-pink-600 bg-pink-50">5 minutes</td>
           </tr>
           <tr class="hover:bg-pink-50/30 transition-colors">
-            <td class="px-6 py-4 text-sm text-neutral-700">Built for boutique studios</td>
+            <th scope="row" class="px-6 py-4 text-sm text-neutral-700 text-left font-normal">Built for boutique studios</th>
             <td class="px-6 py-4 text-center text-sm text-neutral-500">Enterprise focus</td>
             <td class="px-6 py-4 text-center bg-pink-50">
-              <svg class="w-5 h-5 text-pink-400 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-5 h-5 text-pink-400 mx-auto" fill="currentColor" viewBox="0 0 20 20" aria-label="Yes">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
+              <span class="sr-only">Yes</span>
             </td>
           </tr>
         </tbody>
@@ -184,9 +189,10 @@
       <button
         onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})"
         class="inline-flex items-center justify-center px-8 py-4 bg-pink-400 text-white text-base font-semibold rounded-xl hover:bg-pink-500 transition-all hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2"
+        aria-label="Start saving today - Navigate to waitlist signup form"
       >
         Start Saving Today
-        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
         </svg>
       </button>

@@ -10,12 +10,12 @@
  */
 ---
 
-<footer class="bg-white py-12 sm:py-16 border-t border-neutral-200">
+<footer class="bg-white py-12 sm:py-16 border-t border-neutral-200" role="contentinfo" aria-label="Site footer">
   <div class="max-w-7xl mx-auto px-5 sm:px-10 lg:px-20">
     <div class="flex flex-col items-center text-center space-y-4">
       <!-- Logo/Brand -->
       <div>
-        <span class="text-2xl font-bold font-heading text-neutral-900">StudioLoop</span>
+        <span class="text-2xl font-bold font-heading text-neutral-900" aria-label="StudioLoop">StudioLoop</span>
       </div>
 
       <!-- Built with love -->
@@ -25,7 +25,7 @@
 
       <!-- Copyright -->
       <p class="text-sm text-neutral-500">
-        © {new Date().getFullYear()} StudioLoop. All rights reserved.
+        <small>© {new Date().getFullYear()} StudioLoop. All rights reserved.</small>
       </p>
     </div>
   </div>
