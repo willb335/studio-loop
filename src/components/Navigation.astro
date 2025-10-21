@@ -1,24 +1,24 @@
 ---
 /**
- * Navigation component - Duna-style navigation with responsive mobile menu
+ * Navigation component - Inspired by aboardhr.com design
  * 
  * Features:
  * - Desktop: Logo left, centered nav links, CTA button right
- * - Mobile: Hamburger menu with full-screen dark overlay
- * - Smooth scroll to all sections
- * - No hover effects on nav links
- * - Logo click scrolls to top
- * - Backdrop blur effect for modern look
+ * - Mobile: Hamburger menu with full-screen overlay
+ * - Three navigation links: Features, How It Works, Comparison
+ * - Rose pink accent on CTA button (rgb(251, 113, 133))
+ * - Smooth animations and transitions
+ * - Sticky positioning with backdrop blur
  */
 ---
 
 <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-neutral-200">
   <div class="max-w-7xl mx-auto px-5 sm:px-10 lg:px-20">
-    <div class="flex justify-between items-center h-16 sm:h-20">
+    <div class="flex justify-between items-center h-20">
       <!-- Logo -->
       <button
         onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-        class="text-2xl font-semibold text-neutral-900 hover:opacity-80 transition-opacity focus:outline-none"
+        class="text-2xl font-heading font-semibold text-neutral-900 hover:opacity-80 transition-opacity focus:outline-none"
         aria-label="Scroll to top"
       >
         StudioLoop
@@ -29,25 +29,19 @@
         <div class="flex items-center gap-8">
           <button
             onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})"
-            class="text-base text-neutral-700 focus:outline-none focus:text-neutral-900 transition-colors"
+            class="text-base font-body text-neutral-700 hover:text-neutral-900 focus:outline-none focus:text-neutral-900 transition-colors"
           >
             Features
           </button>
           <button
             onclick="document.getElementById('how-it-works').scrollIntoView({behavior: 'smooth'})"
-            class="text-base text-neutral-700 focus:outline-none focus:text-neutral-900 transition-colors"
+            class="text-base font-body text-neutral-700 hover:text-neutral-900 focus:outline-none focus:text-neutral-900 transition-colors"
           >
             How It Works
           </button>
           <button
-            onclick="document.getElementById('pricing').scrollIntoView({behavior: 'smooth'})"
-            class="text-base text-neutral-700 focus:outline-none focus:text-neutral-900 transition-colors"
-          >
-            Pricing
-          </button>
-          <button
             onclick="document.getElementById('comparison').scrollIntoView({behavior: 'smooth'})"
-            class="text-base text-neutral-700 focus:outline-none focus:text-neutral-900 transition-colors"
+            class="text-base font-body text-neutral-700 hover:text-neutral-900 focus:outline-none focus:text-neutral-900 transition-colors"
           >
             Comparison
           </button>
@@ -57,41 +51,36 @@
       <!-- Desktop CTA Button -->
       <button
         onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})"
-        class="hidden lg:inline-flex items-center px-6 py-3 bg-neutral-900 text-white text-base font-semibold rounded-lg hover:bg-neutral-800 transition-all hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2"
+        class="hidden lg:inline-flex items-center px-6 py-3 text-white text-base font-body font-semibold rounded-full transition-all hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2"
+        style="background-color: rgb(251, 113, 133);"
+        onmouseover="this.style.backgroundColor='rgb(244, 63, 94)'"
+        onmouseout="this.style.backgroundColor='rgb(251, 113, 133)'"
       >
         Join Waitlist
-        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-        </svg>
       </button>
 
       <!-- Mobile Menu Button -->
       <button
         id="mobile-menu-button"
-        class="lg:hidden p-2 focus:outline-none focus:ring-2 focus:ring-neutral-900 rounded-lg relative z-[60]"
+        class="lg:hidden p-2 focus:outline-none rounded-lg relative z-[60]"
         aria-label="Toggle menu"
         aria-expanded="false"
       >
         <!-- Hamburger Icon -->
         <svg 
           id="hamburger-icon" 
-          class="w-6 h-6 transition-all duration-300"
+          class="w-6 h-6 transition-all duration-300 text-neutral-900"
           xmlns="http://www.w3.org/2000/svg" 
           viewBox="0 0 24 24" 
           fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
         >
-          <path opacity="0.4" d="M4 8.5L20 8.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-          <path opacity="0.4" d="M4 15.5L20 15.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
-        <!-- Close Icon (hidden by default) -->
-        <svg 
-          id="close-icon" 
-          class="w-6 h-6 absolute top-2 right-2 opacity-0 transition-all duration-300"
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 24 24" 
-          fill="none"
-        >
-          <path d="M18 6L6.00081 17.9992M17.9992 18L6 6.00085" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
       </button>
     </div>
@@ -101,72 +90,77 @@
 <!-- Mobile Menu Overlay -->
 <div
   id="mobile-menu"
-  class="fixed inset-0 bg-neutral-800/95 backdrop-blur-md z-[55] opacity-0 invisible transition-all duration-300 lg:hidden"
+  class="fixed inset-0 bg-white z-[55] opacity-0 invisible transition-all duration-300 lg:hidden"
 >
   <div class="flex flex-col h-full">
     <!-- Header with Logo and Close Button -->
-    <div class="flex justify-between items-center px-5 sm:px-10 h-16 sm:h-20 border-b border-white/10">
+    <div class="flex justify-between items-center px-5 sm:px-10 h-20 border-b border-neutral-100">
       <!-- Logo -->
       <button
         onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-        class="text-xl font-semibold text-white hover:opacity-80 transition-opacity focus:outline-none flex items-center gap-2"
+        class="text-2xl font-heading font-semibold text-neutral-900 hover:opacity-80 transition-opacity focus:outline-none"
         aria-label="Scroll to top"
       >
-        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        STUDIOLOOP
+        StudioLoop
       </button>
       
       <!-- Close Button -->
       <button
         id="mobile-menu-close"
-        class="p-2 focus:outline-none focus:ring-2 focus:ring-white/20 rounded-lg"
+        class="p-2 focus:outline-none rounded-lg"
         aria-label="Close menu"
       >
-        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg 
+          class="w-6 h-6 text-neutral-900" 
+          xmlns="http://www.w3.org/2000/svg" 
+          viewBox="0 0 24 24" 
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       </button>
     </div>
 
-    <!-- Navigation Links (left-aligned) -->
-    <div class="flex flex-col flex-1 px-5 sm:px-10 py-8 space-y-1">
+    <!-- Navigation Links (left-aligned, top of content area) -->
+    <div class="flex flex-col px-5 sm:px-10 pt-8 space-y-2">
       <button
-        class="mobile-menu-link py-4 text-2xl text-white font-normal text-left focus:outline-none transition-colors"
+        class="mobile-menu-link py-4 text-2xl font-body font-normal text-neutral-700 hover:text-neutral-900 text-left transition-colors focus:outline-none"
         data-section="features"
       >
         Features
       </button>
       <button
-        class="mobile-menu-link py-4 text-2xl text-white font-normal text-left focus:outline-none transition-colors"
+        class="mobile-menu-link py-4 text-2xl font-body font-normal text-neutral-700 hover:text-neutral-900 text-left transition-colors focus:outline-none"
         data-section="how-it-works"
       >
         How It Works
       </button>
       <button
-        class="mobile-menu-link py-4 text-2xl text-white font-normal text-left focus:outline-none transition-colors"
-        data-section="pricing"
-      >
-        Pricing
-      </button>
-      <button
-        class="mobile-menu-link py-4 text-2xl text-white font-normal text-left focus:outline-none transition-colors"
+        class="mobile-menu-link py-4 text-2xl font-body font-normal text-neutral-700 hover:text-neutral-900 text-left transition-colors focus:outline-none"
         data-section="comparison"
       >
         Comparison
       </button>
     </div>
 
-    <!-- Mobile CTA Button (at bottom) -->
+    <!-- Spacer to push button to bottom -->
+    <div class="flex-1"></div>
+
+    <!-- Mobile Join Waitlist Button (at bottom) -->
     <div class="px-5 sm:px-10 pb-8">
       <button
-        class="mobile-menu-link w-full py-4 bg-white text-neutral-900 text-lg font-medium rounded-full hover:bg-neutral-100 transition-all focus:outline-none focus:ring-2 focus:ring-white"
+        class="mobile-menu-link w-full py-4 text-white text-lg font-body font-semibold rounded-full transition-all focus:outline-none focus:ring-2 shadow-lg"
+        style="background-color: rgb(251, 113, 133);"
+        onmouseover="this.style.backgroundColor='rgb(244, 63, 94)'"
+        onmouseout="this.style.backgroundColor='rgb(251, 113, 133)'"
         data-section="waitlist"
       >
-        Join the Waitlist
+        Join Waitlist
       </button>
     </div>
   </div>
@@ -175,18 +169,17 @@
 <script>
   /**
    * Mobile menu toggle functionality
-   * Handles opening/closing the mobile menu with animation
+   * Handles opening/closing the mobile menu with smooth animations
    */
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenuCloseButton = document.getElementById('mobile-menu-close');
   const mobileMenu = document.getElementById('mobile-menu');
-  const hamburgerIcon = document.getElementById('hamburger-icon');
   const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
 
   let isMenuOpen = false;
 
   /**
-   * Toggles the mobile menu open/closed state
+   * Toggles the mobile menu open/closed state with smooth animations
    */
   const toggleMenu = (): void => {
     isMenuOpen = !isMenuOpen;

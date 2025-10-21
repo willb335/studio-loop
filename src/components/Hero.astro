@@ -43,22 +43,22 @@ const instructorDashboard = '/src/assets/app/instructor-dashboard.png.svg';
         
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <!-- Primary CTA: Join Waitlist -->
+          <!-- Primary CTA: Join Waitlist (Pill-shaped) -->
           <button
             onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})"
-            class="inline-flex items-center justify-center px-8 py-4 font-body font-semibold text-lg text-white rounded-xl transition-all duration-200 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2"
-            style="background-color: var(--pink-400); border-radius: 12px; padding: 16px 32px;"
-            onmouseover="this.style.backgroundColor='var(--pink-500)'"
-            onmouseout="this.style.backgroundColor='var(--pink-400)'"
+            class="inline-flex items-center justify-center px-8 py-4 font-body font-semibold text-lg text-white rounded-full transition-all duration-200 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2"
+            style="background-color: rgb(251, 113, 133); padding: 16px 32px;"
+            onmouseover="this.style.backgroundColor='rgb(244, 63, 94)'"
+            onmouseout="this.style.backgroundColor='rgb(251, 113, 133)'"
           >
             Join the Waitlist
           </button>
           
-          <!-- Secondary CTA: See How It Works -->
+          <!-- Secondary CTA: See How It Works (Pill-shaped) -->
           <button
             onclick="document.getElementById('how-it-works').scrollIntoView({behavior: 'smooth'})"
-            class="inline-flex items-center justify-center px-8 py-4 font-body font-semibold text-lg rounded-xl transition-all duration-200 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2"
-            style="background-color: transparent; border: 2px solid var(--neutral-200); color: var(--neutral-700); border-radius: 12px; padding: 16px 32px;"
+            class="inline-flex items-center justify-center px-8 py-4 font-body font-semibold text-lg rounded-full transition-all duration-200 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2"
+            style="background-color: transparent; border: 2px solid var(--neutral-200); color: var(--neutral-700); padding: 16px 32px;"
             onmouseover="this.style.borderColor='var(--neutral-300)'"
             onmouseout="this.style.borderColor='var(--neutral-200)'"
           >
