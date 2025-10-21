@@ -22,17 +22,22 @@ All images should be **1200x800px PNG** with shadcn/ui design and Rose Pink acce
 ### 1. Instructor Dashboard (`instructor-dashboard.png`)
 - **Used in**: Hero section (main visual)
 - **Shows**: Dashboard with stats, recent classes, quick actions
-- **AI Prompt**: See [`REDESIGN_PLAN.md`](REDESIGN_PLAN.md#1-instructor-dashboard-screenshot) line 112
+- **Note**: Use placeholder during development (pink-100 background with text label)
 
 ### 2. Client Feedback Page (`client-feedback.png`)
 - **Used in**: Features section (row 2)
 - **Shows**: Member feedback cards with 10-star ratings
-- **AI Prompt**: See [`REDESIGN_PLAN.md`](REDESIGN_PLAN.md#2-client-feedback-page-screenshot) line 145
+- **Note**: Use placeholder during development (pink-100 background with text label)
 
 ### 3. Email Follow-Up Page (`email-followup.png`)
-- **Used in**: Features section (row 1) and How It Works (step 2)
+- **Used in**: Features section (row 1)
 - **Shows**: Email composer with templates and personalization
-- **AI Prompt**: See [`REDESIGN_PLAN.md`](REDESIGN_PLAN.md#3-follow-up-email-page-screenshot) line 180
+- **Note**: Use placeholder during development (pink-100 background with text label)
+
+### 4. Additional Placeholders for How It Works
+- Connection interface (Step 1)
+- Instructor dashboard/template editor (Step 2)
+- Analytics dashboard with stats (Step 3)
 
 **Location**: Save to `/src/assets/app/`
 

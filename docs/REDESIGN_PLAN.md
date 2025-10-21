@@ -104,195 +104,23 @@ small: 0.875rem (14px) - Inter Regular
 
 ---
 
-## Image Specifications & AI Generation Prompts
+## Image Placeholders
 
 ### Required App Screenshots
 
-All screenshots should be created with:
-- **Design System**: shadcn/ui components
-- **Color Palette**: Rose Pink (#fb7185) accents with neutral grays
-- **Dimensions**: 1200x800px (3:2 aspect ratio)
-- **Style**: Clean, minimal, professional
-- **Format**: PNG with transparency where appropriate
+All screenshots will be **1200x800px PNG** format with Rose Pink (#fb7185) accents.
 
-### 1. Instructor Dashboard Screenshot
-
-**Filename**: `instructor-dashboard.png`  
-**Dimensions**: 1200x800px  
 **Location**: `/src/assets/app/`
 
-**AI Generation Prompt**:
-```
-Create a modern web application dashboard screenshot for a fitness studio management app. 
+### Placeholder Images Needed:
 
-Layout & Structure:
-- Clean sidebar navigation on the left with icons
-- Main content area showing an instructor dashboard
-- Top header with user profile and notifications
-- Cards layout with metrics and recent activity
+1. **`instructor-dashboard.png`** - Instructor dashboard view (for Hero section)
+2. **`client-feedback.png`** - Member feedback page with ratings (for Features section)
+3. **`email-followup.png`** - Email editor interface (for Features & How It Works sections)
 
-Design Specifications:
-- Use shadcn/ui components (modern, minimal aesthetic)
-- Primary color: Rose Pink (#fb7185) for buttons, icons, and accents
-- Background: White and very light gray (#fafafa)
-- Typography: Inter font family
-- Card components with subtle shadows and rounded corners (border-radius: 12px)
-- Icons in rose pink color
+**Note**: Image generation will be handled separately. During development, use solid color placeholders (pink-100 background) with text labels indicating the image content.
 
-Content to Display:
-- "Welcome back, Sarah!" greeting at top
-- 3-4 stat cards showing: "Classes This Week: 12", "Average Rating: 9.2/10", "Response Rate: 87%", "Active Members: 234"
-- "Recent Classes" section with list of 3-4 classes showing class name, time, attendance count
-- "Quick Actions" section with buttons: "Create Follow-up", "View Schedule", "Member Feedback"
-- Navigation items: Dashboard, Classes, Members, Messages, Settings
-
-UI Elements:
-- Use rounded buttons with rose pink background
-- Clean table/list layouts with hover states
-- Small avatars/profile pictures where appropriate
-- Rose pink accent color for important data points
-- Minimal, professional aesthetic matching shadcn/ui design system
-
-Technical Requirements:
-- 1200x800px resolution
-- PNG format
-- Realistic but clean UI (not cluttered)
-- Professional color scheme: rose pink (#fb7185), grays, and white
-- Modern, approachable aesthetic suitable for fitness industry
-```
-
-### 2. Client Feedback Page Screenshot
-
-**Filename**: `client-feedback.png`  
-**Dimensions**: 1200x800px  
-**Location**: `/src/assets/app/`
-
-**AI Generation Prompt**:
-```
-Create a modern web application client feedback interface screenshot for a fitness studio app.
-
-Layout & Structure:
-- Header with "Member Feedback" title
-- Filter/sort controls at top (dropdown menus, date range)
-- List/grid of feedback cards from multiple members
-- Each card shows member name, class attended, rating, and comment
-
-Design Specifications:
-- Use shadcn/ui components with modern, card-based layout
-- Primary color: Rose Pink (#fb7185) for ratings, icons, positive elements
-- Background: White cards on light gray background (#fafafa)
-- Typography: Inter font family, clean hierarchy
-- Star rating system using rose pink stars
-- Rounded corners (border-radius: 12px) on all cards
-
-Content to Display:
-- 4-5 feedback cards visible
-- Each card contains:
-  * Member avatar (circular, small)
-  * Member name (e.g., "Emma Rodriguez", "Michael Chen")
-  * Class name (e.g., "Power Yoga - Monday 6pm")
-  * 10-star rating displayed as pink stars (show ratings like 9/10, 8/10)
-  * Short feedback comment (1-2 sentences, positive)
-  * Timestamp (e.g., "2 hours ago", "Yesterday")
-- Overall stats at top: "Average Rating: 9.1/10", "Total Responses: 89 this week"
-- Filter buttons: "All Classes", "This Week", "High Ratings", "Needs Follow-up"
-
-UI Elements:
-- Rose pink filled stars for ratings
-- Gray outline stars for unfilled ratings
-- Clean typography hierarchy
-- Subtle hover effects on cards
-- "Reply" button in rose pink on each card
-- Tag/badge system for class types in soft gray
-- Responsive card grid layout
-
-Technical Requirements:
-- 1200x800px resolution
-- PNG format
-- Professional, clean interface
-- Rose pink (#fb7185) as primary accent color
-- Show real-looking (but fake) member feedback data
-- Emphasize the 10-star rating system clearly
-```
-
-### 3. Follow-Up Email Page Screenshot
-
-**Filename**: `email-followup.png`  
-**Dimensions**: 1200x800px  
-**Location**: `/src/assets/app/`
-
-**AI Generation Prompt**:
-```
-Create a modern email composition/follow-up interface screenshot for a fitness studio management app.
-
-Layout & Structure:
-- Split layout: left sidebar with email templates, main area showing email composer
-- Email composer in center with WYSIWYG editor
-- Preview pane or list of recipients at right/bottom
-- Header with "Post-Class Follow-Up" title
-
-Design Specifications:
-- Use shadcn/ui components with clean, email-focused layout
-- Primary color: Rose Pink (#fb7185) for buttons, send button, and accents
-- Background: White composer area on light gray background (#fafafa)
-- Typography: Inter font family for UI, readable serif/sans for email preview
-- Modern email editor interface with formatting toolbar
-
-Content to Display:
-- Email composition area showing:
-  * "To:" field showing "23 members from Power Yoga - Tuesday 6pm"
-  * Subject line: "Thanks for an amazing class today! 🎉"
-  * Email body with formatted text:
-    "Hi [First Name],
-    
-    Thank you for joining today's Power Yoga class! Your energy and dedication made it special.
-    
-    I'd love to hear your feedback:
-    [Rate Your Class: 1-10 stars shown as buttons]
-    
-    See you next time!
-    
-    Sarah Martinez
-    Lead Yoga Instructor"
-  
-- Left sidebar with "Templates" section:
-  * "Post-Class Thank You" (selected/active)
-  * "New Member Welcome"
-  * "Class Reminder"
-  * "Special Event Invitation"
-  * "+ Create New Template"
-
-- Bottom stats/info:
-  * "Scheduled to send: After class ends"
-  * "Estimated delivery: In 15 minutes"
-  * Small icons showing: delivery rate, open rate stats
-
-- Top toolbar:
-  * Send button (prominent, rose pink)
-  * Save as Draft
-  * Preview button
-  * Insert merge tags dropdown (showing options like [First Name], [Class Name])
-
-UI Elements:
-- Rose pink "Send" button (prominent, right side)
-- Clean WYSIWYG editor with formatting toolbar (bold, italic, lists, links)
-- Template selector on left with rose pink accent for active template
-- Merge tag chips in light pink/gray (e.g., "[First Name]")
-- Preview of rating buttons in email (10 numbered buttons in rose pink)
-- Professional email preview aesthetic
-- Modern, uncluttered interface
-
-Technical Requirements:
-- 1200x800px resolution
-- PNG format
-- Show realistic email composition interface
-- Rose pink (#fb7185) as primary accent color
-- Clean, professional aesthetic matching shadcn/ui
-- Show the automation/scheduled send aspect clearly
-- Display member personalization features (merge tags)
-```
-
-### Hero Image Treatment
+### Image Treatment
 
 All app screenshots in the hero and throughout the page should be displayed with:
 - **Rounded corners**: `border-radius: 1rem` (16px)
@@ -530,25 +358,25 @@ Clean, numbered steps with app screenshots showing the actual process. Make it f
 └─────────────────────────────────────────────┘
 ```
 
-**Steps** (Simplified to 3 main steps):
+**Steps** (3-step process):
 
 **Step 1**: Connect Your Studio
 - Emoji: 🔗 (placeholder for connect icon)
-- Title: "Connect Your Studio in Minutes"
-- Description: "Link your MindBody account with one click. We'll automatically import your classes, instructors, and member list. No data entry needed."
-- Visual: Illustration/screenshot showing connection process or dashboard with "Connected" status
+- Title: "Connect Your Studio"
+- Description: "Link your MindBody account with one click. We'll automatically import your classes, instructors, and member list. Setup takes just minutes."
+- Visual: Placeholder image showing connection/integration interface
 
-**Step 2**: Customize Your Messages
-- Emoji: ✏️ (placeholder for edit icon)
-- Title: "Create Your Perfect Follow-Up"
-- Description: "Choose from templates or write your own. Add your studio's personality. Insert member names and class details automatically."
-- Visual: Email editor screenshot (email-followup.png cropped)
+**Step 2**: Alert Your Instructors
+- Emoji: 👥 (placeholder for users/instructors icon)
+- Title: "Invite Your Instructors"
+- Description: "Notify your instructors to sign into the instructor email template dashboard. They can customize their follow-up messages and make them personal."
+- Visual: Placeholder image showing instructor dashboard/template editor
 
-**Step 3**: Engage Your Members
-- Emoji: 💌 (placeholder for engagement icon)
-- Title: "Watch Engagement Grow"
-- Description: "Emails send automatically after each class. Members rate their experience with one click. You track it all in your dashboard."
-- Visual: Dashboard or feedback page screenshot
+**Step 3**: Track Engagement
+- Emoji: 📊 (placeholder for analytics icon)
+- Title: "Monitor Results"
+- Description: "Track all emails sent and member reviews via your dashboard. See engagement metrics, response rates, and member feedback in real-time."
+- Visual: Placeholder image showing analytics dashboard with email stats and reviews
 
 **Visual Specs**:
 - Section Background: Light gradient (white to pink-50)
@@ -821,8 +649,8 @@ All emojis are **temporary** and will be replaced with HugeIcons SVGs later.
 
 **How It Works**:
 - 🔗 → HugeIcons: Plugin/Connect icon
-- ✏️ → HugeIcons: Edit/Pen icon
-- 💌 → HugeIcons: Envelope/Heart icon
+- 👥 → HugeIcons: Users/Instructors icon
+- 📊 → HugeIcons: Chart/Analytics icon
 
 ### Icon Styling (When Replaced)
 
