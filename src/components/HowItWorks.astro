@@ -15,7 +15,7 @@
 const steps = [
   {
     number: 1,
-    icon: '🔗', // Placeholder for HugeIcons: Plugin/Connect icon
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" color="#000000" fill="none"><path d="M4.45672 19.5433C2.51443 17.601 2.51443 14.4519 4.45672 12.5096L5.75923 11.2071C6.14975 10.8166 6.78292 10.8166 7.17344 11.2071L12.7929 16.8266C13.1834 17.2171 13.1834 17.8502 12.7929 18.2408L11.4904 19.5433C9.54809 21.4856 6.39901 21.4856 4.45672 19.5433ZM4.45672 19.5433L2 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M19.5433 4.45672C21.4856 6.39901 21.4856 9.54809 19.5433 11.4904L18.2408 12.7929C17.8502 13.1834 17.2171 13.1834 16.8266 12.7929L11.2071 7.17344C10.8166 6.78292 10.8166 6.14975 11.2071 5.75923L12.5096 4.45672C14.4519 2.51443 17.601 2.51442 19.5433 4.45672ZM19.5433 4.45672L22 2M12 8L10.5 9.5M16 12L14.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
     title: 'Connect Your Studio',
     description: "Link your MindBody account with one click. We'll automatically sync your classes, instructors, and members. Setup takes less than 5 minutes.",
     imagePlaceholder: 'Connection/Integration Interface',
@@ -23,7 +23,7 @@ const steps = [
   },
   {
     number: 2,
-    icon: '👥', // Placeholder for HugeIcons: Users/Instructors icon
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" color="#000000" fill="none"><path d="M13 11C13 8.79086 11.2091 7 9 7C6.79086 7 5 8.79086 5 11C5 13.2091 6.79086 15 9 15C11.2091 15 13 13.2091 13 11Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11.0386 7.55773C11.0131 7.37547 11 7.18927 11 7C11 4.79086 12.7909 3 15 3C17.2091 3 19 4.79086 19 7C19 9.20914 17.2091 11 15 11C14.2554 11 13.5584 10.7966 12.9614 10.4423" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M15 21C15 17.6863 12.3137 15 9 15C5.68629 15 3 17.6863 3 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21 17C21 13.6863 18.3137 11 15 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
     title: 'Invite Your Instructors',
     description: 'Let your instructors personalize their email templates. They can customize messages to match their teaching style and connect authentically with members.',
     imagePlaceholder: 'Instructor Dashboard/Template Editor',
@@ -31,7 +31,7 @@ const steps = [
   },
   {
     number: 3,
-    icon: '📊', // Placeholder for HugeIcons: Chart/Analytics icon
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" color="#000000" fill="none"><path d="M7.00024 18V16M12.0002 18V15M17.0002 18V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M19.5 2.5C20.6046 2.5 21.5 3.39543 21.5 4.5V19.5C21.5 20.6046 20.6046 21.5 19.5 21.5H4.5C3.39543 21.5 2.5 20.6046 2.5 19.5V4.5C2.5 3.39543 3.39543 2.5 4.5 2.5H19.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M15.0002 6H18.0002V9M6.00024 12C13.0002 12 17.5002 6.5 17.5002 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
     title: 'Track Engagement',
     description: 'Monitor email performance and member feedback in real-time. See what resonates with your community and continuously improve.',
     imagePlaceholder: 'Analytics Dashboard with Email Stats',
@@ -87,7 +87,9 @@ const steps = [
                 {/* Step Content */}
                 <div class="mb-8">
                   <div class="flex items-center justify-center gap-3 mb-4" aria-hidden="true">
-                    <span class="text-[40px]">{step.icon}</span>
+                    <div class="text-[40px]">
+                      <div set:html={step.icon}></div>
+                    </div>
                   </div>
                   <h3 class="text-2xl sm:text-[28px] font-heading font-semibold text-neutral-900 mb-4">
                     {step.title}

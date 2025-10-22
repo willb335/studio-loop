@@ -17,11 +17,11 @@
 
 /**
  * Main feature data for alternating rows
- * Each feature includes emoji, title, description, image path, and layout direction
+ * Each feature includes icon, title, description, image path, and layout direction
  */
 const mainFeatures = [
   {
-    emoji: '📧',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" color="#000000" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.25 6.16667C1.25 4.55584 2.56262 3.25 4.18182 3.25H19.8182C21.4374 3.25 22.75 4.55584 22.75 6.16667V17.8333C22.75 19.4442 21.4374 20.75 19.8182 20.75H4.18182C2.56262 20.75 1.25 19.4442 1.25 17.8333V6.16667ZM4.18182 18.8055C3.64208 18.8055 3.20454 18.3702 3.20454 17.8333V8.71191L10.6889 12.4347C11.5142 12.8453 12.4858 12.8453 13.3111 12.4347L20.7955 8.71191V17.8333C20.7955 18.3702 20.3579 18.8055 19.8182 18.8055H4.18182Z" fill="#141B34" /></svg>',
     title: 'Automated Post-Class Emails',
     description: 'Send personalized follow-ups automatically after every class. Make your members feel valued without lifting a finger.',
     image: '/src/assets/app/email-followup.png.svg',
@@ -29,7 +29,7 @@ const mainFeatures = [
     layout: 'text-left' // text on left, image on right
   },
   {
-    emoji: '⭐',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" color="#000000" fill="none"><path d="M11.109 3.74829C11.48 3.02037 12.52 3.02037 12.891 3.74829L15.0785 8.0407C15.2237 8.32561 15.4964 8.5239 15.8122 8.5742L20.5671 9.33147C21.373 9.45983 21.6941 10.4474 21.1178 11.0252L17.7138 14.4383C17.4883 14.6644 17.3844 14.9846 17.4341 15.3001L18.1843 20.0635C18.3114 20.8702 17.4703 21.4808 16.7426 21.1102L12.4539 18.9254C12.1687 18.7801 11.8313 18.7801 11.5461 18.9254L7.25739 21.1102C6.52973 21.4808 5.68859 20.8702 5.81565 20.0635L6.56594 15.3001C6.61562 14.9846 6.51167 14.6644 6.28617 14.4383L2.88217 11.0252C2.3059 10.4474 2.62703 9.45983 3.43294 9.33147L8.18782 8.5742C8.50362 8.5239 8.77632 8.32561 8.92151 8.0407L11.109 3.74829Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg>',
     title: 'Detailed Member Feedback',
     description: 'Collect actionable insights with our 10-star rating system. Know exactly what your members love and where to improve.',
     image: '/src/assets/app/client-feedback.png.svg',
@@ -37,7 +37,7 @@ const mainFeatures = [
     layout: 'image-left' // image on left, text on right
   },
   {
-    emoji: '🔗',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" color="#000000" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.2929 2.29289C12.6834 1.90237 13.3166 1.90237 13.7071 2.29289L15.7071 4.29289C16.0976 4.68342 16.0976 5.31658 15.7071 5.70711L13.7071 7.70711C13.3166 8.09763 12.6834 8.09763 12.2929 7.70711C11.9024 7.31658 11.9024 6.68342 12.2929 6.29289L12.5858 6H8C6.34315 6 5 7.34315 5 9V15C5 16.6569 6.34315 18 8 18H16C17.6569 18 19 16.6569 19 15V10C19 9.44772 19.4477 9 20 9C20.5523 9 21 9.44772 21 10V15C21 17.7614 18.7614 20 16 20H8C5.23858 20 3 17.7614 3 15V9C3 6.23858 5.23858 4 8 4H12.5858L12.2929 3.70711C11.9024 3.31658 11.9024 2.68342 12.2929 2.29289Z" fill="currentColor"></path></svg>',
     title: 'Seamless MindBody Integration',
     description: 'Connect your MindBody account in one click. We automatically sync your classes, instructors, and member lists.',
     image: '/src/assets/app/instructor-dashboard.png.svg',
@@ -52,17 +52,17 @@ const mainFeatures = [
  */
 const additionalFeatures = [
   {
-    emoji: '💰',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" color="#000000" fill="none"><path d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M12 6.5V8M12 8C10.4812 8 9.25 8.92865 9.25 10.0741C9.25 11.2196 10 11.8519 12 11.8519C14 11.8519 15 12.4445 15 13.926C15 15.4075 13.6569 16 12 16M12 8C13.5188 8 14.75 8.92865 14.75 10.0741M12 16V17.5M12 16C10.3431 16 9 15.0715 9 13.926" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
     title: 'Transparent Pricing',
     description: 'Just $29/month. No contracts, no hidden fees, no surprises.'
   },
   {
-    emoji: '⚡',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" color="#000000" fill="none"><path d="M18 3L14 10H19L8 21L10 13H5L9.5 3H18Z" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>',
     title: 'Lightning-Fast Setup',
     description: "Get started in under 5 minutes. Seriously, it's that easy."
   },
   {
-    emoji: '📊',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" color="#000000" fill="none"><circle cx="9.5" cy="10.5" r="1.5" stroke="#141B34" stroke-width="1.5" stroke-linejoin="round" /><circle cx="15.5" cy="15.5" r="1.5" stroke="#141B34" stroke-width="1.5" stroke-linejoin="round" /><circle cx="19.5" cy="7.5" r="1.5" stroke="#141B34" stroke-width="1.5" stroke-linejoin="round" /><path d="M16.4341 14.2963L19 9M10.5825 11.5684L14.2038 14.2963M3.5 20.5L8.58957 11.8792" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M21 21H3V3" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>',
     title: 'Clear Analytics',
     description: 'Track email performance and member engagement at a glance.'
   }
@@ -94,9 +94,9 @@ const additionalFeatures = [
               {/* Text Content */}
               <div class={isImageLeft ? 'lg:col-start-2' : ''}>
                 <div class="mb-6" aria-hidden="true">
-                  <span class="text-5xl sm:text-6xl inline-block">
-                    {feature.emoji}
-                  </span>
+                  <div class="text-5xl sm:text-6xl inline-block">
+                    <div set:html={feature.icon}></div>
+                  </div>
                 </div>
                 <h3 class="font-heading text-2xl sm:text-3xl lg:text-[2rem] font-semibold text-neutral-900 mb-4 leading-tight">
                   {feature.title}
@@ -129,9 +129,9 @@ const additionalFeatures = [
       {additionalFeatures.map((feature) => (
         <article class="bg-white border border-neutral-200 rounded-2xl p-8 hover:border-pink-200 hover:shadow-md transition-all duration-300">
           <div class="mb-4" aria-hidden="true">
-            <span class="text-4xl inline-block">
-              {feature.emoji}
-            </span>
+            <div class="text-4xl inline-block">
+              <div set:html={feature.icon}></div>
+            </div>
           </div>
           <h4 class="font-heading text-xl font-semibold text-neutral-900 mb-3">
             {feature.title}
