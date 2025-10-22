@@ -16,8 +16,9 @@
  * - Clean white background with optional subtle pink gradient
  */
 
-// Import the placeholder instructor dashboard image
-const instructorDashboard = '/src/assets/app/instructor-dashboard.png.svg';
+// Import Astro's Image component and the hero image
+import { Image } from 'astro:assets';
+import heroImage from '../assets/app/hero.png';
 ---
 
 <section class="relative w-full bg-white overflow-hidden" aria-labelledby="hero-heading">
@@ -72,12 +73,14 @@ const instructorDashboard = '/src/assets/app/instructor-dashboard.png.svg';
       <!-- App Screenshot -->
       <div class="mt-12 sm:mt-16 lg:mt-[60px]">
         <div class="app-screenshot-hero" role="img" aria-label="StudioLoop instructor dashboard interface">
-          <img
-            src={instructorDashboard}
+          <Image
+            src={heroImage}
             alt="StudioLoop instructor dashboard showing class management, member feedback ratings, and engagement tracking features"
             class="w-full h-auto rounded-2xl"
             style="border-radius: 1rem; box-shadow: 0 25px 70px rgba(251, 113, 133, 0.2); max-width: 1100px; margin: 0 auto; display: block;"
             loading="eager"
+            widths={[640, 768, 1024, 1280, 1536]}
+            sizes="(max-width: 640px) 640px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, 1536px"
           />
         </div>
       </div>

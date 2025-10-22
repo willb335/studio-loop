@@ -1,30 +1,36 @@
 ---
+// Import Astro's Image component and feature images
+import { Image } from 'astro:assets';
+import emailTemplatesImg from '../assets/app/email-templates.png';
+import clientFeedbackImg from '../assets/app/client-feedback.png';
+import ssoImg from '../assets/app/sso.png';
+
 /**
  * Features component - Alternating layout with app screenshots
- * 
+ *
  * Displays main features with large images alternating between left and right,
  * followed by a grid of smaller feature cards. Implements the redesign from
  * REDESIGN_PLAN.md Phase 2 Task 3.
- * 
+ *
  * Layout pattern:
  * - Row 1: Text left, image right (white background)
  * - Row 2: Image left, text right (pink-50 background)
  * - Row 3: Text left, image right (white background)
  * - Grid of 3 smaller feature cards below
- * 
+ *
  * @see docs/REDESIGN_PLAN.md - Features Section (lines 257-323)
  */
 
 /**
  * Main feature data for alternating rows
- * Each feature includes icon, title, description, image path, and layout direction
+ * Each feature includes icon, title, description, image, and layout direction
  */
 const mainFeatures = [
   {
     icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" color="#000000" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.25 6.16667C1.25 4.55584 2.56262 3.25 4.18182 3.25H19.8182C21.4374 3.25 22.75 4.55584 22.75 6.16667V17.8333C22.75 19.4442 21.4374 20.75 19.8182 20.75H4.18182C2.56262 20.75 1.25 19.4442 1.25 17.8333V6.16667ZM4.18182 18.8055C3.64208 18.8055 3.20454 18.3702 3.20454 17.8333V8.71191L10.6889 12.4347C11.5142 12.8453 12.4858 12.8453 13.3111 12.4347L20.7955 8.71191V17.8333C20.7955 18.3702 20.3579 18.8055 19.8182 18.8055H4.18182Z" fill="#141B34" /></svg>',
     title: 'Automated Post-Class Emails',
     description: 'Send personalized follow-ups automatically after every class. Make your members feel valued without lifting a finger.',
-    image: '/src/assets/app/email-followup.png.svg',
+    image: emailTemplatesImg,
     imageAlt: 'Email follow-up editor interface showing personalized message templates',
     layout: 'text-left' // text on left, image on right
   },
@@ -32,7 +38,7 @@ const mainFeatures = [
     icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" color="#000000" fill="none"><path d="M11.109 3.74829C11.48 3.02037 12.52 3.02037 12.891 3.74829L15.0785 8.0407C15.2237 8.32561 15.4964 8.5239 15.8122 8.5742L20.5671 9.33147C21.373 9.45983 21.6941 10.4474 21.1178 11.0252L17.7138 14.4383C17.4883 14.6644 17.3844 14.9846 17.4341 15.3001L18.1843 20.0635C18.3114 20.8702 17.4703 21.4808 16.7426 21.1102L12.4539 18.9254C12.1687 18.7801 11.8313 18.7801 11.5461 18.9254L7.25739 21.1102C6.52973 21.4808 5.68859 20.8702 5.81565 20.0635L6.56594 15.3001C6.61562 14.9846 6.51167 14.6644 6.28617 14.4383L2.88217 11.0252C2.3059 10.4474 2.62703 9.45983 3.43294 9.33147L8.18782 8.5742C8.50362 8.5239 8.77632 8.32561 8.92151 8.0407L11.109 3.74829Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg>',
     title: 'Detailed Member Feedback',
     description: 'Collect actionable insights with our 10-star rating system. Know exactly what your members love and where to improve.',
-    image: '/src/assets/app/client-feedback.png.svg',
+    image: clientFeedbackImg,
     imageAlt: 'Member feedback page showing 10-star ratings and reviews',
     layout: 'image-left' // image on left, text on right
   },
@@ -40,7 +46,7 @@ const mainFeatures = [
     icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" color="#000000" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.2929 2.29289C12.6834 1.90237 13.3166 1.90237 13.7071 2.29289L15.7071 4.29289C16.0976 4.68342 16.0976 5.31658 15.7071 5.70711L13.7071 7.70711C13.3166 8.09763 12.6834 8.09763 12.2929 7.70711C11.9024 7.31658 11.9024 6.68342 12.2929 6.29289L12.5858 6H8C6.34315 6 5 7.34315 5 9V15C5 16.6569 6.34315 18 8 18H16C17.6569 18 19 16.6569 19 15V10C19 9.44772 19.4477 9 20 9C20.5523 9 21 9.44772 21 10V15C21 17.7614 18.7614 20 16 20H8C5.23858 20 3 17.7614 3 15V9C3 6.23858 5.23858 4 8 4H12.5858L12.2929 3.70711C11.9024 3.31658 11.9024 2.68342 12.2929 2.29289Z" fill="currentColor"></path></svg>',
     title: 'Seamless MindBody Integration',
     description: 'Connect your MindBody account in one click. We automatically sync your classes, instructors, and member lists.',
-    image: '/src/assets/app/sso.png',
+    image: ssoImg,
     imageAlt: 'Single sign-on interface showing MindBody integration connection',
     layout: 'text-left' // text on left, image on right
   }
@@ -109,11 +115,13 @@ const additionalFeatures = [
               {/* Image */}
               <div class={isImageLeft ? 'lg:col-start-1 lg:row-start-1' : ''}>
                 <div class="relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                  <img 
-                    src={feature.image} 
+                  <Image
+                    src={feature.image}
                     alt={feature.imageAlt}
                     class="w-full h-auto object-cover"
                     loading="lazy"
+                    widths={[640, 768, 1024, 1280]}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
                   />
                 </div>
               </div>
