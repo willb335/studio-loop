@@ -115,14 +115,14 @@ We're pre-launch validating demand before building. If you join the waitlist and
     <!-- FAQ Accordion -->
     <div class="space-y-4" role="list" aria-label="Frequently asked questions">
       {faqs.map((faq, index) => (
-        <article 
-          class="faq-item border border-neutral-200 rounded-xl overflow-hidden hover:border-pink-200 transition-colors duration-300"
+        <article
+          class="faq-item border border-neutral-200 rounded-xl overflow-hidden transition-colors duration-300"
           data-faq-id={faq.id}
           role="listitem"
         >
           <button
             type="button"
-            class="faq-button w-full text-left px-6 sm:px-8 py-6 flex items-start justify-between gap-4 hover:bg-pink-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-inset"
+            class="faq-button w-full text-left px-6 sm:px-8 py-6 flex items-start justify-between gap-4 hover:bg-neutral-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-neutral-300 focus:ring-inset"
             aria-expanded="false"
             aria-controls={`faq-answer-${faq.id}`}
             data-faq-button="true"
@@ -131,7 +131,7 @@ We're pre-launch validating demand before building. If you join the waitlist and
               {faq.question}
             </span>
             <svg
-              class="faq-icon flex-shrink-0 w-6 h-6 text-pink-400 transition-transform duration-300"
+              class="faq-icon flex-shrink-0 w-6 h-6 transition-transform duration-300"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -294,25 +294,58 @@ document.addEventListener('DOMContentLoaded', () => {
     padding-left: 0.5rem;
   }
 
-  /* Icon rotation transition */
+  /* Icon rotation transition (chevron stays colored) */
   .faq-icon {
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--pink-400) !important; /* keep chevron pink */
   }
 
-  /* Remove pink highlighting when FAQ is open */
+  /**
+   * Aggressively force neutral borders/backgrounds and remove pink rings/shadows for FAQ items.
+   * Use !important to override utility classes from global styles.
+   * Only the chevron (.faq-icon) remains colored.
+   */
+  .faq-item,
+  .faq-item:hover,
+  .faq-item:focus-within,
   .faq-item.faq-open {
-    border-color: rgb(229, 231, 235); /* neutral-200 */
+    border-color: var(--neutral-200) !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
   }
 
-  .faq-item.faq-open:hover {
-    border-color: rgb(229, 231, 235); /* neutral-200 */
+  /* Ensure button hover/focus doesn't introduce pink fills or rings */
+  .faq-button {
+    background-color: transparent !important;
   }
 
-  .faq-item.faq-open .faq-button {
-    background-color: transparent;
+  .faq-button:hover {
+    background-color: var(--neutral-50) !important;
   }
 
-  .faq-item.faq-open .faq-button:hover {
-    background-color: transparent;
+  .faq-button:focus,
+  .faq-button:focus-visible {
+    outline: none !important;
+    box-shadow: 0 0 0 4px rgba(16,24,40,0.04) !important; /* subtle neutral focus */
+  }
+
+  /* Prevent descendants from showing pink borders/shadows or rings */
+  .faq-item,
+  .faq-item * {
+    border-color: var(--neutral-200) !important;
+    box-shadow: none !important;
+    outline-color: transparent !important;
+  }
+
+  /* In case Tailwind utilities add pink ring CSS variables, override them locally */
+  .faq-item:where([class*="ring-"], [class*="focus:ring-"], .faq-item *:where([class*="ring-"])) {
+    --tw-ring-color: rgba(0,0,0,0) !important;
+  }
+
+  /* Keep only the chevron colored; ensure it cannot be overridden */
+  .faq-item .faq-icon {
+    color: var(--pink-400) !important;
+    stroke: currentColor;
   }
 </style>
