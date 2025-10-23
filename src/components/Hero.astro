@@ -1,17 +1,22 @@
 ---
 /**
- * Hero Section - Redesigned to match aboardhr.com aesthetic
- * 
+ * Hero Section - Optimized for conversion (Phase 1, Task 1.1)
+ *
  * Design Philosophy:
- * - Large, benefit-focused headline that speaks to member value
- * - Prominent app screenshot as the hero visual (show, don't just tell)
+ * - Pain-focused headline that addresses member retention crisis
+ * - Trust bar with key value propositions
+ * - Optimized CTA with value proposition
+ * - Pre-launch transparency note for authenticity
+ * - Prominent app screenshot as the hero visual
  * - Clean, centered layout with generous white space
  * - Rose pink accent color for CTAs
  * - Responsive typography and spacing
- * 
+ *
  * Layout Structure:
  * - Headline and subheadline centered at top
- * - Two CTAs (primary pink, secondary outline)
+ * - Trust bar below headline
+ * - Two CTAs (primary with value prop, secondary outline)
+ * - Pre-launch transparency note
  * - Large app screenshot below with pink shadow treatment
  * - Clean white background with optional subtle pink gradient
  */
@@ -27,20 +32,48 @@ import heroImage from '../assets/app/hero.png';
   
   <!-- Main Content Container -->
   <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-    <!-- Top Padding: 120px desktop, 80px mobile -->
-    <div class="pt-20 sm:pt-24 lg:pt-[120px]">
+    <!-- Top Padding: Reduced for above-the-fold visibility -->
+    <div class="pt-12 sm:pt-16 lg:pt-20">
       
       <!-- Headline Section -->
       <div class="text-center max-w-4xl mx-auto">
         <!-- Main Headline -->
-        <h1 id="hero-heading" class="font-heading font-bold text-[2.25rem] sm:text-5xl lg:text-[3.5rem] leading-[1.1] mb-6 sm:mb-8" style="color: var(--neutral-900); max-width: 900px; margin-left: auto; margin-right: auto;">
-          Your Members Deserve Better Follow-Ups
+        <h1 id="hero-heading" class="font-heading font-bold text-[1.75rem] sm:text-5xl lg:text-[3.5rem] leading-[1.1] mb-4 sm:mb-6 lg:mb-8" style="color: var(--neutral-900); max-width: 900px; margin-left: auto; margin-right: auto;">
+          Stop Losing New Members After Their First Class
         </h1>
         
         <!-- Subheadline -->
-        <p class="font-body text-lg sm:text-xl lg:text-[1.25rem] leading-relaxed mb-10 sm:mb-12" style="color: var(--neutral-600); max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-          Automate personalized post-class emails that strengthen member relationships. Built exclusively for boutique fitness studios. Just $29/month.
+        <p class="font-body text-base sm:text-xl lg:text-[1.25rem] leading-relaxed mb-5 sm:mb-8 lg:mb-10" style="color: var(--neutral-600); max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+          Automatic personal follow-ups after every class. No buggy apps, no complex setup. 90% cheaper than <a href="https://fitgrid.com" target="_blank" rel="noopener noreferrer" class="fitgrid-link" style="color: var(--neutral-900); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; transition: color 0.2s;">FitGrid</a>.
         </p>
+        
+        <!-- Trust Bar -->
+        <div class="flex flex-wrap justify-center gap-3 sm:gap-6 mb-5 sm:mb-8 lg:mb-10 max-w-3xl mx-auto">
+          <div class="flex items-center gap-2 text-sm sm:text-base font-body" style="color: var(--neutral-700);">
+            <svg class="w-5 h-5 flex-shrink-0" style="color: rgb(251, 113, 133);" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>MindBody Certified Integration</span>
+          </div>
+          <div class="flex items-center gap-2 text-sm sm:text-base font-body" style="color: var(--neutral-700);">
+            <svg class="w-5 h-5 flex-shrink-0" style="color: rgb(251, 113, 133);" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Setup in 5 Minutes</span>
+          </div>
+          <div class="flex items-center gap-2 text-sm sm:text-base font-body" style="color: var(--neutral-700);">
+            <svg class="w-5 h-5 flex-shrink-0" style="color: rgb(251, 113, 133);" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>No Credit Card Required</span>
+          </div>
+          <div class="flex items-center gap-2 text-sm sm:text-base font-body" style="color: var(--neutral-700);">
+            <svg class="w-5 h-5 flex-shrink-0" style="color: rgb(251, 113, 133);" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Cancel Anytime</span>
+          </div>
+        </div>
         
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -51,15 +84,15 @@ import heroImage from '../assets/app/hero.png';
             style="background-color: rgb(251, 113, 133); padding: 16px 32px;"
             onmouseover="this.style.backgroundColor='rgb(244, 63, 94)'"
             onmouseout="this.style.backgroundColor='rgb(251, 113, 133)'"
-            aria-label="Join the waitlist - Navigate to signup form"
+            aria-label="Get early access and save $140+ per month - Navigate to signup form"
           >
-            Join the Waitlist
+            Get Early Access (Save $140+/Month)
           </button>
           
-          <!-- Secondary CTA: See How It Works (Pill-shaped) -->
+          <!-- Secondary CTA: See How It Works (Pill-shaped) - Hidden on mobile -->
           <button
             onclick="document.getElementById('how-it-works').scrollIntoView({behavior: 'smooth'})"
-            class="inline-flex items-center justify-center px-8 py-4 font-body font-semibold text-lg rounded-full transition-all duration-200 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 cursor-pointer"
+            class="hidden sm:inline-flex items-center justify-center px-8 py-4 font-body font-semibold text-lg rounded-full transition-all duration-200 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 cursor-pointer"
             style="background-color: transparent; border: 2px solid var(--neutral-200); color: var(--neutral-700); padding: 16px 32px;"
             onmouseover="this.style.borderColor='var(--neutral-300)'"
             onmouseout="this.style.borderColor='var(--neutral-200)'"
@@ -68,10 +101,17 @@ import heroImage from '../assets/app/hero.png';
             See How It Works
           </button>
         </div>
+        
+        <!-- Pre-Launch Transparency Note -->
+        <div class="mt-5 sm:mt-6 lg:mt-8 max-w-2xl mx-auto">
+          <p class="text-sm sm:text-base font-body text-center" style="color: var(--neutral-600); line-height: 1.6;">
+            <strong style="color: var(--neutral-900);">Full transparency:</strong> We're validating this idea before building. Join the waitlist to help shape what we create and get lifetime founder pricing.
+          </p>
+        </div>
       </div>
       
       <!-- App Screenshot -->
-      <div class="mt-12 sm:mt-16 lg:mt-[60px]">
+      <div class="mt-6 sm:mt-10 lg:mt-12">
         <div class="app-screenshot-hero" role="img" aria-label="StudioLoop instructor dashboard interface">
           <Image
             src={heroImage}
@@ -87,8 +127,8 @@ import heroImage from '../assets/app/hero.png';
       
     </div>
     
-    <!-- Bottom Padding: 100px desktop, 60px mobile -->
-    <div class="pb-16 sm:pb-20 lg:pb-[100px]"></div>
+    <!-- Bottom Padding: Minimal for above-the-fold hero -->
+    <div class="pb-8 sm:pb-12 lg:pb-16"></div>
   </div>
 </section>
 
@@ -108,15 +148,39 @@ import heroImage from '../assets/app/hero.png';
     font-family: var(--font-body);
   }
   
+  /* FitGrid link styling */
+  .fitgrid-link:hover {
+    color: rgb(251, 113, 133) !important;
+  }
+  
+  /* Trust bar styling */
+  .trust-bar-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
   /* Mobile-specific adjustments */
   @media (max-width: 640px) {
     h1 {
-      font-size: 2.25rem; /* 36px */
-      line-height: 1.1;
+      font-size: 1.75rem; /* 28px - compact for above-the-fold visibility */
+      line-height: 1.2;
     }
     
     p {
-      font-size: 1.125rem; /* 18px */
+      font-size: 0.9375rem; /* 15px - more compact */
+      line-height: 1.5;
+    }
+    
+    /* Reduce button padding on mobile */
+    button {
+      padding: 12px 24px !important;
+      font-size: 0.9375rem !important; /* 15px */
+    }
+    
+    /* Reduce trust bar text on mobile */
+    .flex.items-center.gap-2 {
+      font-size: 0.8125rem; /* 13px */
     }
   }
   
@@ -128,7 +192,16 @@ import heroImage from '../assets/app/hero.png';
   
   @media (max-width: 768px) {
     .app-screenshot-hero {
-      padding: 0 20px;
+      padding: 0 10px;
+    }
+  }
+  
+  /* Ensure hero section fits in viewport */
+  @media (max-width: 640px) {
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
   }
 </style>
