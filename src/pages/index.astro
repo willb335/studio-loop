@@ -2,14 +2,15 @@
 /**
  * Main landing page - Redesigned with Rose Pink palette
  *
- * Page structure (Phase 3 complete):
+ * Page structure (Phase 4 - Task 1.2 complete):
  * 1. Navigation (sticky)
  * 2. Hero Section (with large app screenshot)
  * 3. Features Section (with app images & emojis)
  * 4. How It Works Section (with app screenshots)
- * 5. Comparison Table (with pink accents)
- * 6. Waitlist Form Section
- * 7. Footer (simplified)
+ * 5. FAQ Section (objection handler)
+ * 6. Comparison Table (with pink accents)
+ * 7. Waitlist Form Section
+ * 8. Footer (simplified)
  *
  * Removed sections:
  * - Problem Statement (removed in Phase 3)
@@ -20,6 +21,7 @@ import Navigation from '../components/Navigation.astro';
 import Hero from '../components/Hero.astro';
 import Features from '../components/Features.astro';
 import HowItWorks from '../components/HowItWorks.astro';
+import FAQ from '../components/FAQ.astro';
 import ComparisonTable from '../components/ComparisonTable.astro';
 import WaitlistForm from '../components/WaitlistForm.astro';
 import Footer from '../components/Footer.astro';
@@ -31,6 +33,7 @@ import Footer from '../components/Footer.astro';
     <Hero />
     <Features />
     <HowItWorks />
+    <FAQ />
     <ComparisonTable />
     <WaitlistForm />
   </main>

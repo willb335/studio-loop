@@ -1,0 +1,318 @@
+---
+/**
+ * FAQ component - Objection handler with accordion interface
+ * 
+ * Addresses critical questions and objections from potential users.
+ * Implements accordion pattern for expandable Q&A sections.
+ * Designed to build trust and overcome common concerns.
+ * 
+ * @see docs/OBJECTION_HANDLER_FAQ.md - Source content
+ * @see docs/LANDING_PAGE_OPTIMIZATION_STRATEGY.md - Implementation strategy (lines 369-432)
+ */
+
+/**
+ * FAQ data structure containing questions and detailed answers
+ * Each item includes a question, answer, and category for organization
+ */
+const faqs = [
+  {
+    id: 'fitgrid-difference',
+    question: 'How is this different from FitGrid?',
+    answer: `Three key differences:
+
+1. **Price:** $29/mo vs FitGrid's $169-325/mo (90% savings)
+2. **Simplicity:** 5-minute setup vs complex onboarding process
+3. **Reliability:** Built from scratch to avoid the crashes and bugs that plague FitGrid's 2.4-star instructor app
+
+We focused on doing one thing exceptionally well: automated post-class follow-ups. No feature bloat, no enterprise complexity.`,
+    category: 'product'
+  },
+  {
+    id: 'mindbody-integration',
+    question: 'Do I need to switch from MindBody?',
+    answer: `No! We integrate seamlessly with your existing MindBody account. Your schedules, instructors, and member data sync automatically. We add value without replacing your core system. One-click connection, zero disruption.`,
+    category: 'technical'
+  },
+  {
+    id: 'pricing-catch',
+    question: 'If it\'s 90% cheaper than FitGrid, there must be a catch. What are you not telling me?',
+    answer: `Fair skepticism. Here's the complete picture:
+
+**What you're NOT getting:**
+- No SMS/text messaging (email only)
+- No multi-platform integration (Mindbody only right now)
+- No consumer-facing mobile app for members
+- No advanced AI segmentation or win-back campaigns
+- No multi-location enterprise features
+
+**What you ARE getting:**
+- The core feature that drives results: automated post-class follow-up emails
+- Member feedback collection and analytics
+- Template customization by class type
+- Dashboard showing open rates and engagement metrics
+- Direct Mindbody integration (the platform 60% of boutique studios use)
+
+FitGrid charges $169-325/month because they bundle dozens of features most boutique studios never use. We built exactly two things exceptionally well: automated follow-ups and feedback tracking. That's why we can charge $29/month.`,
+    category: 'pricing'
+  },
+  {
+    id: 'proof-of-effectiveness',
+    question: 'How do I know this actually works?',
+    answer: `FitGrid's case studies show 87% revenue increases and 35-46% better retention from automated follow-ups. Industry data confirms: acquiring new customers costs 5-9× more than retaining existing ones, and 50% of gym members quit within 6 months without follow-up. Early beta studios are seeing similar results.`,
+    category: 'results'
+  },
+  {
+    id: 'credibility-trust',
+    question: 'Your product doesn\'t even exist yet. Why should I give you my email and trust you\'ll actually build this?',
+    answer: `You shouldn't blindly trust us. Here's how we're earning that trust:
+
+**What we're NOT doing:**
+- We're not taking pre-payments (only email for waitlist)
+- We're not promising a launch date we can't hit
+- We're not hiding behind vague "coming soon" language
+
+**What we ARE doing:**
+1. **Public validation threshold:** We build if and only if we hit 100 waitlist signups. No signups = no build = no one wastes time.
+2. **Transparent progress:** Every 2 weeks, we post progress updates in r/boutiquefitness with signup counts and learnings
+3. **Open roadmap:** Our Trello board is public. You can see exactly what we're building and when.
+4. **Early access voting:** First 50 studios vote on features. You literally shape what gets built.
+
+We're pre-launch validating demand before building. If you join the waitlist and we hit 100 signups, we build. If not, we refund deposits and don't waste anyone's time.`,
+    category: 'credibility'
+  },
+  {
+    id: 'money-back-guarantee',
+    question: "What if I don't like it?",
+    answer: `Month-to-month pricing means you can cancel anytime. Plus, we offer a 60-day money-back guarantee. If you don't see improved engagement in your first two months, we'll refund every penny. Lock in launch pricing to get this guarantee.`,
+    category: 'risk'
+  },
+  {
+    id: 'launch-timeline',
+    question: 'When will this be available?',
+    answer: `We're launching to waitlist members in January 2026. Early access sign-ups get:
+
+• **Lifetime lock-in at $29/month** (will increase to $49 post-launch)
+• **60-day money-back guarantee**
+• **Free 1-on-1 setup assistance**
+• **Beta feature voting rights**`,
+    category: 'timeline'
+  }
+];
+---
+
+<section id="faq" class="bg-white py-20 sm:py-24 lg:py-32" aria-labelledby="faq-heading">
+  <div class="max-w-4xl mx-auto px-5 sm:px-10 lg:px-20">
+    <!-- Section Header -->
+    <div class="text-center mb-12 sm:mb-16">
+      <h2 id="faq-heading" class="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold text-neutral-900 mb-6 leading-tight">
+        Your Questions, Honestly Answered
+      </h2>
+      <p class="font-body text-lg sm:text-xl text-neutral-600 leading-relaxed max-w-2xl mx-auto">
+        We know you've been burned before. Here's the truth about what we're building.
+      </p>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <div class="space-y-4" role="list" aria-label="Frequently asked questions">
+      {faqs.map((faq, index) => (
+        <article 
+          class="faq-item border border-neutral-200 rounded-xl overflow-hidden hover:border-pink-200 transition-colors duration-300"
+          data-faq-id={faq.id}
+          role="listitem"
+        >
+          <button
+            type="button"
+            class="faq-button w-full text-left px-6 sm:px-8 py-6 flex items-start justify-between gap-4 hover:bg-pink-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-inset"
+            aria-expanded="false"
+            aria-controls={`faq-answer-${faq.id}`}
+            data-faq-button="true"
+          >
+            <span class="font-heading text-lg sm:text-xl font-semibold text-neutral-900 pr-4 leading-snug">
+              {faq.question}
+            </span>
+            <svg
+              class="faq-icon flex-shrink-0 w-6 h-6 text-pink-400 transition-transform duration-300"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          
+          <div
+            id={`faq-answer-${faq.id}`}
+            class="faq-answer overflow-hidden transition-all duration-300"
+            style="max-height: 0;"
+            aria-hidden="true"
+            data-faq-answer="true"
+          >
+            <div class="px-6 sm:px-8 pb-6 pt-2">
+              <div class="font-body text-base sm:text-lg text-neutral-600 leading-relaxed prose prose-neutral max-w-none [&>p]:mb-4 [&>ul]:ml-6 [&>ul]:list-disc [&>ul]:space-y-2 [&>ul]:mb-4 [&_strong]:text-neutral-900 [&_strong]:font-semibold">
+                {faq.answer.split('\n').map((paragraph: string, idx: number) => {
+                  if (paragraph.trim().startsWith('•')) {
+                    const items = faq.answer.split('\n').filter((line: string) => line.trim().startsWith('•'));
+                    return (
+                      <ul class="list-disc ml-6 space-y-2 mb-4">
+                        {items.map((item: string, itemIdx: number) => (
+                          <li>{item.replace('•', '').trim()}</li>
+                        ))}
+                      </ul>
+                    );
+                  } else if (paragraph.includes('**')) {
+                    const parts = paragraph.split(/(\*\*.*?\*\*)/g);
+                    return (
+                      <p>
+                        {parts.map((part: string, partIdx: number) => {
+                          if (part.startsWith('**') && part.endsWith('**')) {
+                            return <strong>{part.slice(2, -2)}</strong>;
+                          }
+                          return part;
+                        })}
+                      </p>
+                    );
+                  } else if (paragraph.trim()) {
+                    return <p>{paragraph}</p>;
+                  }
+                  return null;
+                })}
+              </div>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="mt-12 sm:mt-16 text-center">
+      <p class="font-body text-base sm:text-lg text-neutral-600 mb-6">
+        Still have questions? We're here to help.
+      </p>
+      <button
+        id="faq-cta-button"
+        class="inline-flex items-center justify-center px-8 py-4 text-white text-base sm:text-lg font-semibold rounded-full transition-all hover:shadow-lg hover:shadow-pink-400/30 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 cursor-pointer"
+        style="background-color: rgb(251, 113, 133);"
+        aria-label="Join the waitlist to get your questions answered"
+      >
+        Join the Waitlist
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+/**
+ * FAQ accordion interaction logic and CTA button handler
+ * Handles expanding/collapsing FAQ items with smooth animations
+ */
+document.addEventListener('DOMContentLoaded', () => {
+  // FAQ accordion logic
+  const faqButtons = document.querySelectorAll('[data-faq-button]');
+  
+  faqButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const faqItem = button.closest('.faq-item');
+      const answer = faqItem?.querySelector('[data-faq-answer]');
+      const icon = button.querySelector('.faq-icon');
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+      
+      if (!answer || !icon) return;
+      
+      // Close all other FAQs (optional - remove if you want multiple open)
+      document.querySelectorAll('.faq-item').forEach((item) => {
+        if (item !== faqItem) {
+          const otherButton = item.querySelector('[data-faq-button]') as HTMLButtonElement | null;
+          const otherAnswer = item.querySelector('[data-faq-answer]') as HTMLElement | null;
+          const otherIcon = item.querySelector('.faq-icon') as HTMLElement | null;
+
+          if (otherButton && otherAnswer && otherIcon) {
+            otherButton.setAttribute('aria-expanded', 'false');
+            otherAnswer.setAttribute('aria-hidden', 'true');
+            otherAnswer.style.maxHeight = '0';
+            otherIcon.style.transform = 'rotate(0deg)';
+            item.classList.remove('faq-open');
+          }
+        }
+      });
+      
+      // Toggle current FAQ
+      const answerEl = answer as HTMLElement;
+      const iconEl = icon as HTMLElement;
+
+      if (isExpanded) {
+        button.setAttribute('aria-expanded', 'false');
+        answerEl.setAttribute('aria-hidden', 'true');
+        answerEl.style.maxHeight = '0';
+        iconEl.style.transform = 'rotate(0deg)';
+        faqItem?.classList.remove('faq-open');
+      } else {
+        button.setAttribute('aria-expanded', 'true');
+        answerEl.setAttribute('aria-hidden', 'false');
+        answerEl.style.maxHeight = `${answerEl.scrollHeight}px`;
+        iconEl.style.transform = 'rotate(180deg)';
+        faqItem?.classList.add('faq-open');
+      }
+    });
+  });
+  
+  // CTA button handler
+  const ctaButton = document.getElementById('faq-cta-button');
+  if (ctaButton) {
+    ctaButton.addEventListener('click', () => {
+      const waitlistSection = document.getElementById('waitlist');
+      if (waitlistSection) {
+        waitlistSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+    
+    // Hover effects
+    ctaButton.addEventListener('mouseover', () => {
+      ctaButton.style.backgroundColor = 'rgb(244, 63, 94)';
+    });
+    
+    ctaButton.addEventListener('mouseout', () => {
+      ctaButton.style.backgroundColor = 'rgb(251, 113, 133)';
+    });
+  }
+});
+</script>
+
+<style>
+  /* Smooth transition for FAQ answer expansion */
+  .faq-answer {
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Ensure list items from markdown parsing display correctly */
+  .faq-answer ul {
+    padding-left: 0;
+    margin-left: 1.5rem;
+  }
+
+  .faq-answer li {
+    padding-left: 0.5rem;
+  }
+
+  /* Icon rotation transition */
+  .faq-icon {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Remove pink highlighting when FAQ is open */
+  .faq-item.faq-open {
+    border-color: rgb(229, 231, 235); /* neutral-200 */
+  }
+
+  .faq-item.faq-open:hover {
+    border-color: rgb(229, 231, 235); /* neutral-200 */
+  }
+
+  .faq-item.faq-open .faq-button {
+    background-color: transparent;
+  }
+
+  .faq-item.faq-open .faq-button:hover {
+    background-color: transparent;
+  }
+</style>
