@@ -2,99 +2,119 @@
 /**
  * HowItWorks component - 3-step visual process flow
  * 
- * Redesigned with rose pink accents and visual journey through the product.
- * Shows the actual process with app screenshot placeholders.
- * Simplified from 5 steps to 3 for clearer messaging.
+ * Mobile-first design with rose pink accents and clean visual hierarchy.
+ * Optimized for touch interactions and small screens.
+ * Features smooth animations and accessible design patterns.
  */
 
 /**
  * Step data for the how-it-works process
- * Each step includes number, emoji placeholder (to be replaced with HugeIcons),
- * title, description, and image placeholder information
+ * Each step includes number, icon SVG, title, and description
  */
 const steps = [
   {
     number: 1,
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" color="#000000" fill="none"><path d="M4.45672 19.5433C2.51443 17.601 2.51443 14.4519 4.45672 12.5096L5.75923 11.2071C6.14975 10.8166 6.78292 10.8166 7.17344 11.2071L12.7929 16.8266C13.1834 17.2171 13.1834 17.8502 12.7929 18.2408L11.4904 19.5433C9.54809 21.4856 6.39901 21.4856 4.45672 19.5433ZM4.45672 19.5433L2 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M19.5433 4.45672C21.4856 6.39901 21.4856 9.54809 19.5433 11.4904L18.2408 12.7929C17.8502 13.1834 17.2171 13.1834 16.8266 12.7929L11.2071 7.17344C10.8166 6.78292 10.8166 6.14975 11.2071 5.75923L12.5096 4.45672C14.4519 2.51443 17.601 2.51442 19.5433 4.45672ZM19.5433 4.45672L22 2M12 8L10.5 9.5M16 12L14.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="none"><path d="M4.45672 19.5433C2.51443 17.601 2.51443 14.4519 4.45672 12.5096L5.75923 11.2071C6.14975 10.8166 6.78292 10.8166 7.17344 11.2071L12.7929 16.8266C13.1834 17.2171 13.1834 17.8502 12.7929 18.2408L11.4904 19.5433C9.54809 21.4856 6.39901 21.4856 4.45672 19.5433ZM4.45672 19.5433L2 22" stroke="rgb(251, 113, 133)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M19.5433 4.45672C21.4856 6.39901 21.4856 9.54809 19.5433 11.4904L18.2408 12.7929C17.8502 13.1834 17.2171 13.1834 16.8266 12.7929L11.2071 7.17344C10.8166 6.78292 10.8166 6.14975 11.2071 5.75923L12.5096 4.45672C14.4519 2.51443 17.601 2.51442 19.5433 4.45672ZM19.5433 4.45672L22 2M12 8L10.5 9.5M16 12L14.5 13.5" stroke="rgb(251, 113, 133)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
     title: 'Connect Your Studio',
     description: "Link your MindBody account with one click. We'll automatically sync your classes, instructors, and members. Setup takes less than 5 minutes.",
-    imagePlaceholder: 'Connection/Integration Interface',
     imageAlt: 'MindBody integration connection interface showing one-click setup'
   },
   {
     number: 2,
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" color="#000000" fill="none"><path d="M13 11C13 8.79086 11.2091 7 9 7C6.79086 7 5 8.79086 5 11C5 13.2091 6.79086 15 9 15C11.2091 15 13 13.2091 13 11Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11.0386 7.55773C11.0131 7.37547 11 7.18927 11 7C11 4.79086 12.7909 3 15 3C17.2091 3 19 4.79086 19 7C19 9.20914 17.2091 11 15 11C14.2554 11 13.5584 10.7966 12.9614 10.4423" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M15 21C15 17.6863 12.3137 15 9 15C5.68629 15 3 17.6863 3 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21 17C21 13.6863 18.3137 11 15 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="none"><path d="M13 11C13 8.79086 11.2091 7 9 7C6.79086 7 5 8.79086 5 11C5 13.2091 6.79086 15 9 15C11.2091 15 13 13.2091 13 11Z" stroke="rgb(251, 113, 133)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11.0386 7.55773C11.0131 7.37547 11 7.18927 11 7C11 4.79086 12.7909 3 15 3C17.2091 3 19 4.79086 19 7C19 9.20914 17.2091 11 15 11C14.2554 11 13.5584 10.7966 12.9614 10.4423" stroke="rgb(251, 113, 133)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M15 21C15 17.6863 12.3137 15 9 15C5.68629 15 3 17.6863 3 21" stroke="rgb(251, 113, 133)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21 17C21 13.6863 18.3137 11 15 11" stroke="rgb(251, 113, 133)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
     title: 'Invite Your Instructors',
     description: 'Let your instructors personalize their email templates. They can customize messages to match their teaching style and connect authentically with members.',
-    imagePlaceholder: 'Instructor Dashboard/Template Editor',
     imageAlt: 'Instructor dashboard showing email template customization interface'
   },
   {
     number: 3,
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" color="#000000" fill="none"><path d="M7.00024 18V16M12.0002 18V15M17.0002 18V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M19.5 2.5C20.6046 2.5 21.5 3.39543 21.5 4.5V19.5C21.5 20.6046 20.6046 21.5 19.5 21.5H4.5C3.39543 21.5 2.5 20.6046 2.5 19.5V4.5C2.5 3.39543 3.39543 2.5 4.5 2.5H19.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M15.0002 6H18.0002V9M6.00024 12C13.0002 12 17.5002 6.5 17.5002 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="none"><path d="M7.00024 18V16M12.0002 18V15M17.0002 18V13" stroke="rgb(251, 113, 133)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M19.5 2.5C20.6046 2.5 21.5 3.39543 21.5 4.5V19.5C21.5 20.6046 20.6046 21.5 19.5 21.5H4.5C3.39543 21.5 2.5 20.6046 2.5 19.5V4.5C2.5 3.39543 3.39543 2.5 4.5 2.5H19.5Z" stroke="rgb(251, 113, 133)" stroke-width="1.5" stroke-linejoin="round"></path><path d="M15.0002 6H18.0002V9M6.00024 12C13.0002 12 17.5002 6.5 17.5002 6.5" stroke="rgb(251, 113, 133)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
     title: 'Track Engagement',
     description: 'Monitor email performance and member feedback in real-time. See what resonates with your community and continuously improve.',
-    imagePlaceholder: 'Analytics Dashboard with Email Stats',
     imageAlt: 'Analytics dashboard displaying email statistics and member feedback metrics'
   }
 ];
 ---
 
-<section id="how-it-works" class="bg-gradient-to-b from-white to-pink-50 py-20 sm:py-28 lg:py-32" aria-labelledby="how-it-works-heading">
-  <div class="max-w-7xl mx-auto px-5 sm:px-10 lg:px-20">
+<section id="how-it-works" class="bg-gradient-to-b from-white to-pink-50/50 py-16 sm:py-24 lg:py-32" aria-labelledby="how-it-works-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section Header -->
-    <div class="text-center mb-16 sm:mb-20">
-      <h2 id="how-it-works-heading" class="text-3xl sm:text-4xl lg:text-[2.75rem] font-heading font-semibold text-neutral-900 mb-6">
+    <div class="text-center mb-12 sm:mb-16 lg:mb-20">
+      <h2 id="how-it-works-heading" class="text-[28px] leading-tight sm:text-4xl lg:text-5xl font-heading font-bold text-neutral-900 mb-4 sm:mb-6">
         Get Started in Minutes
       </h2>
-      <p class="text-lg sm:text-xl text-neutral-600 leading-relaxed max-w-2xl mx-auto">
+      <p class="text-base sm:text-lg lg:text-xl text-neutral-600 leading-relaxed max-w-2xl mx-auto px-4">
         Three simple steps to transform your member engagement.
       </p>
     </div>
 
     <!-- Steps Container -->
-    <div class="max-w-[900px] mx-auto">
-      <ol class="space-y-12 sm:space-y-16" role="list" aria-label="Setup process steps">
+    <div class="max-w-3xl mx-auto">
+      <ol class="space-y-8 sm:space-y-12" role="list" aria-label="Setup process steps">
         {steps.map((step, index) => (
           <li class="relative">
-            {/* Connector Arrow/Line (except for last step) */}
+            {/* Connector (except for last step) */}
             {index < steps.length - 1 && (
               <div 
-                class="absolute left-1/2 -translate-x-1/2 top-full mt-8 mb-8 flex flex-col items-center" 
+                class="absolute left-[30px] sm:left-1/2 sm:-translate-x-1/2 top-full h-8 sm:h-12 w-0.5 bg-gradient-to-b from-pink-200 to-pink-100 -mt-[2px]" 
                 aria-hidden="true"
               >
-                <div class="w-0.5 h-8 bg-gradient-to-b from-neutral-200 to-pink-200"></div>
-                <svg 
-                  class="w-6 h-6 text-pink-400" 
-                  fill="currentColor" 
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" transform="rotate(90 12 12)"/>
-                </svg>
               </div>
             )}
 
             {/* Step Card */}
-            <article class="relative bg-white rounded-2xl shadow-lg border border-neutral-100 p-6 sm:p-10 hover:shadow-xl transition-all duration-300">
-              <div class="flex flex-col items-center text-center">
-                {/* Step Number Badge */}
-                <div class="mb-6">
-                  <div class="w-[60px] h-[60px] bg-[rgb(251,113,133)] text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg" aria-label={`Step ${step.number}`}>
+            <article class="relative bg-white rounded-xl sm:rounded-2xl shadow-md hover:shadow-xl border border-neutral-100 p-5 sm:p-8 lg:p-10 transition-all duration-300 hover:border-pink-200">
+              {/* Mobile Layout: Number centered at top */}
+              <div class="flex sm:hidden flex-col items-center mb-5">
+                <div 
+                  class="w-[60px] h-[60px] bg-gradient-to-br from-[rgb(251,113,133)] to-[rgb(244,63,94)] text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg shadow-pink-200/50" 
+                  aria-label={`Step ${step.number}`}
+                >
+                  {step.number}
+                </div>
+              </div>
+
+              {/* Mobile Layout: Icon and Content */}
+              <div class="flex sm:hidden gap-4">
+                {/* Icon on left */}
+                <div class="flex-shrink-0 pt-1" aria-hidden="true">
+                  <div class="inline-flex items-center justify-center w-[40px] h-[40px]" set:html={step.icon}></div>
+                </div>
+                
+                {/* Content on right */}
+                <div class="flex-1 min-w-0">
+                  <h3 class="text-xl font-heading font-bold text-neutral-900 mb-3 leading-tight">
+                    {step.title}
+                  </h3>
+                  <p class="text-sm text-neutral-600 leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+
+              {/* Desktop Layout */}
+              <div class="hidden sm:flex sm:flex-row sm:items-start gap-6 lg:gap-8">
+                {/* Left: Number Badge */}
+                <div class="flex-shrink-0">
+                  <div 
+                    class="w-[72px] h-[72px] bg-gradient-to-br from-[rgb(251,113,133)] to-[rgb(244,63,94)] text-white rounded-full flex items-center justify-center text-3xl font-bold shadow-lg shadow-pink-200/50" 
+                    aria-label={`Step ${step.number}`}
+                  >
                     {step.number}
                   </div>
                 </div>
 
-                {/* Step Content */}
-                <div>
-                  <div class="flex items-center justify-center gap-3 mb-4" aria-hidden="true">
-                    <div class="text-[40px]">
-                      <div set:html={step.icon}></div>
-                    </div>
+                {/* Right: Content */}
+                <div class="flex-1 min-w-0">
+                  <div class="mb-5" aria-hidden="true">
+                    <div class="inline-flex items-center justify-center w-[48px] h-[48px]" set:html={step.icon}></div>
                   </div>
-                  <h3 class="text-2xl sm:text-[28px] font-heading font-semibold text-neutral-900 mb-4">
+                  
+                  <h3 class="text-2xl lg:text-[28px] font-heading font-bold text-neutral-900 mb-4 leading-tight">
                     {step.title}
                   </h3>
-                  <p class="text-base sm:text-lg text-neutral-600 leading-[1.7] max-w-[600px] mx-auto">
+                  
+                  <p class="text-base lg:text-lg text-neutral-600 leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -106,10 +126,10 @@ const steps = [
     </div>
 
     {/* Call to Action */}
-    <div class="mt-16 sm:mt-20 text-center">
+    <div class="mt-12 sm:mt-16 lg:mt-20 text-center px-4">
       <button
         onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})"
-        class="inline-flex items-center justify-center px-8 py-4 text-white text-base sm:text-lg font-semibold rounded-full transition-all hover:shadow-lg hover:shadow-pink-400/30 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 cursor-pointer"
+        class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 min-h-[56px] text-white text-base sm:text-lg font-semibold rounded-full transition-all duration-200 active:scale-95 hover:shadow-xl hover:shadow-pink-400/30 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 cursor-pointer"
         style="background-color: rgb(251, 113, 133);"
         onmouseover="this.style.backgroundColor='rgb(244, 63, 94)'"
         onmouseout="this.style.backgroundColor='rgb(251, 113, 133)'"
@@ -117,7 +137,7 @@ const steps = [
       >
         Start Your Free Setup
       </button>
-      <p class="text-sm text-neutral-500 mt-4">
+      <p class="text-xs sm:text-sm text-neutral-500 mt-4">
         No credit card required • Setup in under 5 minutes
       </p>
     </div>
