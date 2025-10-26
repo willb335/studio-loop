@@ -11,7 +11,7 @@ interface ResultsDisplayProps {
 
 export const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ results }) => {
   return (
-    <div 
+    <div
       className="bg-white rounded-xl p-6 space-y-4 border-2"
       style={{ borderColor: 'rgb(252, 231, 243)' }}
     >
@@ -19,7 +19,10 @@ export const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ results }) => {
       <div>
         <p className="text-sm mb-2" style={{ color: 'rgb(82, 82, 91)' }}>
           Annual churn loss{' '}
-          <span style={{ color: 'rgb(161, 161, 170)' }}>(37% dropout rate)</span>:
+          <span style={{ color: 'rgb(161, 161, 170)' }}>
+            (37% dropout rate)
+          </span>
+          :
         </p>
         <motion.div
           key={results.annualLoss}
@@ -38,14 +41,17 @@ export const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ results }) => {
       </div>
 
       {/* Recovery Potential */}
-      <div 
+      <div
         className="rounded-lg p-5 border-2"
-        style={{ 
+        style={{
           backgroundColor: 'rgb(240, 253, 244)',
-          borderColor: 'rgb(187, 247, 208)'
+          borderColor: 'rgb(187, 247, 208)',
         }}
       >
-        <p className="text-sm mb-2 font-medium" style={{ color: 'rgb(63, 63, 70)' }}>
+        <p
+          className="text-sm mb-2 font-medium"
+          style={{ color: 'rgb(63, 63, 70)' }}
+        >
           With automated follow-ups (35-46% churn reduction):
         </p>
         <motion.div
@@ -59,7 +65,10 @@ export const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ results }) => {
           Recover {formatCurrency(results.recoveryLow)} -{' '}
           {formatCurrency(results.recoveryHigh)}/year
         </motion.div>
-        <p className="text-xs mt-3 flex items-center gap-2" style={{ color: 'rgb(22, 163, 74)' }}>
+        <p
+          className="text-xs mt-3 flex items-center gap-2"
+          style={{ color: 'rgb(22, 163, 74)' }}
+        >
           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
             <path
               fillRule="evenodd"
@@ -74,10 +83,13 @@ export const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ results }) => {
       </div>
 
       {/* Industry Data Attribution */}
-      <p className="text-xs text-center pt-2 border-t" style={{ 
-        color: 'rgb(161, 161, 170)',
-        borderColor: 'rgb(228, 228, 231)'
-      }}>
+      <p
+        className="text-xs text-center pt-2 border-t"
+        style={{
+          color: 'rgb(161, 161, 170)',
+          borderColor: 'rgb(228, 228, 231)',
+        }}
+      >
         Based on IHRSA industry data and FitGrid case studies
       </p>
     </div>

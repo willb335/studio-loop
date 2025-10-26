@@ -59,7 +59,8 @@ export const ChurnCalculator: React.FC = () => {
       <div
         className="rounded-2xl shadow-2xl overflow-hidden border-2"
         style={{
-          background: 'linear-gradient(to bottom right, rgb(253, 242, 248), rgb(255, 241, 242))',
+          background:
+            'linear-gradient(to bottom right, rgb(253, 242, 248), rgb(255, 241, 242))',
           borderColor: 'rgb(252, 231, 243)',
           boxShadow: '0 20px 50px rgba(251, 113, 133, 0.15)',
         }}
@@ -98,7 +99,10 @@ export const ChurnCalculator: React.FC = () => {
           />
 
           {/* Fine Print */}
-          <p className="text-center text-xs mt-4" style={{ color: 'rgb(161, 161, 170)' }}>
+          <p
+            className="text-center text-xs mt-4"
+            style={{ color: 'rgb(161, 161, 170)' }}
+          >
             Based on 37% industry churn rate and 35-46% retention improvement
             with automated follow-ups
           </p>

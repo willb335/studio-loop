@@ -33,7 +33,10 @@ export const SliderInput: React.FC<SliderInputProps> = ({
 
   return (
     <div className="slider-input-wrapper">
-      <label className="block text-sm font-medium mb-3" style={{ color: 'rgb(63, 63, 70)' }}>
+      <label
+        className="block text-sm font-medium mb-3"
+        style={{ color: 'rgb(63, 63, 70)' }}
+      >
         {label}
       </label>
 
@@ -58,7 +61,7 @@ export const SliderInput: React.FC<SliderInputProps> = ({
         {/* Number Input */}
         <div className="relative">
           {prefix && (
-            <span 
+            <span
               className="absolute left-3 top-1/2 -translate-y-1/2 font-semibold"
               style={{ color: 'rgb(82, 82, 91)' }}
             >
@@ -81,7 +84,7 @@ export const SliderInput: React.FC<SliderInputProps> = ({
             aria-label={`${label} input`}
           />
           {suffix && (
-            <span 
+            <span
               className="absolute right-3 top-1/2 -translate-y-1/2 text-sm"
               style={{ color: 'rgb(82, 82, 91)' }}
             >
