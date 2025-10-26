@@ -1,9 +1,10 @@
 ---
 /**
- * Hero Section - Mobile-First Design
+ * Hero Section - Mobile-First Design with Interactive Calculator
  * 
  * Clean, focused design with:
  * - Clear headline and subheadline
+ * - Interactive churn calculator
  * - Minimal trust indicators
  * - Single prominent CTA
  * - Hero image with subtle shadow
@@ -11,6 +12,7 @@
 
 import { Image } from 'astro:assets';
 import heroImage from '../assets/app/hero.png';
+import ChurnCalculator from './calculator/ChurnCalculator';
 ---
 
 <section class="relative w-full bg-white overflow-hidden" aria-labelledby="hero-heading">
@@ -22,50 +24,45 @@ import heroImage from '../assets/app/hero.png';
       <!-- Content -->
       <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
         <h1 id="hero-heading" class="font-heading font-bold text-3xl sm:text-5xl lg:text-6xl leading-tight mb-5 sm:mb-6" style="color: var(--neutral-900);">
-          FitGrid Works. But Paying $169-325/Month Doesn't.
+          What's Your Studio's Silent Churn Number?
         </h1>
         
         <p class="font-body text-lg sm:text-xl leading-relaxed mb-8 sm:mb-10" style="color: var(--neutral-600);">
-          Get the same proven results—87% more member spending, 35-46% better retention—for just $29/month. Save an average of $238/month with transparent pricing and a reliable web platform.
+          Most owners don't realize how much first-class dropout costs them. Industry average: 37% of new members never return. Use our calculator below to see your real number—and what automated follow-ups could recover.
         </p>
-        
-        <!-- Trust Bar -->
-        <div class="flex flex-wrap justify-center gap-4 sm:gap-6 mb-8 sm:mb-10 text-sm sm:text-base" style="color: var(--neutral-700);">
-          <div class="flex items-center gap-2">
-            <svg class="w-5 h-5" style="color: rgb(251, 113, 133);" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-            </svg>
-            <span>No separate app</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <svg class="w-5 h-5" style="color: rgb(251, 113, 133);" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-            </svg>
-            <span>Same proven strategy</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <svg class="w-5 h-5" style="color: rgb(251, 113, 133);" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-            </svg>
-            <span>90% cost savings</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <svg class="w-5 h-5" style="color: rgb(251, 113, 133);" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-            </svg>
-            <span>Cancel anytime</span>
-          </div>
+      </div>
+      
+      <!-- Interactive Calculator -->
+      <div class="mb-12 sm:mb-16">
+        <ChurnCalculator client:load />
+      </div>
+      
+      <!-- Trust Bar -->
+      <div class="flex flex-wrap justify-center gap-4 sm:gap-6 mb-10 sm:mb-14 text-sm sm:text-base" style="color: var(--neutral-700);">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" style="color: rgb(251, 113, 133);" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span>Free calculator, no signup</span>
         </div>
-        
-        <!-- CTA Button -->
-        <button
-          onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})"
-          class="cta-button"
-          aria-label="Get FitGrid results without FitGrid costs"
-        >
-          <span class="cta-mobile">Join Waitlist</span>
-          <span class="cta-desktop">Get FitGrid Results Without FitGrid Costs</span>
-        </button>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" style="color: rgb(251, 113, 133);" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span>Based on IHRSA data</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" style="color: rgb(251, 113, 133);" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span>Solution: $29/month</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" style="color: rgb(251, 113, 133);" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span>90% less than FitGrid</span>
+        </div>
       </div>
       
       <!-- App Screenshot -->
@@ -86,68 +83,8 @@ import heroImage from '../assets/app/hero.png';
 
 
 <style>
-  .fitgrid-link {
-    transition: color 0.2s ease;
-  }
-  
-  .fitgrid-link:hover {
-    color: rgb(251, 113, 133) !important;
-  }
-  
-  .cta-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 14px 32px;
-    font-family: var(--font-body);
-    font-weight: 600;
-    font-size: 1rem;
-    color: white;
-    background-color: rgb(251, 113, 133);
-    border-radius: 9999px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 14px rgba(251, 113, 133, 0.25);
-  }
-  
-  .cta-button:hover {
-    background-color: rgb(244, 63, 94);
-    box-shadow: 0 6px 20px rgba(251, 113, 133, 0.35);
-    transform: translateY(-1px);
-  }
-  
-  .cta-button:focus {
-    outline: 2px solid rgb(251, 113, 133);
-    outline-offset: 2px;
-  }
-  
-  .cta-desktop {
-    display: none;
-  }
-  
-  .cta-mobile {
-    display: inline;
-  }
-  
   .shadow-hero {
     box-shadow: 0 20px 50px rgba(251, 113, 133, 0.15);
-  }
-  
-  /* Tablet and up */
-  @media (min-width: 640px) {
-    .cta-button {
-      padding: 16px 40px;
-      font-size: 1.125rem;
-    }
-    
-    .cta-desktop {
-      display: inline;
-    }
-    
-    .cta-mobile {
-      display: none;
-    }
   }
   
   /* Mobile optimization */

@@ -1,0 +1,102 @@
+/* src/styles/calculator.css */
+
+/* Custom slider styling for better cross-browser support */
+input[type='range'].calculator-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgb(244, 114, 182);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(244, 114, 182, 0.4);
+}
+
+input[type='range'].calculator-slider::-webkit-slider-thumb:hover {
+  background: rgb(219, 39, 119);
+  transform: scale(1.1);
+  box-shadow: 0 3px 8px rgba(244, 114, 182, 0.5);
+}
+
+input[type='range'].calculator-slider::-webkit-slider-thumb:active {
+  transform: scale(1.05);
+}
+
+input[type='range'].calculator-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgb(244, 114, 182);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(244, 114, 182, 0.4);
+}
+
+input[type='range'].calculator-slider::-moz-range-thumb:hover {
+  background: rgb(219, 39, 119);
+  transform: scale(1.1);
+  box-shadow: 0 3px 8px rgba(244, 114, 182, 0.5);
+}
+
+input[type='range'].calculator-slider::-moz-range-thumb:active {
+  transform: scale(1.05);
+}
+
+/* Slider track styling */
+input[type='range'].calculator-slider::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 4px;
+  background: rgb(251, 207, 232);
+}
+
+input[type='range'].calculator-slider::-moz-range-track {
+  height: 8px;
+  border-radius: 4px;
+  background: rgb(251, 207, 232);
+}
+
+/* Number input styling enhancements */
+input[type='number']:focus {
+  border-color: rgb(219, 39, 119) !important;
+  box-shadow: 0 0 0 3px rgba(252, 231, 243, 0.5);
+}
+
+input[type='number']:hover {
+  border-color: rgb(244, 114, 182);
+}
+
+/* Number input spin buttons */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  opacity: 1;
+  height: 40px;
+  cursor: pointer;
+}
+
+/* Focus ring for accessibility */
+input[type='range'].calculator-slider:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(244, 114, 182, 0.3);
+}
+
+input[type='range'].calculator-slider:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 4px rgba(244, 114, 182, 0.2);
+}
+
+input[type='range'].calculator-slider:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 4px rgba(244, 114, 182, 0.2);
+}
+
+/* Mobile touch optimizations */
+@media (max-width: 640px) {
+  input[type='range'].calculator-slider::-webkit-slider-thumb {
+    width: 24px;
+    height: 24px;
+  }
+  
+  input[type='range'].calculator-slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+  }
+}
