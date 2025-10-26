@@ -18,136 +18,136 @@ const faqs = [
   {
     id: "fitgrid-difference",
     question: "How is this different from FitGrid?",
-    answer: `Three key differences:
+    answer: `Two key differences:
 
-1. **Price:** $29/mo vs FitGrid's $169–$325/mo (about 80–90% less)
-2. **Simplicity:** Laser‑focused on automated post‑class emails (no feature
-   bloat) with a 5‑minute setup
-3. **Reliability:** Polished instructor web app for setting email templates; FitGrid’s instructor app is
-   low‑rated (2.4/5 on Google Play as of Oct 2025)
+**Price:** $29/mo vs. FitGrid's $169–$325/mo (about 80–90% less)
 
-We built the one thing that drives retention and spend—and removed the
-complexity that slows teams down.`,
+**Simplicity:** Laser-focused on two things—automated post-class follow-up emails and collecting member feedback about instructors—with a 5-minute setup and no feature bloat
+
+**User Experience:** Polished instructor web app for managing email templates; FitGrid's instructor app has a 2.4/5 rating on Google Play (as of Oct 2025)
+
+We built the two things that drive retention and spend, and removed the complexity that slows teams down.`,
     category: "product",
   },
   {
     id: "mindbody-integration",
     question: "Do I need to switch from Mindbody?",
-    answer: `No switching. Connect your existing Mindbody account in minutes. We sync schedules, rosters, and instructor data automatically and send follow‑ups without any new daily tasks for your team.`,
+    answer: `Not at all. Connect your existing Mindbody account in minutes. We sync schedules, rosters, and instructor data automatically, then send follow-ups without creating any new daily tasks for your team.`,
     category: "technical",
   },
   {
     id: "pricing-catch",
-    question:
-      "If it’s so much cheaper than FitGrid, what’s the catch? What’s included?",
+    question: "If it's so much cheaper than FitGrid, what's the catch?",
     answer: `No catch—just focus.
 
 **Included at $29/mo:**
-- Automated post‑class follow‑up emails
-- Basic feedback collection and analytics (opens/clicks)
-- Email Template customization for instructors.
-- Direct Mindbody connection
+- Automated post-class follow-up emails
+- Feedback collection and analytics (open rates, click rates, ratings)
+- Email template customization for each instructor
+- Direct Mindbody connection with automatic syncing
 
-**Not in v1:**
+**Not included (yet):**
 - SMS messaging
-- Advanced AI segmentation/win‑backs
-- Multi‑location enterprise controls
+- Advanced AI segmentation and win-back campaigns
+- Multi-location enterprise controls
 
-You pay less because we ship only what most boutiques actually use.`,
+You pay less because we ship only what most boutiques actually use—the features that drive real results.`,
     category: "pricing",
   },
   {
     id: "proof-of-effectiveness",
     question: "How do I know this actually works?",
-    answer: `The tactic is proven: FitGrid’s public case studies report biguplifts from post‑class follow‑ups (higher return rates and spend), and industry data shows retention outperforms acquisition on ROI. We’ll share anonymized results from the first cohort (open/return metrics) so you cansee the impact—and decide with data.`,
+    answer: `The tactic is proven: FitGrid's own case studies report significant increases in return rates and spend from post-class follow-ups, and industry data shows retention delivers better ROI than acquisition. 
+
+We'll share anonymized results from our first cohort (open rates, return metrics, and revenue impact) so you can see the real impact and decide with data, not promises.`,
     category: "results",
   },
   {
     id: "money-back-guarantee",
-    question: "What if I don’t like it or don’t see results?",
-    answer: `No contracts. Cancel anytime. Plus a **60‑day money‑back guarantee**: if your engagement metrics don’t improve in the first two months, we’ll refund 100%. Zero risk to try.`,
+    question: "What if I don't see results?",
+    answer: `No contracts. Cancel anytime. Plus, we offer a **60-day money-back guarantee**: if your engagement metrics don't improve in the first two months, we'll refund 100%. Zero risk to try.`,
     category: "risk",
   }
- 
 ];
 ---
 
-<section id="faq" class="bg-white py-20 sm:py-24 lg:py-32" aria-labelledby="faq-heading">
-  <div class="max-w-4xl mx-auto px-5 sm:px-10 lg:px-20">
+<section id="faq" class="bg-white py-16 sm:py-20 lg:py-28" aria-labelledby="faq-heading">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section Header -->
-    <div class="text-center mb-12 sm:mb-16">
-      <h2 id="faq-heading" class="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold text-neutral-900 mb-6 leading-tight">
+    <div class="text-center mb-10 sm:mb-14 lg:mb-16">
+      <h2 id="faq-heading" class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-5 leading-tight">
         Your Questions, Honestly Answered
       </h2>
-      <p class="font-body text-lg sm:text-xl text-neutral-600 leading-relaxed max-w-2xl mx-auto">
+      <p class="font-body text-base sm:text-lg lg:text-xl text-neutral-600 leading-relaxed max-w-2xl mx-auto">
         We know you've been burned before. Here's the truth about what we're building.
       </p>
     </div>
 
     <!-- FAQ Accordion -->
-    <div class="space-y-4" role="list" aria-label="Frequently asked questions">
-      {faqs.map((faq, index) => (
+    <div class="space-y-3 sm:space-y-4" role="list" aria-label="Frequently asked questions">
+      {faqs.map((faq) => (
         <article
-          class="faq-item border border-neutral-200 rounded-xl overflow-hidden transition-colors duration-300"
+          class="faq-item border border-neutral-200 rounded-lg sm:rounded-xl overflow-hidden transition-all duration-200"
           data-faq-id={faq.id}
           role="listitem"
         >
           <button
             type="button"
-            class="faq-button w-full text-left px-6 sm:px-8 py-6 flex items-start justify-between gap-4 hover:bg-neutral-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-neutral-300 focus:ring-inset"
+            class="faq-button w-full text-left px-5 sm:px-6 lg:px-7 py-5 sm:py-6 flex items-start justify-between gap-3 sm:gap-4 hover:bg-neutral-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-neutral-300 focus:ring-inset"
             aria-expanded="false"
             aria-controls={`faq-answer-${faq.id}`}
             data-faq-button="true"
           >
-            <span class="font-heading text-lg sm:text-xl font-semibold text-neutral-900 pr-4 leading-snug">
+            <span class="font-heading text-base sm:text-lg lg:text-xl font-semibold text-neutral-900 pr-2 sm:pr-4 leading-snug">
               {faq.question}
             </span>
             <svg
-              class="faq-icon flex-shrink-0 w-6 h-6 transition-transform duration-300"
+              class="faq-icon flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 mt-0.5 transition-transform duration-300 ease-out"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              stroke-width="2.5"
               aria-hidden="true"
             >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
           
           <div
             id={`faq-answer-${faq.id}`}
-            class="faq-answer overflow-hidden transition-all duration-300"
+            class="faq-answer overflow-hidden transition-all duration-300 ease-out"
             style="max-height: 0;"
             aria-hidden="true"
             data-faq-answer="true"
           >
-            <div class="px-6 sm:px-8 pb-6 pt-2">
-              <div class="font-body text-base sm:text-lg text-neutral-600 leading-relaxed prose prose-neutral max-w-none [&>p]:mb-4 [&>ul]:ml-6 [&>ul]:list-disc [&>ul]:space-y-2 [&>ul]:mb-4 [&_strong]:text-neutral-900 [&_strong]:font-semibold">
-                {faq.answer.split('\n').map((paragraph: string, idx: number) => {
-                  if (paragraph.trim().startsWith('•')) {
-                    const items = faq.answer.split('\n').filter((line: string) => line.trim().startsWith('•'));
+            <div class="px-5 sm:px-6 lg:px-7 pb-5 sm:pb-6 pt-1">
+              <div class="font-body text-sm sm:text-base lg:text-lg text-neutral-600 leading-relaxed prose prose-neutral max-w-none
+                [&>p]:mb-3 sm:[&>p]:mb-4 
+                [&>ul]:ml-5 sm:[&>ul]:ml-6 
+                [&>ul]:list-disc 
+                [&>ul]:space-y-1.5 sm:[&>ul]:space-y-2 
+                [&>ul]:mb-3 sm:[&>ul]:mb-4 
+                [&_strong]:text-neutral-900 
+                [&_strong]:font-semibold
+                [&>p:last-child]:mb-0
+                [&>ul:last-child]:mb-0">
+                {faq.answer.split('\n\n').map((block: string) => {
+                  // Check if this block is a list
+                  if (block.trim().startsWith('-')) {
+                    const items = block.split('\n').filter((line: string) => line.trim().startsWith('-'));
                     return (
-                      <ul class="list-disc ml-6 space-y-2 mb-4">
-                        {items.map((item: string, itemIdx: number) => (
-                          <li>{item.replace('•', '').trim()}</li>
+                      <ul>
+                        {items.map((item: string) => (
+                          <li set:html={item.replace(/^-\s*/, '').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')} />
                         ))}
                       </ul>
                     );
-                  } else if (paragraph.includes('**')) {
-                    const parts = paragraph.split(/(\*\*.*?\*\*)/g);
-                    return (
-                      <p>
-                        {parts.map((part: string, partIdx: number) => {
-                          if (part.startsWith('**') && part.endsWith('**')) {
-                            return <strong>{part.slice(2, -2)}</strong>;
-                          }
-                          return part;
-                        })}
-                      </p>
-                    );
-                  } else if (paragraph.trim()) {
-                    return <p>{paragraph}</p>;
                   }
-                  return null;
+                  // Regular paragraph
+                  const formatted = block
+                    .trim()
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                  return formatted ? <p set:html={formatted} /> : null;
                 })}
               </div>
             </div>
@@ -157,13 +157,13 @@ You pay less because we ship only what most boutiques actually use.`,
     </div>
 
     <!-- Bottom CTA -->
-    <div class="mt-12 sm:mt-16 text-center">
-      <p class="font-body text-base sm:text-lg text-neutral-600 mb-6">
+    <div class="mt-10 sm:mt-14 lg:mt-16 text-center">
+      <p class="font-body text-sm sm:text-base lg:text-lg text-neutral-600 mb-5 sm:mb-6">
         Still have questions? We're here to help.
       </p>
       <button
         id="faq-cta-button"
-        class="inline-flex items-center justify-center px-8 py-4 text-white text-base sm:text-lg font-semibold rounded-full transition-all hover:shadow-lg hover:shadow-pink-400/30 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 cursor-pointer"
+        class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-white text-sm sm:text-base lg:text-lg font-semibold rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-pink-400/30 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 cursor-pointer"
         style="background-color: rgb(251, 113, 133);"
         aria-label="Join the waitlist to get your questions answered"
       >
@@ -177,6 +177,7 @@ You pay less because we ship only what most boutiques actually use.`,
 /**
  * FAQ accordion interaction logic and CTA button handler
  * Handles expanding/collapsing FAQ items with smooth animations
+ * Mobile-optimized for touch interactions
  */
 document.addEventListener('DOMContentLoaded', () => {
   // FAQ accordion logic
@@ -191,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       if (!answer || !icon) return;
       
-      // Close all other FAQs (optional - remove if you want multiple open)
+      // Close all other FAQs
       document.querySelectorAll('.faq-item').forEach((item) => {
         if (item !== faqItem) {
           const otherButton = item.querySelector('[data-faq-button]') as HTMLButtonElement | null;
@@ -221,7 +222,8 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         button.setAttribute('aria-expanded', 'true');
         answerEl.setAttribute('aria-hidden', 'false');
-        answerEl.style.maxHeight = `${answerEl.scrollHeight}px`;
+        // Add extra space for smooth animation
+        answerEl.style.maxHeight = `${answerEl.scrollHeight + 20}px`;
         iconEl.style.transform = 'rotate(180deg)';
         faqItem?.classList.add('faq-open');
       }
@@ -234,90 +236,127 @@ document.addEventListener('DOMContentLoaded', () => {
     ctaButton.addEventListener('click', () => {
       const waitlistSection = document.getElementById('waitlist');
       if (waitlistSection) {
-        waitlistSection.scrollIntoView({ behavior: 'smooth' });
+        waitlistSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
     
-    // Hover effects
-    ctaButton.addEventListener('mouseover', () => {
+    // Hover effects (desktop only)
+    if (window.matchMedia('(hover: hover)').matches) {
+      ctaButton.addEventListener('mouseenter', () => {
+        ctaButton.style.backgroundColor = 'rgb(244, 63, 94)';
+        ctaButton.style.transform = 'translateY(-2px)';
+      });
+      
+      ctaButton.addEventListener('mouseleave', () => {
+        ctaButton.style.backgroundColor = 'rgb(251, 113, 133)';
+        ctaButton.style.transform = 'translateY(0)';
+      });
+    }
+    
+    // Active state for mobile
+    ctaButton.addEventListener('touchstart', () => {
       ctaButton.style.backgroundColor = 'rgb(244, 63, 94)';
     });
     
-    ctaButton.addEventListener('mouseout', () => {
-      ctaButton.style.backgroundColor = 'rgb(251, 113, 133)';
+    ctaButton.addEventListener('touchend', () => {
+      setTimeout(() => {
+        ctaButton.style.backgroundColor = 'rgb(251, 113, 133)';
+      }, 150);
     });
   }
 });
 </script>
 
 <style>
+  /**
+   * Mobile-first FAQ component styles
+   * Smooth animations and professional appearance
+   */
+  
   /* Smooth transition for FAQ answer expansion */
   .faq-answer {
     transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Ensure list items from markdown parsing display correctly */
-  .faq-answer ul {
-    padding-left: 0;
-    margin-left: 1.5rem;
-  }
-
-  .faq-answer li {
-    padding-left: 0.5rem;
-  }
-
-  /* Icon rotation transition (chevron stays colored) */
+  /* Icon rotation with smooth easing */
   .faq-icon {
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    color: var(--pink-400) !important; /* keep chevron pink */
+    color: rgb(251, 113, 133);
   }
 
-  /**
-   * Aggressively force neutral borders/backgrounds and remove pink rings/shadows for FAQ items.
-   * Use !important to override utility classes from global styles.
-   * Only the chevron (.faq-icon) remains colored.
-   */
-  .faq-item,
-  .faq-item:hover,
-  .faq-item:focus-within,
+  /* Clean, neutral styling for FAQ items - no pink accents on container */
+  .faq-item {
+    border-color: rgb(229, 231, 235);
+    background-color: transparent;
+  }
+
+  .faq-item:hover {
+    border-color: rgb(209, 213, 219);
+  }
+
   .faq-item.faq-open {
-    border-color: var(--neutral-200) !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
-    outline: none !important;
+    border-color: rgb(209, 213, 219);
+    background-color: rgb(249, 250, 251);
   }
 
-  /* Ensure button hover/focus doesn't introduce pink fills or rings */
+  /* Button styling */
   .faq-button {
-    background-color: transparent !important;
+    background-color: transparent;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .faq-button:hover {
-    background-color: var(--neutral-50) !important;
+    background-color: rgb(249, 250, 251);
   }
 
-  .faq-button:focus,
   .faq-button:focus-visible {
-    outline: none !important;
-    box-shadow: 0 0 0 4px rgba(16,24,40,0.04) !important; /* subtle neutral focus */
+    outline: 2px solid rgb(209, 213, 219);
+    outline-offset: -2px;
   }
 
-  /* Prevent descendants from showing pink borders/shadows or rings */
-  .faq-item,
-  .faq-item * {
-    border-color: var(--neutral-200) !important;
-    box-shadow: none !important;
-    outline-color: transparent !important;
+  /* Mobile touch optimization */
+  @media (max-width: 640px) {
+    .faq-button {
+      padding-top: 1.25rem;
+      padding-bottom: 1.25rem;
+    }
+    
+    .faq-button:active {
+      background-color: rgb(243, 244, 246);
+    }
   }
 
-  /* In case Tailwind utilities add pink ring CSS variables, override them locally */
-  .faq-item:where([class*="ring-"], [class*="focus:ring-"], .faq-item *:where([class*="ring-"])) {
-    --tw-ring-color: rgba(0,0,0,0) !important;
+  /* CTA button smooth transitions */
+  #faq-cta-button {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Keep only the chevron colored; ensure it cannot be overridden */
-  .faq-item .faq-icon {
-    color: var(--pink-400) !important;
-    stroke: currentColor;
+  /* Ensure proper spacing for last paragraph/list in answers */
+  .faq-answer p:last-child,
+  .faq-answer ul:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Better text rendering on mobile */
+  @media (max-width: 640px) {
+    .faq-button span {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    
+    .faq-answer {
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+  }
+
+  /* Improve tap targets for accessibility */
+  .faq-button {
+    min-height: 44px;
+  }
+
+  /* Smooth color transitions */
+  .faq-item {
+    transition: all 0.2s ease-out;
   }
 </style>
