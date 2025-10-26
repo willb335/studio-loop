@@ -1,7 +1,8 @@
 // src/components/calculator/SliderInput.tsx
 
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import type { SliderConfig } from './types';
+import { InfoTooltip } from './InfoTooltip';
 
 interface SliderInputProps {
   label: string;
@@ -10,6 +11,8 @@ interface SliderInputProps {
   config: SliderConfig;
   prefix?: string;
   suffix?: string;
+  tooltip?: string;
+  tooltipPosition?: 'top' | 'bottom' | 'left' | 'right';
 }
 
 export const SliderInput: React.FC<SliderInputProps> = ({
@@ -19,7 +22,11 @@ export const SliderInput: React.FC<SliderInputProps> = ({
   config,
   prefix = '',
   suffix = '',
+  tooltip,
+  tooltipPosition = 'top',
 }) => {
+  const sliderRef = useRef<HTMLInputElement>(null);
+
   const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange(Number(e.target.value));
   };
@@ -31,38 +38,51 @@ export const SliderInput: React.FC<SliderInputProps> = ({
     }
   };
 
+  // Calculate percentage for slider fill
+  const percentage = ((value - config.min) / (config.max - config.min)) * 100;
+
+  useEffect(() => {
+    if (sliderRef.current) {
+      sliderRef.current.style.setProperty('--value-percent', `${percentage}%`);
+    }
+  }, [percentage]);
+
   return (
     <div className="slider-input-wrapper">
-      <label
-        className="block text-sm font-medium mb-3"
-        style={{ color: 'rgb(63, 63, 70)' }}
-      >
-        {label}
-      </label>
+      <div className="flex items-center gap-2 mb-3">
+        <label
+          className="block text-sm font-medium"
+          style={{ color: 'rgb(63, 63, 70)' }}
+        >
+          {label}
+        </label>
+        {tooltip && (
+          <InfoTooltip content={tooltip} position={tooltipPosition} />
+        )}
+      </div>
 
-      <div className="flex items-center gap-4">
-        {/* Slider */}
-        <input
-          type="range"
-          min={config.min}
-          max={config.max}
-          step={config.step}
-          value={value}
-          onChange={handleSliderChange}
-          className="flex-1 h-2 rounded-lg appearance-none cursor-pointer calculator-slider
-                     transition-all focus:outline-none focus:ring-2 focus:ring-offset-2"
-          style={{
-            background: 'rgb(251, 207, 232)',
-            accentColor: 'rgb(244, 114, 182)',
-          }}
-          aria-label={label}
-        />
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+        {/* Slider Container */}
+        <div className="flex-1 relative py-2">
+          <input
+            ref={sliderRef}
+            type="range"
+            min={config.min}
+            max={config.max}
+            step={config.step}
+            value={value}
+            onChange={handleSliderChange}
+            className="calculator-slider w-full h-2 rounded-full appearance-none cursor-pointer
+                       transition-all focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2"
+            aria-label={label}
+          />
+        </div>
 
         {/* Number Input */}
-        <div className="relative">
+        <div className="relative flex-shrink-0">
           {prefix && (
             <span
-              className="absolute left-3 top-1/2 -translate-y-1/2 font-semibold"
+              className="absolute left-3 top-1/2 -translate-y-1/2 font-semibold text-sm"
               style={{ color: 'rgb(82, 82, 91)' }}
             >
               {prefix}
@@ -75,8 +95,9 @@ export const SliderInput: React.FC<SliderInputProps> = ({
             step={config.step}
             value={value}
             onChange={handleInputChange}
-            className={`w-28 text-center text-2xl font-bold border-2 rounded-lg py-2 transition-all
-                       focus:outline-none focus:ring-2
+            className={`w-full sm:w-28 text-center text-xl sm:text-2xl font-bold border-2 rounded-lg py-2.5 sm:py-2 transition-all
+                       focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-1
+                       hover:border-pink-400
                        ${prefix ? 'pl-6' : 'pl-3'} pr-3`}
             style={{
               borderColor: 'rgb(249, 168, 212)',

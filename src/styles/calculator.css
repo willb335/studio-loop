@@ -1,102 +1,162 @@
 /* src/styles/calculator.css */
 
-/* Custom slider styling for better cross-browser support */
-input[type='range'].calculator-slider::-webkit-slider-thumb {
+/* ===========================
+   CALCULATOR SLIDER STYLING
+   Mobile-First with Centered Knobs
+   =========================== */
+
+/* Custom slider with progress fill */
+input[type='range'].calculator-slider {
+  --value-percent: 50%;
+  height: 8px;
+  background: linear-gradient(
+    to right,
+    rgb(251, 113, 133) 0%,
+    rgb(251, 113, 133) var(--value-percent),
+    rgb(251, 207, 232) var(--value-percent),
+    rgb(251, 207, 232) 100%
+  );
+  border-radius: 4px;
+  outline: none;
+  -webkit-appearance: none;
   appearance: none;
-  width: 20px;
-  height: 20px;
+}
+
+/* Webkit (Chrome, Safari, Edge) - Thumb */
+input[type='range'].calculator-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  background: rgb(244, 114, 182);
-  cursor: pointer;
+  background: rgb(251, 113, 133);
+  cursor: grab;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 6px rgba(244, 114, 182, 0.4);
+  box-shadow: 0 2px 8px rgba(251, 113, 133, 0.4);
+  border: 3px solid white;
+  margin-top: -8px; /* Center the thumb vertically */
 }
 
 input[type='range'].calculator-slider::-webkit-slider-thumb:hover {
-  background: rgb(219, 39, 119);
-  transform: scale(1.1);
-  box-shadow: 0 3px 8px rgba(244, 114, 182, 0.5);
+  background: rgb(225, 83, 103);
+  transform: scale(1.15);
+  box-shadow: 0 4px 12px rgba(251, 113, 133, 0.5);
 }
 
 input[type='range'].calculator-slider::-webkit-slider-thumb:active {
+  cursor: grabbing;
   transform: scale(1.05);
+  box-shadow: 0 2px 6px rgba(251, 113, 133, 0.6);
 }
 
-input[type='range'].calculator-slider::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: rgb(244, 114, 182);
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 6px rgba(244, 114, 182, 0.4);
-}
-
-input[type='range'].calculator-slider::-moz-range-thumb:hover {
-  background: rgb(219, 39, 119);
-  transform: scale(1.1);
-  box-shadow: 0 3px 8px rgba(244, 114, 182, 0.5);
-}
-
-input[type='range'].calculator-slider::-moz-range-thumb:active {
-  transform: scale(1.05);
-}
-
-/* Slider track styling */
+/* Webkit - Track */
 input[type='range'].calculator-slider::-webkit-slider-runnable-track {
   height: 8px;
   border-radius: 4px;
-  background: rgb(251, 207, 232);
+  background: transparent; /* Handled by parent */
 }
 
+/* Firefox - Thumb */
+input[type='range'].calculator-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgb(251, 113, 133);
+  border: 3px solid white;
+  cursor: grab;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(251, 113, 133, 0.4);
+}
+
+input[type='range'].calculator-slider::-moz-range-thumb:hover {
+  background: rgb(225, 83, 103);
+  transform: scale(1.15);
+  box-shadow: 0 4px 12px rgba(251, 113, 133, 0.5);
+}
+
+input[type='range'].calculator-slider::-moz-range-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.05);
+  box-shadow: 0 2px 6px rgba(251, 113, 133, 0.6);
+}
+
+/* Firefox - Track */
 input[type='range'].calculator-slider::-moz-range-track {
   height: 8px;
   border-radius: 4px;
-  background: rgb(251, 207, 232);
+  background: transparent;
 }
+
+/* Firefox - Progress */
+input[type='range'].calculator-slider::-moz-range-progress {
+  height: 8px;
+  border-radius: 4px 0 0 4px;
+  background: rgb(251, 113, 133);
+}
+
+/* Focus state for accessibility */
+input[type='range'].calculator-slider:focus {
+  outline: none;
+}
+
+input[type='range'].calculator-slider:focus-visible {
+  outline: 2px solid rgb(251, 113, 133);
+  outline-offset: 4px;
+}
+
+/* ===========================
+   NUMBER INPUT STYLING
+   =========================== */
 
 /* Number input styling enhancements */
 input[type='number']:focus {
-  border-color: rgb(219, 39, 119) !important;
+  border-color: rgb(225, 83, 103) !important;
   box-shadow: 0 0 0 3px rgba(252, 231, 243, 0.5);
 }
 
 input[type='number']:hover {
-  border-color: rgb(244, 114, 182);
+  border-color: rgb(251, 113, 133);
 }
 
 /* Number input spin buttons */
 input[type='number']::-webkit-inner-spin-button,
 input[type='number']::-webkit-outer-spin-button {
   opacity: 1;
-  height: 40px;
+  height: 32px;
   cursor: pointer;
-}
-
-/* Focus ring for accessibility */
-input[type='range'].calculator-slider:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(244, 114, 182, 0.3);
-}
-
-input[type='range'].calculator-slider:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 4px rgba(244, 114, 182, 0.2);
-}
-
-input[type='range'].calculator-slider:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 4px rgba(244, 114, 182, 0.2);
 }
 
 /* Mobile touch optimizations */
 @media (max-width: 640px) {
+  /* Larger touch targets for mobile */
   input[type='range'].calculator-slider::-webkit-slider-thumb {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
+    margin-top: -10px;
   }
 
   input[type='range'].calculator-slider::-moz-range-thumb {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Ensure input number fields are easy to tap */
+  input[type='number'] {
+    min-height: 44px;
+    font-size: 1.25rem;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  input[type='range'].calculator-slider::-webkit-slider-thumb {
+    width: 26px;
+    height: 26px;
+    margin-top: -9px;
+  }
+
+  input[type='range'].calculator-slider::-moz-range-thumb {
+    width: 26px;
+    height: 26px;
   }
 }

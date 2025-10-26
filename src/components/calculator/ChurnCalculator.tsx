@@ -66,7 +66,7 @@ export const ChurnCalculator: React.FC = () => {
         }}
       >
         {/* Input Section */}
-        <div className="p-6 sm:p-8 space-y-6">
+        <div className="p-5 sm:p-6 lg:p-8 space-y-6 sm:space-y-8">
           <SliderInput
             label="New members per month"
             value={inputs.monthlyMembers}
@@ -74,6 +74,8 @@ export const ChurnCalculator: React.FC = () => {
               setInputs({ ...inputs, monthlyMembers: value })
             }
             config={MEMBERS_CONFIG}
+            tooltip="How many new members sign up at your studio each month on average. This helps calculate your total annual churn."
+            tooltipPosition="bottom"
           />
 
           <SliderInput
@@ -82,16 +84,18 @@ export const ChurnCalculator: React.FC = () => {
             onChange={(value) => setInputs({ ...inputs, lifetimeValue: value })}
             config={LTV_CONFIG}
             prefix="$"
+            tooltip="Total revenue from one member across all purchases: memberships, packages, retail, etc. Industry average: $212 (IHRSA data). Your number depends on pricing and how long members stay."
+            tooltipPosition="left"
           />
         </div>
 
         {/* Results Section */}
-        <div className="px-6 pb-6 sm:px-8 sm:pb-8">
+        <div className="px-5 pb-5 sm:px-6 sm:pb-6 lg:px-8 lg:pb-8">
           <ResultsDisplay results={results} />
         </div>
 
         {/* CTA Section */}
-        <div className="px-6 pb-8 sm:px-8">
+        <div className="px-5 pb-6 sm:px-6 sm:pb-8 lg:px-8">
           <CTAButton
             recoveryLow={results.recoveryLow}
             recoveryHigh={results.recoveryHigh}
@@ -100,7 +104,7 @@ export const ChurnCalculator: React.FC = () => {
 
           {/* Fine Print */}
           <p
-            className="text-center text-xs mt-4"
+            className="text-center text-xs mt-4 leading-relaxed"
             style={{ color: 'rgb(161, 161, 170)' }}
           >
             Based on 37% industry churn rate and 35-46% retention improvement

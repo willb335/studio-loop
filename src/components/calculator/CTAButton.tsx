@@ -33,16 +33,16 @@ export const CTAButton: React.FC<CTAButtonProps> = ({
                  transition-all duration-200 flex items-center justify-center gap-3
                  focus:outline-none focus:ring-2 focus:ring-offset-2"
       style={{
-        backgroundColor: 'rgb(244, 114, 182)',
-        boxShadow: '0 4px 14px rgba(244, 114, 182, 0.3)',
+        backgroundColor: 'rgb(251, 113, 133)',
+        boxShadow: '0 4px 14px rgba(251, 113, 133, 0.3)',
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.backgroundColor = 'rgb(219, 39, 119)';
-        e.currentTarget.style.boxShadow = '0 6px 20px rgba(244, 114, 182, 0.4)';
+        e.currentTarget.style.backgroundColor = 'rgb(225, 83, 103)';
+        e.currentTarget.style.boxShadow = '0 6px 20px rgba(251, 113, 133, 0.4)';
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.backgroundColor = 'rgb(244, 114, 182)';
-        e.currentTarget.style.boxShadow = '0 4px 14px rgba(244, 114, 182, 0.3)';
+        e.currentTarget.style.backgroundColor = 'rgb(251, 113, 133)';
+        e.currentTarget.style.boxShadow = '0 4px 14px rgba(251, 113, 133, 0.3)';
       }}
       aria-label={`Recover ${formatCurrency(recoveryLow)} to ${formatCurrency(
         recoveryHigh
