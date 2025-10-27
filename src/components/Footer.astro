@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import KettlebellLogo from '../assets/kettlebell-envelope-icon.svg';
 /**
  * Footer component - Ultra-minimal footer
  *
@@ -14,8 +16,15 @@
   <div class="max-w-7xl mx-auto px-5 sm:px-10 lg:px-20">
     <div class="flex flex-col items-center text-center space-y-4">
       <!-- Logo/Brand -->
-      <div>
-        <span class="text-2xl font-bold font-heading text-neutral-900" aria-label="StudioLoop">StudioLoop</span>
+      <div class="flex items-center gap-3">
+        <Image
+          src={KettlebellLogo}
+          alt="FitnessFollowup logo"
+          width={50}
+          height={50}
+          class="footer-logo"
+        />
+        <span class="text-2xl font-bold font-heading text-neutral-900" aria-label="FitnessFollowup">FitnessFollowup</span>
       </div>
 
       <!-- Built with love -->
@@ -25,7 +34,7 @@
 
       <!-- Copyright -->
       <p class="text-sm text-neutral-500">
-        <small>© {new Date().getFullYear()} StudioLoop. All rights reserved.</small>
+        <small>© {new Date().getFullYear()} FitnessFollowup. All rights reserved.</small>
       </p>
     </div>
   </div>

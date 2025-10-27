@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Kettlebell Body -->
+  <circle cx="100" cy="95" r="45" fill="#fb7185"/>
+  
+  <!-- Kettlebell Handle -->
+  <path d="M 70 65 Q 70 30, 100 30 Q 130 30, 130 65" 
+        stroke="#e11d48" 
+        stroke-width="14" 
+        fill="none" 
+        stroke-linecap="round"/>
+  
+  <!-- Left Eye -->
+  <circle cx="88" cy="85" r="5" fill="#1f2937"/>
+  
+  <!-- Right Eye -->
+  <circle cx="112" cy="85" r="5" fill="#1f2937"/>
+  
+  <!-- Smile -->
+  <path d="M 85 105 Q 100 115, 115 105" 
+        stroke="#1f2937" 
+        stroke-width="3" 
+        fill="none" 
+        stroke-linecap="round"/>
+  
+  <!-- Envelope Base -->
+  <rect x="70" y="120" width="60" height="42" 
+        fill="#fda4af" 
+        rx="2"/>
+  
+  <!-- Envelope Flap -->
+  <path d="M 70 120 L 100 142 L 130 120" 
+        fill="#fbbacf" 
+        stroke="#fda4af" 
+        stroke-width="1"/>
+  
+  <!-- Envelope Flap Fold Line -->
+  <path d="M 70 120 L 100 142 L 130 120" 
+        stroke="#fb7185" 
+        stroke-width="1.5" 
+        fill="none"/>
+  
+  <!-- Envelope Top Edge -->
+  <line x1="70" y1="120" x2="130" y2="120" 
+        stroke="#fb7185" 
+        stroke-width="1"/>
+</svg>
