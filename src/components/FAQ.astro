@@ -18,54 +18,104 @@ const faqs = [
   {
     id: "fitgrid-difference",
     question: "How is this different from FitGrid?",
-    answer: `Two key differences:
+  answer: `We built StudioLoop after running FitGrid in our own studios and hearing the same frustrations from boutique owners.
 
-**Price:** $29/mo vs. FitGrid's $169–$325/mo (about 80–90% less)
+- **Pricing sanity:** Lock in $29/mo versus FitGrid's $169–$325/mo. That's 80–90% less every month—$1,800–$3,552 in annual savings.
+- **No feature bloat:** We obsess over two outcomes—automated post-class follow-ups and instructor feedback—so you aren't paying for SMS, AI segmentation, or enterprise controls you may never launch.
+- **Instructor happiness:** Templates live in a clean web app. No 2.4-star mobile app or buggy push notifications. We're intentional about user experience so their workflow feels effortless.
 
-**Simplicity:** Laser-focused on two things—automated post-class follow-up emails and collecting member feedback about instructors—with a 5-minute setup and no feature bloat
-
-**User Experience:** Polished instructor web app for managing email templates; FitGrid's instructor app has a 2.4/5 rating on Google Play (as of Oct 2025)
-
-We built the two things that drive retention and spend, and removed the complexity that slows teams down.`,
+If FitGrid already delivers at $300/month, keep it. If you want the same retention lift with an improved UX at a tenth of the price, that's us.`,
     category: "product",
   },
   {
     id: "mindbody-integration",
     question: "Do I need to switch from Mindbody?",
-    answer: `Not at all. Connect your existing Mindbody account in minutes. We sync schedules, rosters, and instructor data automatically, then send follow-ups without creating any new daily tasks for your team.`,
+  answer: `You keep Mindbody. StudioLoop is designed to sit on top of it without changing your daily workflow.
+
+- We're working with Mindbody to deliver a true single sign-on. If that isn't available, we'll set up the initial API connection with you for free so it stays secure and painless.
+- Automatic roster, instructor, and first-timer sync every 15 minutes keeps everything current.
+- Follow-ups and feedback go out within an hour of each class, no staff action required.
+
+No exports, no duplicate data entry, no new dashboards for your team to babysit.`,
     category: "technical",
+  },
+//   {
+//     id: "setup-time",
+//     question: "How long does setup really take?",
+//   answer: `Most studios go live the same day.
+
+// - Pick a default follow-up template (we preload the top-performing copy).
+// - Connect Mindbody, choose which classes to automate, and set send windows.
+// - Preview the first email and flip the switch.
+// - Once instructors sign in to their content portals and set their follow-up templates, the owner dashboard updates instantly.
+
+// Member review emails send automatically—no extra setup. Total time: about five minutes. Need help? We hop on Zoom and do it with you.`,
+//     category: "product",
+//   },
+  {
+    id: "instructor-adoption",
+    question: "Will my instructors actually use this?",
+  answer: `Yes—because they barely have to touch it.
+
+- Instructors set a template email once in a simple web view and can forget it.
+- StudioLoop sends every follow-up automatically, branded per instructor.
+
+No new app to download, no inboxes to manage, no nagging required.`,
+    category: "product",
   },
   {
     id: "pricing-catch",
     question: "If it's so much cheaper than FitGrid, what's the catch?",
-    answer: `No catch—just focus.
+  answer: `Launch pricing stays low because we're focused.
 
-**Included at $29/mo:**
-- Automated post-class follow-up emails
-- Feedback collection and analytics (open rates, click rates, ratings)
-- Email template customization for each instructor
-- Direct Mindbody connection with automatic syncing
+- **Included at $29/mo:** Automated post-class emails, feedback collection, open/click analytics, instructor template library, and the Mindbody sync.
+- **Transparent approach:** We don't market mysterious AI or magic dashboards, and we currently integrate with Mindbody only so we are focused on only one integration.
 
-**Not included (yet):**
-- SMS messaging
-- Advanced AI segmentation and win-back campaigns
-- Multi-location enterprise controls
-
-You pay less because we ship only what most boutiques actually use—the features that drive real results.`,
+No contracts, setup fees, or hidden per-email charges.`,
     category: "pricing",
   },
   {
     id: "proof-of-effectiveness",
     question: "How do I know this actually works?",
-    answer: `The tactic is proven: FitGrid's own case studies report significant increases in return rates and spend from post-class follow-ups, and industry data shows retention delivers better ROI than acquisition. 
+  answer: `We're using a tactic that's already proven.
 
-We'll share anonymized results from our first cohort (open rates, return metrics, and revenue impact) so you can see the real impact and decide with data, not promises.`,
+- FitGrid's own case studies report 35–46% more first-time clients returning when instructors send a follow-up.
+- Those same clients spend 87% more in the first 90 days compared with people who never got an email.
+
+We'll share anonymized cohort data (open rates, revenue impact, retention curves) before you commit.`,
     category: "results",
+  },
+  {
+    id: "data-security",
+    question: "Is my member data secure?",
+  answer: `Absolutely. Security is non-negotiable for us.
+
+- StudioLoop runs on Convex, a zero-trust backend platform that handles authentication, rate limiting, and encrypted storage out of the box.
+- Mindbody data travels over encrypted channels and is stored using Convex's SOC 2-type controls, so you get enterprise-grade protections without extra setup.
+`,
+    category: "risk",
+  },
+  {
+    id: "launch-timeline",
+    question: "When do I get access—and what comes with the beta?",
+  answer: `We're aiming for 20 studios in the beta cohort.
+
+- Once the first 20 sign up, we'll start building the full app and keep you updated on launch milestones.
+- Those first 20 studios get two months free and direct input on the roadmap.
+
+Join the waitlist and we'll reserve your spot while we prep the build.`,
+    category: "product",
   },
   {
     id: "money-back-guarantee",
     question: "What if I don't see results?",
-    answer: `No contracts. Cancel anytime. Plus, we offer a **60-day money-back guarantee**: if your engagement metrics don't improve in the first two months, we'll refund 100%. Zero risk to try.`,
+    answer: `Zero risk.
+
+- Month-to-month billing—you can cancel anytime.
+- **60-day money-back guarantee:** if your engagement metrics don't improve, we refund you 100%.
+- We help you benchmark before and after so there's no fuzzy math.
+
+If we can't move the needle for your studio, you shouldn't pay for it.`,
     category: "risk",
   }
 ];
@@ -75,11 +125,14 @@ We'll share anonymized results from our first cohort (open rates, return metrics
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section Header -->
     <div class="text-center mb-10 sm:mb-14 lg:mb-16">
+      <div class="inline-flex items-center justify-center px-3 py-1 mb-4 text-xs font-medium rounded-full bg-rose-100 text-rose-700">
+        Limited Beta - 20 spots left
+      </div>
       <h2 id="faq-heading" class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-5 leading-tight">
         Your Questions, Honestly Answered
       </h2>
       <p class="font-body text-base sm:text-lg lg:text-xl text-neutral-600 leading-relaxed max-w-2xl mx-auto">
-        We know you've been burned before. Here's the truth about what we're building.
+        We're building this in public with you. Ask the hard questions—we'll answer them straight so you can decide with data, not hype.
       </p>
     </div>
 
@@ -159,15 +212,14 @@ We'll share anonymized results from our first cohort (open rates, return metrics
     <!-- Bottom CTA -->
     <div class="mt-10 sm:mt-14 lg:mt-16 text-center">
       <p class="font-body text-sm sm:text-base lg:text-lg text-neutral-600 mb-5 sm:mb-6">
-        Still have questions? We're here to help.
+        Still on the fence? Book a quick call with us after you join—we'll walk through your numbers together.
       </p>
       <button
         id="faq-cta-button"
-        class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-white text-sm sm:text-base lg:text-lg font-semibold rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-pink-400/30 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 cursor-pointer"
-        style="background-color: rgb(251, 113, 133);"
-        aria-label="Join the waitlist to get your questions answered"
+        class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-white text-sm sm:text-base lg:text-lg font-semibold rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-rose-400 focus:ring-offset-2 cursor-pointer bg-rose-500 hover:bg-rose-600 shadow-lg shadow-rose-200/60"
+        aria-label="Get early access and join the waitlist"
       >
-        Join the Waitlist
+        Get Early Access – Save $1,800/yr
       </button>
     </div>
   </div>
@@ -233,6 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // CTA button handler
   const ctaButton = document.getElementById('faq-cta-button');
   if (ctaButton) {
+    ctaButton.style.backgroundColor = 'rgb(244, 63, 94)';
     ctaButton.addEventListener('click', () => {
       const waitlistSection = document.getElementById('waitlist');
       if (waitlistSection) {
@@ -243,24 +296,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hover effects (desktop only)
     if (window.matchMedia('(hover: hover)').matches) {
       ctaButton.addEventListener('mouseenter', () => {
-        ctaButton.style.backgroundColor = 'rgb(244, 63, 94)';
+        ctaButton.style.backgroundColor = 'rgb(225, 29, 72)';
         ctaButton.style.transform = 'translateY(-2px)';
       });
       
       ctaButton.addEventListener('mouseleave', () => {
-        ctaButton.style.backgroundColor = 'rgb(251, 113, 133)';
+        ctaButton.style.backgroundColor = 'rgb(244, 63, 94)';
         ctaButton.style.transform = 'translateY(0)';
       });
     }
     
     // Active state for mobile
     ctaButton.addEventListener('touchstart', () => {
-      ctaButton.style.backgroundColor = 'rgb(244, 63, 94)';
+      ctaButton.style.backgroundColor = 'rgb(225, 29, 72)';
     });
     
     ctaButton.addEventListener('touchend', () => {
       setTimeout(() => {
-        ctaButton.style.backgroundColor = 'rgb(251, 113, 133)';
+        ctaButton.style.backgroundColor = 'rgb(244, 63, 94)';
       }, 150);
     });
   }
@@ -281,7 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* Icon rotation with smooth easing */
   .faq-icon {
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    color: rgb(251, 113, 133);
+    color: rgb(244, 63, 94);
   }
 
   /* Clean, neutral styling for FAQ items - no pink accents on container */
