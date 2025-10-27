@@ -4,6 +4,11 @@
  * A single unified canvas keeps the reader focused on the waitlist CTA.
  */
 
+import { Image } from 'astro:assets';
+import automatedEmailsImg from '../assets/app/email-templates.png';
+import feedbackAnalyticsImg from '../assets/app/client-feedback.png';
+import savingsCalculatorImg from '../assets/app/price-savings.png';
+
 const featureCards = [
   {
     icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" color="rgb(251, 113, 133)" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 6.5C12.5523 6.5 13 6.94772 13 7.5V7.77827C13.8024 8.03113 14.4829 8.58617 14.8085 9.36363C15.0219 9.87302 14.782 10.459 14.2726 10.6723C13.7632 10.8857 13.1772 10.6458 12.9639 10.1364C12.8699 9.91204 12.5363 9.625 12 9.625C11.2818 9.625 11 10.0853 11 10.3125C11 10.5397 11.2818 11 12 11C13.4909 11 15 12.0507 15 13.6875C15 14.9528 14.0981 15.8679 13 16.2181V16.5C13 17.0523 12.5523 17.5 12 17.5C11.4477 17.5 11 17.0523 11 16.5V16.2217C10.1976 15.9689 9.51714 15.4138 9.19146 14.6364C8.97807 14.127 9.21804 13.541 9.72743 13.3277C10.2368 13.1143 10.8228 13.3542 11.0361 13.8636C11.1301 14.088 11.4637 14.375 12 14.375C12.7182 14.375 13 13.9147 13 13.6875C13 13.4603 12.7182 13 12 13C10.5091 13 9 11.9493 9 10.3125C9 9.04719 9.90187 8.1321 11 7.78192V7.5C11 6.94772 11.4477 6.5 12 6.5Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.20455C7.1424 3.20455 3.20455 7.1424 3.20455 12C3.20455 16.8576 7.1424 20.7955 12 20.7955C16.8576 20.7955 20.7955 16.8576 20.7955 12C20.7955 11.3963 20.7348 10.8078 20.6195 10.2399C20.5121 9.71092 20.8539 9.19509 21.3828 9.08771C21.9118 8.98034 22.4276 9.3221 22.535 9.85104C22.6761 10.5462 22.75 11.265 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12C1.25 6.06294 6.06294 1.25 12 1.25C12.735 1.25 13.4538 1.32391 14.149 1.46502C14.6779 1.57239 15.0197 2.08823 14.9123 2.61717C14.8049 3.14612 14.2891 3.48787 13.7601 3.3805C13.1922 3.26522 12.6037 3.20455 12 3.20455Z" fill="currentColor" /><path d="M17.9439 7.45903C17.556 7.84699 16.927 7.84699 16.539 7.45903C16.1511 7.07108 16.1511 6.44207 16.539 6.05412L18.3394 4.25369L18.2256 4.13989C18.0215 3.93596 17.8056 3.72019 17.6557 3.52945C17.5463 3.39039 17.1454 2.87739 17.3624 2.23881C17.5795 1.59971 18.203 1.4608 18.3717 1.42363C18.604 1.37246 18.903 1.34461 19.1859 1.31826L19.2345 1.31374C19.68 1.27209 20.1977 1.2353 20.6595 1.25589C20.89 1.26617 21.1428 1.29199 21.3837 1.35356C21.607 1.41064 21.9341 1.52632 22.2029 1.79508C22.4717 2.06383 22.5873 2.39098 22.6444 2.61429C22.706 2.85518 22.7318 3.10795 22.7421 3.33853C22.7627 3.80026 22.7259 4.318 22.6842 4.76352L22.6797 4.81209C22.6534 5.09498 22.6255 5.394 22.5743 5.62632C22.5372 5.79504 22.3983 6.41855 21.7592 6.63566C21.1206 6.8526 20.6076 6.45166 20.4685 6.34233C20.2778 6.19239 20.062 5.97648 19.8581 5.77241L19.7443 5.65861L17.9439 7.45903Z" fill="currentColor" /></svg>',
@@ -53,6 +58,23 @@ const featureCards = [
 
 const trustPills = ['Mindbody Sync', '5-min setup', '60-day guarantee'];
 const stickyCtaLabel = 'Join the Waitlist — Save $238/mo';
+const previewImages = [
+  {
+    src: automatedEmailsImg,
+    label: 'Automated Emails',
+    alt: 'Card UI showing automated instructor follow-up email with send now button'
+  },
+  {
+    src: feedbackAnalyticsImg,
+    label: 'Feedback Analytics',
+    alt: 'Card UI showing feedback analytics score of 9.3 with monthly trend chart'
+  },
+  {
+    src: savingsCalculatorImg,
+    label: 'Savings Calculator',
+    alt: 'Pricing comparison card illustrating $29 per month vs $299 per month savings'
+  }
+];
 
 ---
 <section id="features" class="relative overflow-hidden py-16 sm:py-20 lg:py-24" aria-labelledby="features-heading" role="region">
@@ -76,56 +98,26 @@ const stickyCtaLabel = 'Join the Waitlist — Save $238/mo';
       <div class="absolute left-6 top-6 text-xs font-semibold uppercase tracking-wide text-neutral-500">
         Product Preview
       </div>
-      <div class="mt-10 grid gap-3 sm:grid-cols-3" role="presentation">
-        <div class="aspect-[4/3] rounded-xl bg-gradient-to-br from-rose-50 via-white to-rose-100 border border-rose-100 p-4 flex flex-col justify-between">
-          <div class="text-xs font-semibold text-rose-500 uppercase tracking-wide">Automated Email</div>
-          <div class="space-y-2">
-            <div class="h-2.5 rounded-full bg-rose-200 w-3/5"></div>
-            <div class="h-2.5 rounded-full bg-rose-100 w-4/5"></div>
-            <div class="h-2.5 rounded-full bg-rose-100 w-2/5"></div>
-          </div>
-          <div class="rounded-lg bg-white/80 border border-white/60 px-3 py-2 text-xs text-neutral-500">
-            Instructor avatar, personalized copy, send time preview
-          </div>
-        </div>
-        <div class="aspect-[4/3] rounded-xl bg-gradient-to-br from-white via-rose-50 to-white border border-rose-100 p-4 flex flex-col">
-          <div class="text-xs font-semibold text-rose-500 uppercase tracking-wide">Feedback Insights</div>
-          <div class="flex-1 flex flex-col justify-center gap-4">
-            <div class="h-24 rounded-lg bg-white/80 border border-white/60 shadow-[0_10px_30px_rgba(0,0,0,0.04)]"></div>
-            <div class="grid grid-cols-3 gap-2">
-              <div class="h-10 rounded-md bg-rose-100/80"></div>
-              <div class="h-10 rounded-md bg-rose-100/50"></div>
-              <div class="h-10 rounded-md bg-rose-100/20"></div>
+      <div class="mt-10 grid gap-4 sm:grid-cols-3" role="presentation">
+        {previewImages.map((preview) => (
+          <div class="group relative aspect-[4/3] overflow-hidden rounded-[26px] border border-rose-100 bg-rose-50/50 shadow-[0_18px_45px_rgba(251,113,133,0.18)]">
+            <Image
+              src={preview.src}
+              alt={preview.alt}
+              loading="lazy"
+              class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+              widths={[480, 720, 960]}
+              sizes="(max-width: 1024px) 100vw, 320px"
+            />
+            <div class="pointer-events-none absolute left-4 top-4 inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-rose-500 shadow-sm backdrop-blur">
+              {preview.label}
             </div>
           </div>
-          <div class="text-xs text-neutral-500 mt-3">10★ score trend + instructor shoutouts</div>
-        </div>
-        <div class="aspect-[4/3] rounded-xl bg-gradient-to-br from-white to-rose-50 border border-rose-100 p-4 flex flex-col justify-between">
-          <div class="text-xs font-semibold text-rose-500 uppercase tracking-wide">Savings Snapshot</div>
-          <div class="space-y-3">
-            <div class="rounded-xl bg-white/90 border border-white px-4 py-3">
-              <div class="flex items-baseline justify-between">
-                <span class="text-sm font-semibold text-neutral-500">StudioLoop</span>
-                <span class="text-2xl font-bold text-rose-500">$29</span>
-              </div>
-              <div class="text-xs text-neutral-400 mt-1">flat monthly pricing</div>
-            </div>
-            <div class="rounded-xl bg-rose-100/70 border border-rose-200 px-4 py-3">
-              <div class="flex items-baseline justify-between">
-                <span class="text-sm font-semibold text-neutral-500">FitGrid</span>
-                <span class="text-2xl font-bold text-neutral-600">$299</span>
-              </div>
-              <div class="text-xs text-neutral-500 mt-1">comparable feature tier</div>
-            </div>
-          </div>
-          <div class="rounded-lg bg-white/80 border border-white/60 px-3 py-2 text-xs text-neutral-500">
-            90% cheaper with the same retention lift
-          </div>
-        </div>
+        ))}
       </div>
       <figcaption class="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <p class="text-sm sm:text-base text-neutral-500">
-          High-res preview coming soon. Scene art direction: pastel rose UI, 3-panel SaaS dashboard.
+          Preview cards generated from the latest StudioLoop UI concept art.
         </p>
         <a href="#waitlist" class="inline-flex items-center text-sm font-semibold text-rose-500 hover:text-rose-600 transition" data-astro-interactive>
           View the live demo →
