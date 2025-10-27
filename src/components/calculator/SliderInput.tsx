@@ -60,7 +60,7 @@ export const SliderInput: React.FC<SliderInputProps> = ({
         </label>
         <div className="flex items-center gap-2">
           <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold text-rose-600 bg-rose-50 border border-rose-100">
-            <svg
+            {/* <svg
               width="14"
               height="14"
               viewBox="0 0 24 24"
@@ -81,7 +81,7 @@ export const SliderInput: React.FC<SliderInputProps> = ({
                 stroke="currentColor"
                 strokeWidth="1.5"
               />
-            </svg>
+            </svg> */}
             {formatWithAffixes(value)}
           </span>
           {tooltip && (

@@ -1,6 +1,6 @@
 // src/components/calculator/InfoTooltip.tsx
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface InfoTooltipProps {
@@ -13,6 +13,8 @@ export const InfoTooltip: React.FC<InfoTooltipProps> = ({
   position = 'top',
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const tooltipRef = useRef<HTMLDivElement>(null);
 
   const positionClasses = {
     top: 'bottom-full left-1/2 -translate-x-1/2 mb-2',
@@ -28,6 +30,24 @@ export const InfoTooltip: React.FC<InfoTooltipProps> = ({
     left: 'left-full top-1/2 -translate-y-1/2 -ml-1 border-t-[6px] border-b-[6px] border-l-[6px] border-t-transparent border-b-transparent border-l-neutral-800',
     right:
       'right-full top-1/2 -translate-y-1/2 -mr-1 border-t-[6px] border-b-[6px] border-r-[6px] border-t-transparent border-b-transparent border-r-neutral-800',
+  };
+
+  const handleOpen = () => {
+    if (!isTouchDevice) {
+      setIsOpen(true);
+    }
+  };
+
+  const handleClose = () => {
+    if (!isTouchDevice) {
+      setIsOpen(false);
+    }
+  };
+
+  const handleToggle = () => {
+    if (isTouchDevice) {
+      setIsOpen((prev) => !prev);
+    }
   };
 
   useEffect(() => {
@@ -46,15 +66,67 @@ export const InfoTooltip: React.FC<InfoTooltipProps> = ({
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const mediaQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
+
+    const handleChange = (event: MediaQueryListEvent) => {
+      setIsTouchDevice(!event.matches);
+    };
+
+    setIsTouchDevice(!mediaQuery.matches);
+
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', handleChange);
+    } else {
+      mediaQuery.addListener(handleChange);
+    }
+
+    return () => {
+      if (mediaQuery.removeEventListener) {
+        mediaQuery.removeEventListener('change', handleChange);
+      } else {
+        mediaQuery.removeListener(handleChange);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isTouchDevice || !isOpen) {
+      return;
+    }
+
+    const handleOutsideInteraction = (event: MouseEvent | TouchEvent) => {
+      if (
+        tooltipRef.current &&
+        event.target instanceof Node &&
+        !tooltipRef.current.contains(event.target)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('touchstart', handleOutsideInteraction);
+    document.addEventListener('click', handleOutsideInteraction);
+
+    return () => {
+      document.removeEventListener('touchstart', handleOutsideInteraction);
+      document.removeEventListener('click', handleOutsideInteraction);
+    };
+  }, [isTouchDevice, isOpen]);
+
   return (
-    <div className="relative inline-block">
+    <div ref={tooltipRef} className="relative inline-block">
       <button
         type="button"
-        onClick={() => setIsOpen(!isOpen)}
-        onMouseEnter={() => setIsOpen(true)}
-        onMouseLeave={() => setIsOpen(false)}
-        onFocus={() => setIsOpen(true)}
-        onBlur={() => setIsOpen(false)}
+        onClick={handleToggle}
+        onMouseEnter={handleOpen}
+        onMouseLeave={handleClose}
+        onFocus={handleOpen}
+        onBlur={handleClose}
         className="inline-flex items-center justify-center w-5 h-5 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-1"
         style={{ color: 'rgb(161, 161, 170)' }}
         aria-label="More information"
