@@ -5,9 +5,9 @@
  */
 
 import { Image } from 'astro:assets';
-import automatedEmailsImg from '../assets/app/email-templates.png';
-import feedbackAnalyticsImg from '../assets/app/client-feedback.png';
-import savingsCalculatorImg from '../assets/app/price-savings.png';
+import automatedEmailsImg from '../assets/app/automated-followup-emails.png';
+import feedbackAnalyticsImg from '../assets/app/customer-feedback.png';
+import instructorCommandImg from '../assets/app/instructor-dashboard.png';
 
 const featureCards = [
   {
@@ -61,18 +61,18 @@ const stickyCtaLabel = 'Join the Waitlist — Save $238/mo';
 const previewImages = [
   {
     src: automatedEmailsImg,
-    label: 'Automated Emails',
-    alt: 'Card UI showing automated instructor follow-up email with send now button'
+    label: 'Post-Class Email Composer',
+    alt: 'Glass UI showing automated post-class email subject and personalized message copy'
   },
   {
     src: feedbackAnalyticsImg,
-    label: 'Feedback Analytics',
-    alt: 'Card UI showing feedback analytics score of 9.3 with monthly trend chart'
+    label: 'Feedback Analytics Hub',
+    alt: 'Floating dashboard panels highlighting a 9.3 monthly feedback rating and trend charts'
   },
   {
-    src: savingsCalculatorImg,
-    label: 'Savings Calculator',
-    alt: 'Pricing comparison card illustrating $29 per month vs $299 per month savings'
+    src: instructorCommandImg,
+    label: 'Instructor Command Center',
+    alt: 'Triple panel interface with instructor roster, attendance heatmap, and action queue'
   }
 ];
 
@@ -90,7 +90,7 @@ const previewImages = [
         Everything You Need to Keep New Members Coming Back
       </h2>
       <p class="font-body text-base sm:text-lg lg:text-xl text-neutral-600 leading-relaxed max-w-3xl mx-auto">
-        StudioLoop pairs automated follow-ups, real-time feedback, and founder pricing in one reliable dashboard—mirroring the hero promise and nudging visitors straight to the waitlist.
+        StudioLoop pairs automated follow-ups, real-time feedback, and instructor command controls in one reliable dashboard—mirroring the hero promise and nudging visitors straight to the waitlist.
       </p>
     </div>
 
@@ -133,6 +133,11 @@ const previewImages = [
               <div class="text-4xl" set:html={feature.icon}></div>
             </div>
             <div class="flex-1">
+              <div class="sm:hidden mb-4">
+                <div class="inline-flex items-center justify-center rounded-full border border-rose-100 bg-rose-50/80 p-2.5 shadow-sm" aria-hidden="true">
+                  <div class="scale-[0.7] origin-center" set:html={feature.icon}></div>
+                </div>
+              </div>
               <div class="inline-flex items-center px-3 py-1 text-xs font-semibold uppercase tracking-wide rounded-full bg-rose-100 text-rose-600 mb-3">
                 {feature.eyebrow}
               </div>
