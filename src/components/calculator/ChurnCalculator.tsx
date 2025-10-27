@@ -92,10 +92,13 @@ export const ChurnCalculator: React.FC = () => {
                 Churn impact calculator
               </span>
               <h3 className="text-xl sm:text-2xl font-semibold text-neutral-900 leading-tight">
-                Tailor the sliders to match your studio. Your revenue impact updates instantly.
+                Tailor the sliders to match your studio. Your revenue impact
+                updates instantly.
               </h3>
               <p className="text-sm text-neutral-500 leading-relaxed">
-                We estimate how many members quietly churn and how much StudioLoop could recover using proven IHRSA and FitGrid benchmarks.
+                We estimate how many members quietly churn and how much
+                StudioLoop could recover using proven IHRSA and FitGrid
+                benchmarks.
               </p>
             </header>
 
@@ -134,7 +137,8 @@ export const ChurnCalculator: React.FC = () => {
               />
 
               <p className="text-center text-xs leading-relaxed text-neutral-400">
-                Based on a 37 percent industry churn rate and 35-46 percent retention lift from automated post-class follow-ups.
+                Based on a 37 percent industry churn rate and 35-46 percent
+                retention lift from automated post-class follow-ups.
               </p>
             </div>
           </div>

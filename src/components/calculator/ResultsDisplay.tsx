@@ -33,9 +33,8 @@ export const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ results }) => {
           {formatCurrency(results.annualLoss)}
         </motion.div>
         <p className="text-xs text-neutral-500 leading-relaxed">
-          {results.churnedMembers} lost members x ${
-            Math.round(results.annualLoss / results.churnedMembers)
-          } average LTV
+          {results.churnedMembers} lost members x $
+          {Math.round(results.annualLoss / results.churnedMembers)} average LTV
         </p>
       </div>
 
@@ -68,7 +67,8 @@ export const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ results }) => {
             transition={{ duration: 0.4, ease: 'easeOut' }}
             className="text-lg sm:text-xl font-semibold text-emerald-600"
           >
-            {formatCurrency(results.recoveryLow)} - {formatCurrency(results.recoveryHigh)} per year
+            {formatCurrency(results.recoveryLow)} -{' '}
+            {formatCurrency(results.recoveryHigh)} per year
           </motion.p>
           <p className="text-xs text-emerald-600/80">
             ROI range: {results.roiLow}x - {results.roiHigh}x in year one
