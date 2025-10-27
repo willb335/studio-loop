@@ -1,177 +1,221 @@
 ---
-// Import Astro's Image component and feature images
-import { Image } from 'astro:assets';
-import emailTemplatesImg from '../assets/app/email-templates.png';
-import clientFeedbackImg from '../assets/app/client-feedback.png';
-import heroDashImg from '../assets/app/hero-dash.png';
-import ssoImg from '../assets/app/sso.png';
-
 /**
- * Features component - Data-driven marketing section with ROI-focused messaging
- *
- * Displays optimized features with alternating layout, proof points, and CTAs.
- * Implements the marketing strategy from FEATURES.md for higher conversion rates.
- *
- * Layout pattern:
- * - Row 1: Text left, image right (white background) - Email follow-ups & cost savings
- * - Row 2: Image left, text right (pink-50 background) - Member feedback & ratings
- * - Row 3: Text left, image right (white background) - Web dashboard (no app)
- * - Row 4: Image left, text right (pink-50 background) - Flexible pricing
- *
- * @see docs/FEATURES.md - Optimized Feature Structure (lines 73-151)
+ * Features component - Rebuilt to mirror the hero's centered storytelling.
+ * A single unified canvas keeps the reader focused on the waitlist CTA.
  */
 
-/**
- * Main feature data for alternating rows
- * Each feature includes icon, title, description, proofPoints, cta, image, imageAlt, layout direction
- */
-const mainFeatures = [
+const featureCards = [
   {
     icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" color="rgb(251, 113, 133)" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 6.5C12.5523 6.5 13 6.94772 13 7.5V7.77827C13.8024 8.03113 14.4829 8.58617 14.8085 9.36363C15.0219 9.87302 14.782 10.459 14.2726 10.6723C13.7632 10.8857 13.1772 10.6458 12.9639 10.1364C12.8699 9.91204 12.5363 9.625 12 9.625C11.2818 9.625 11 10.0853 11 10.3125C11 10.5397 11.2818 11 12 11C13.4909 11 15 12.0507 15 13.6875C15 14.9528 14.0981 15.8679 13 16.2181V16.5C13 17.0523 12.5523 17.5 12 17.5C11.4477 17.5 11 17.0523 11 16.5V16.2217C10.1976 15.9689 9.51714 15.4138 9.19146 14.6364C8.97807 14.127 9.21804 13.541 9.72743 13.3277C10.2368 13.1143 10.8228 13.3542 11.0361 13.8636C11.1301 14.088 11.4637 14.375 12 14.375C12.7182 14.375 13 13.9147 13 13.6875C13 13.4603 12.7182 13 12 13C10.5091 13 9 11.9493 9 10.3125C9 9.04719 9.90187 8.1321 11 7.78192V7.5C11 6.94772 11.4477 6.5 12 6.5Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.20455C7.1424 3.20455 3.20455 7.1424 3.20455 12C3.20455 16.8576 7.1424 20.7955 12 20.7955C16.8576 20.7955 20.7955 16.8576 20.7955 12C20.7955 11.3963 20.7348 10.8078 20.6195 10.2399C20.5121 9.71092 20.8539 9.19509 21.3828 9.08771C21.9118 8.98034 22.4276 9.3221 22.535 9.85104C22.6761 10.5462 22.75 11.265 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12C1.25 6.06294 6.06294 1.25 12 1.25C12.735 1.25 13.4538 1.32391 14.149 1.46502C14.6779 1.57239 15.0197 2.08823 14.9123 2.61717C14.8049 3.14612 14.2891 3.48787 13.7601 3.3805C13.1922 3.26522 12.6037 3.20455 12 3.20455Z" fill="currentColor" /><path d="M17.9439 7.45903C17.556 7.84699 16.927 7.84699 16.539 7.45903C16.1511 7.07108 16.1511 6.44207 16.539 6.05412L18.3394 4.25369L18.2256 4.13989C18.0215 3.93596 17.8056 3.72019 17.6557 3.52945C17.5463 3.39039 17.1454 2.87739 17.3624 2.23881C17.5795 1.59971 18.203 1.4608 18.3717 1.42363C18.604 1.37246 18.903 1.34461 19.1859 1.31826L19.2345 1.31374C19.68 1.27209 20.1977 1.2353 20.6595 1.25589C20.89 1.26617 21.1428 1.29199 21.3837 1.35356C21.607 1.41064 21.9341 1.52632 22.2029 1.79508C22.4717 2.06383 22.5873 2.39098 22.6444 2.61429C22.706 2.85518 22.7318 3.10795 22.7421 3.33853C22.7627 3.80026 22.7259 4.318 22.6842 4.76352L22.6797 4.81209C22.6534 5.09498 22.6255 5.394 22.5743 5.62632C22.5372 5.79504 22.3983 6.41855 21.7592 6.63566C21.1206 6.8526 20.6076 6.45166 20.4685 6.34233C20.2778 6.19239 20.062 5.97648 19.8581 5.77241L19.7443 5.65861L17.9439 7.45903Z" fill="currentColor" /></svg>',
+    eyebrow: 'Automated follow-ups',
     title: 'Get FitGrid\'s 87% Revenue Lift for $238/Month Less',
     description: 'FitGrid charges $169-325/month for automated follow-ups that drive 87% more member spending. We deliver the same proven results for just $29/month—saving you $238 every single month. No annual contracts, no complex setup.',
     proofPoints: [
       { value: '87%', label: 'More revenue per client' },
       { value: '35-46%', label: 'Higher return rates' },
       { value: '$238', label: 'Monthly savings' }
-    ],
-    cta: 'Join Waitlist (Save $238/mo) →',
-    image: emailTemplatesImg,
-    imageAlt: 'Email follow-up editor interface showing personalized message templates',
-    layout: 'text-left' // text on left, image on right
+    ]
   },
   {
     icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" color="rgb(251, 113, 133)" fill="none"><path d="M13.7276 3.44418L15.4874 6.99288C15.7274 7.48687 16.3673 7.9607 16.9073 8.05143L20.0969 8.58575C22.1367 8.92853 22.6167 10.4206 21.1468 11.8925L18.6671 14.3927C18.2471 14.8161 18.0172 15.6327 18.1471 16.2175L18.8571 19.3125C19.417 21.7623 18.1271 22.71 15.9774 21.4296L12.9877 19.6452C12.4478 19.3226 11.5579 19.3226 11.0079 19.6452L8.01827 21.4296C5.8785 22.71 4.57865 21.7522 5.13859 19.3125L5.84851 16.2175C5.97849 15.6327 5.74852 14.8161 5.32856 14.3927L2.84884 11.8925C1.389 10.4206 1.85895 8.92853 3.89872 8.58575L7.08837 8.05143C7.61831 7.9607 8.25824 7.48687 8.49821 6.99288L10.258 3.44418C11.2179 1.51861 12.7777 1.51861 13.7276 3.44418Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    eyebrow: 'Member feedback',
     title: 'Instant Member Feedback & Ratings for Every Instructor',
     description: 'Members rate each class and instructor immediately after attending. Get real-time insights into what\'s working, which instructors members love, and actionable feedback to improve retention—all collected automatically with zero extra work.',
     proofPoints: [
       { value: '10★', label: 'rating system' },
       { value: 'Real-time', label: 'feedback dashboard' },
       { value: 'Zero effort', label: 'fully automated' }
-    ],
-    cta: 'See How It Works →',
-    image: clientFeedbackImg,
-    imageAlt: 'Member feedback dashboard showing 10-star ratings and instructor reviews',
-    layout: 'image-left' // image on left, text on right
+    ]
   },
   {
     icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" color="rgb(251, 113, 133)" fill="none"><path d="M18.5 14.25C18.8138 14.25 19.0945 14.4454 19.2034 14.7397L19.4613 15.4367C19.8233 16.4151 19.9388 16.6809 20.1289 16.8711C20.3191 17.0612 20.5849 17.1767 21.5633 17.5387L22.2603 17.7966C22.5546 17.9055 22.75 18.1862 22.75 18.5C22.75 18.8138 22.5546 19.0945 22.2603 19.2034L21.5633 19.4613C20.5849 19.8233 20.3191 19.9388 20.1289 20.1289C19.9388 20.3191 19.8233 20.5849 19.4613 21.5633L19.2034 22.2603C19.0945 22.5546 18.8138 22.75 18.5 22.75C18.1862 22.75 17.9055 22.5546 17.7966 22.2603L17.5387 21.5633C17.1767 20.5849 17.0612 20.3191 16.8711 20.1289C16.6809 19.9388 16.4151 19.8233 15.4367 19.4613L14.7397 19.2034C14.4454 19.0945 14.25 18.8138 14.25 18.5C14.25 18.1862 14.4454 17.9055 14.7397 17.7966L15.4367 17.5387C16.4151 17.1767 16.6809 17.0612 16.8711 16.8711C17.0612 16.6809 17.1767 16.4151 17.5387 15.4367L17.7966 14.7397C17.9055 14.4454 18.1862 14.25 18.5 14.25Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M11.4273 1.25C13.5515 1.24998 15.3903 1.24996 16.718 1.42847C18.089 1.61279 19.2153 2.00337 20.106 2.89404C20.9966 3.78471 21.3872 4.91104 21.5715 6.28198C21.75 7.60974 21.75 9.37709 21.75 11.5013C21.75 11.7997 21.75 12.4142 21.7496 12.9692C21.7491 13.5084 21.3107 13.9431 20.7715 13.9405C20.2324 13.9378 19.7968 13.4987 19.7972 12.9596C19.7976 12.4083 19.7976 11.7983 19.7976 11.5C19.7976 10.7841 19.7974 9.58878 19.7917 9H3.20827C3.2026 9.58878 3.20238 10.7841 3.20238 11.5C3.20238 13.7135 3.20446 15.2753 3.36344 16.4579C3.51865 17.6123 3.80713 18.258 4.27458 18.7254C4.74203 19.1929 5.38769 19.4813 6.54213 19.6366C7.72466 19.7955 9.28655 19.7976 11.5 19.7976C12.0186 19.7976 12.5034 19.7976 12.9595 19.7954C13.4986 19.7927 13.9378 20.2276 13.9405 20.7667C13.9431 21.3059 13.5082 21.7451 12.9691 21.7477C12.5077 21.75 12.0183 21.75 11.5013 21.75C9.37709 21.75 7.60974 21.75 6.28198 21.5715C4.91104 21.3872 3.78471 20.9966 2.89404 20.106C2.00337 19.2153 1.61279 18.089 1.42847 16.718C1.24996 15.3903 1.24998 13.6969 1.25 11.5727V11.5727C1.24998 9.44851 1.24996 7.60973 1.42847 6.28198C1.61279 4.91104 2.00337 3.78471 2.89404 2.89404C3.78471 2.00337 4.91104 1.61279 6.28198 1.42847C7.60973 1.24996 9.30315 1.24998 11.4273 1.25H11.4273ZM5.5 5.5C5.5 4.94772 5.94772 4.5 6.5 4.5H6.50898C7.06127 4.5 7.50898 4.94772 7.50898 5.5C7.50898 6.05229 7.06127 6.5 6.50898 6.5H6.5C5.94772 6.5 5.5 6.05229 5.5 5.5ZM10.5 4.5C9.94772 4.5 9.5 4.94772 9.5 5.5C9.5 6.05229 9.94772 6.5 10.5 6.5H10.509C11.0613 6.5 11.509 6.05229 11.509 5.5C11.509 4.94772 11.0613 4.5 10.509 4.5H10.5Z" fill="currentColor" /></svg>',
+    eyebrow: 'Instructor experience',
     title: 'Professional Web Dashboard. No Buggy Mobile App.',
     description: 'FitGrid forces instructors to use a buggy mobile app (rated 2.4 stars) that crashes constantly. StudioLoop works perfectly in any browser—no app to download, no login failures, no frustration. Your instructors will actually want to use it.',
     proofPoints: [
       { value: 'Web-based', label: 'works everywhere' },
       { value: '2.4★', label: 'FitGrid app rating' },
       { value: '5-min', label: 'setup time' }
-    ],
-    cta: 'Get Early Access →',
-    image: heroDashImg,
-    imageAlt: 'Clean web-based instructor dashboard showing class schedules and member engagement',
-    layout: 'text-left' // text on left, image on right
+    ]
   },
   {
     icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" color="rgb(251, 113, 133)" fill="none"><path d="M11.9961 15.5H12.0051" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7.5 9V6.5C7.5 4.01472 9.51472 2 12 2C13.9593 2 15.3822 3.25221 16 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M18 9H6.00019C4.89554 9 4.00008 9.89554 4.00018 11.0002L4.00102 20.0002C4.00112 21.1047 4.89652 22 6.00102 22H18C19.1046 22 20 21.1046 20 20V11C20 9.89543 19.1046 9 18 9Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>',
+    eyebrow: 'Pricing & commitment',
     title: 'Cancel Anytime. No Lock-In.',
     description: 'Month-to-month pricing with no annual contracts. Try it risk-free with our 60-day money-back guarantee. Lock in lifetime founder pricing at $29/month—but leave whenever you want.',
     proofPoints: [
       { value: '✓', label: 'No annual contracts' },
-      { value: '✓', label: '60-day money-back guarantee' },
+      { value: '✓', label: '60-day guarantee' },
       { value: '✓', label: 'Cancel anytime' }
-    ],
-    cta: 'Start Risk-Free →',
-    image: ssoImg,
-    imageAlt: 'Flexible pricing dashboard showing month-to-month subscription options',
-    layout: 'image-left' // image on left, text on right
+    ]
   }
 ];
 
----
+const trustPills = ['Mindbody Sync', '5-min setup', '60-day guarantee'];
+const stickyCtaLabel = 'Join the Waitlist — Save $238/mo';
 
-<section id="features" class="bg-white py-5 sm:py-6 lg:py-8" aria-labelledby="features-heading" role="region">
-  <div class="max-w-7xl mx-auto px-5 sm:px-10 lg:px-20">
-    <!-- Section Header -->
-    <!-- <div class="text-center mb-12 sm:mb-16 lg:mb-20">
-      <div class="inline-block px-4 py-2 rounded-full text-sm sm:text-base font-body font-semibold mb-4" style="background-color: rgba(251, 113, 133, 0.1); color: rgb(251, 113, 133);">
+---
+<section id="features" class="relative overflow-hidden py-16 sm:py-20 lg:py-24" aria-labelledby="features-heading" role="region">
+  <div class="absolute inset-0 bg-gradient-radial-pink opacity-20" aria-hidden="true"></div>
+  <div class="absolute inset-x-0 top-0 h-64 bg-white/80 backdrop-blur-sm" aria-hidden="true"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-5 sm:px-8">
+    <div class="text-center">
+      <div class="inline-flex items-center px-4 py-1 mb-5 text-xs sm:text-sm font-semibold rounded-full bg-rose-100 text-rose-600 uppercase tracking-wide">
         Proven Results at 90% Lower Cost
       </div>
-      <h2 id="features-heading" class="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-4 sm:mb-6 leading-tight px-4">
-        Automated Follow-Ups + Member Feedback That Drive Retention
+      <h2 id="features-heading" class="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight text-neutral-900 mb-4">
+        Everything You Need to Keep New Members Coming Back
       </h2>
-      <p class="font-body text-base sm:text-lg lg:text-xl text-neutral-600 leading-relaxed max-w-3xl mx-auto px-4">
-        Send personal post-class emails and collect instant member ratings—get the proven 87% revenue lift at $29/month instead of $169-325. No buggy apps, no annual contracts.
+      <p class="font-body text-base sm:text-lg lg:text-xl text-neutral-600 leading-relaxed max-w-3xl mx-auto">
+        StudioLoop pairs automated follow-ups, real-time feedback, and founder pricing in one reliable dashboard—mirroring the hero promise and nudging visitors straight to the waitlist.
       </p>
-    </div> -->
+    </div>
 
-    <!-- Main Features - Alternating Layout -->
-    <div class="space-y-12 sm:space-y-16 lg:space-y-20">
-      {mainFeatures.map((feature, index) => {
-        const isImageLeft = feature.layout === 'image-left';
-        const bgClass = index % 2 === 1 ? 'bg-pink-50' : 'bg-white';
-
-        return (
-          <div class={`${bgClass} rounded-xl sm:rounded-2xl p-6 sm:p-10 lg:p-14 -mx-5 sm:mx-0 transition-all duration-300`}>
-            <div class={`max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center ${isImageLeft ? 'lg:grid-flow-dense' : ''}`}>
-
-              {/* Text Content */}
-              <div class={isImageLeft ? 'lg:col-start-2' : ''}>
-                <div class="mb-4 sm:mb-6" aria-hidden="true">
-                  <div class="text-4xl sm:text-5xl inline-block">
-                    <div set:html={feature.icon}></div>
-                  </div>
-                </div>
-                <h3 class="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-neutral-900 mb-3 sm:mb-4 leading-tight">
-                  {feature.title}
-                </h3>
-                <p class="font-body text-sm sm:text-base lg:text-lg text-neutral-600 leading-relaxed mb-6">
-                  {feature.description}
-                </p>
-
-                {/* Proof Points */}
-                {feature.proofPoints && (
-                  <div class="mb-6 p-4 sm:p-5 bg-pink-50 rounded-xl border border-pink-100">
-                    <div class="grid grid-cols-3 gap-3 sm:gap-4 text-center">
-                      {feature.proofPoints.map((point, idx) => (
-                        <div>
-                          <div class="text-xl sm:text-2xl font-bold" style="color: rgb(251, 113, 133);">{point.value}</div>
-                          <div class="text-xs sm:text-sm text-neutral-600 mt-1 leading-tight">{point.label}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* CTA Button */}
-                {feature.cta && (
-                  <button
-                    onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})"
-                    class="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 text-white font-body font-semibold text-base sm:text-lg rounded-full transition-all duration-200 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 cursor-pointer"
-                    style="background-color: rgb(251, 113, 133);"
-                    onmouseover="this.style.backgroundColor='rgb(244, 63, 94)'"
-                    onmouseout="this.style.backgroundColor='rgb(251, 113, 133)'"
-                    aria-label={feature.cta.replace(' →', '')}
-                  >
-                    {feature.cta}
-                  </button>
-                )}
-              </div>
-
-              {/* Image */}
-              <div class={isImageLeft ? 'lg:col-start-1 lg:row-start-1' : ''}>
-                <div class="relative rounded-lg sm:rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl" style="box-shadow: 0 10px 40px rgba(251, 113, 133, 0.15);">
-                  <Image
-                    src={feature.image}
-                    alt={feature.imageAlt}
-                    class="w-full h-auto object-cover"
-                    loading="lazy"
-                    widths={[640, 768, 1024, 1280]}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-                  />
-                </div>
-              </div>
-
+    <figure class="relative mt-12 sm:mt-16 rounded-2xl border border-rose-100 bg-white/90 shadow-[0_25px_80px_rgba(251,113,133,0.12)] p-6 sm:p-8">
+      <div class="absolute left-6 top-6 text-xs font-semibold uppercase tracking-wide text-neutral-500">
+        Product Preview
+      </div>
+      <div class="mt-10 grid gap-3 sm:grid-cols-3" role="presentation">
+        <div class="aspect-[4/3] rounded-xl bg-gradient-to-br from-rose-50 via-white to-rose-100 border border-rose-100 p-4 flex flex-col justify-between">
+          <div class="text-xs font-semibold text-rose-500 uppercase tracking-wide">Automated Email</div>
+          <div class="space-y-2">
+            <div class="h-2.5 rounded-full bg-rose-200 w-3/5"></div>
+            <div class="h-2.5 rounded-full bg-rose-100 w-4/5"></div>
+            <div class="h-2.5 rounded-full bg-rose-100 w-2/5"></div>
+          </div>
+          <div class="rounded-lg bg-white/80 border border-white/60 px-3 py-2 text-xs text-neutral-500">
+            Instructor avatar, personalized copy, send time preview
+          </div>
+        </div>
+        <div class="aspect-[4/3] rounded-xl bg-gradient-to-br from-white via-rose-50 to-white border border-rose-100 p-4 flex flex-col">
+          <div class="text-xs font-semibold text-rose-500 uppercase tracking-wide">Feedback Insights</div>
+          <div class="flex-1 flex flex-col justify-center gap-4">
+            <div class="h-24 rounded-lg bg-white/80 border border-white/60 shadow-[0_10px_30px_rgba(0,0,0,0.04)]"></div>
+            <div class="grid grid-cols-3 gap-2">
+              <div class="h-10 rounded-md bg-rose-100/80"></div>
+              <div class="h-10 rounded-md bg-rose-100/50"></div>
+              <div class="h-10 rounded-md bg-rose-100/20"></div>
             </div>
           </div>
-        );
-      })}
+          <div class="text-xs text-neutral-500 mt-3">10★ score trend + instructor shoutouts</div>
+        </div>
+        <div class="aspect-[4/3] rounded-xl bg-gradient-to-br from-white to-rose-50 border border-rose-100 p-4 flex flex-col justify-between">
+          <div class="text-xs font-semibold text-rose-500 uppercase tracking-wide">Savings Snapshot</div>
+          <div class="space-y-3">
+            <div class="rounded-xl bg-white/90 border border-white px-4 py-3">
+              <div class="flex items-baseline justify-between">
+                <span class="text-sm font-semibold text-neutral-500">StudioLoop</span>
+                <span class="text-2xl font-bold text-rose-500">$29</span>
+              </div>
+              <div class="text-xs text-neutral-400 mt-1">flat monthly pricing</div>
+            </div>
+            <div class="rounded-xl bg-rose-100/70 border border-rose-200 px-4 py-3">
+              <div class="flex items-baseline justify-between">
+                <span class="text-sm font-semibold text-neutral-500">FitGrid</span>
+                <span class="text-2xl font-bold text-neutral-600">$299</span>
+              </div>
+              <div class="text-xs text-neutral-500 mt-1">comparable feature tier</div>
+            </div>
+          </div>
+          <div class="rounded-lg bg-white/80 border border-white/60 px-3 py-2 text-xs text-neutral-500">
+            90% cheaper with the same retention lift
+          </div>
+        </div>
+      </div>
+      <figcaption class="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <p class="text-sm sm:text-base text-neutral-500">
+          High-res preview coming soon. Scene art direction: pastel rose UI, 3-panel SaaS dashboard.
+        </p>
+        <a href="#waitlist" class="inline-flex items-center text-sm font-semibold text-rose-500 hover:text-rose-600 transition" data-astro-interactive>
+          View the live demo →
+        </a>
+      </figcaption>
+    </figure>
+
+    <div class="mt-14 grid gap-6 sm:gap-8">
+      {featureCards.map((feature) => (
+        <article class="relative rounded-2xl border border-rose-100 bg-white/90 backdrop-blur-sm px-6 py-8 sm:px-8 shadow-[0_10px_40px_rgba(17,24,39,0.08)]">
+          <div class="flex items-start gap-4">
+            <div class="hidden sm:block" aria-hidden="true">
+              <div class="text-4xl" set:html={feature.icon}></div>
+            </div>
+            <div class="flex-1">
+              <div class="inline-flex items-center px-3 py-1 text-xs font-semibold uppercase tracking-wide rounded-full bg-rose-100 text-rose-600 mb-3">
+                {feature.eyebrow}
+              </div>
+              <h3 class="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-neutral-900 leading-tight mb-3">
+                {feature.title}
+              </h3>
+              <p class="font-body text-sm sm:text-base lg:text-lg text-neutral-600 leading-relaxed mb-6">
+                {feature.description}
+              </p>
+
+              <div class="mb-6 grid grid-cols-3 gap-3 text-center">
+                {feature.proofPoints.map((point) => (
+                  <div class="rounded-xl border border-rose-100 bg-rose-50/60 px-3 py-3">
+                    <div class="text-lg sm:text-xl font-bold text-rose-500">{point.value}</div>
+                    <div class="text-xs text-neutral-500 mt-1 leading-tight">{point.label}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div class="flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-wide text-neutral-400">
+                {trustPills.map((pill) => (
+                  <span class="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-neutral-500">
+                    <span aria-hidden="true">✓</span>{pill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="mt-16 sm:mt-20 rounded-2xl border border-rose-200 bg-gradient-to-r from-rose-500 to-rose-600 px-6 py-8 sm:px-10 sm:py-10 text-center text-white shadow-[0_25px_60px_rgba(251,113,133,0.35)]">
+      <p class="text-sm sm:text-base uppercase tracking-[0.2em] mb-3 font-semibold">Ready to see it live?</p>
+      <h3 class="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 leading-tight">
+        Claim Early Access and lock in $29/month founder pricing now.
+      </h3>
+      <button
+        onclick="document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' })"
+        class="inline-flex items-center justify-center gap-2 rounded-full bg-white text-rose-600 px-7 py-3 sm:px-9 sm:py-4 font-semibold text-base sm:text-lg shadow-lg transition hover:bg-rose-50"
+        data-astro-interactive
+      >
+        Get Early Access – Save $1,800/yr
+      </button>
+      <p class="mt-4 text-xs text-rose-100/80">
+        Limited beta: 38 spots left. Cancel anytime within the first two months for a full refund.
+      </p>
     </div>
   </div>
+
+  <div data-sticky-cta class="pointer-events-none fixed inset-x-0 bottom-6 z-40 flex justify-center px-5 opacity-0 transition-opacity duration-300">
+    <button
+      onclick="document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' })"
+      class="pointer-events-auto inline-flex items-center justify-center gap-2 rounded-full bg-rose-500 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-rose-600"
+    >
+      {stickyCtaLabel}
+    </button>
+  </div>
+
+  <script type="module">
+    const featuresSection = document.getElementById('features');
+    const stickyCta = document.querySelector('[data-sticky-cta]');
+
+    if (featuresSection && stickyCta) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            stickyCta.classList.add('opacity-100');
+          } else {
+            stickyCta.classList.remove('opacity-100');
+          }
+        });
+      }, { threshold: 0.2 });
+
+      observer.observe(featuresSection);
+    }
+  </script>
 </section>
