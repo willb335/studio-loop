@@ -36,108 +36,81 @@ const steps = [
 ];
 ---
 
-<section id="how-it-works" class="bg-gradient-to-b from-white to-pink-50/50 py-16 sm:py-24 lg:py-32" aria-labelledby="how-it-works-heading">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Section Header -->
-    <div class="text-center mb-12 sm:mb-16 lg:mb-20">
-      <h2 id="how-it-works-heading" class="text-[28px] leading-tight sm:text-4xl lg:text-5xl font-heading font-bold text-neutral-900 mb-4 sm:mb-6">
-        Get Started in Minutes
+<section
+  id="how-it-works"
+  class="relative overflow-hidden py-16 sm:py-20 lg:py-28"
+  aria-labelledby="how-it-works-heading"
+  role="region"
+>
+  <div class="absolute inset-0 bg-gradient-radial-pink opacity-25" aria-hidden="true"></div>
+  <div class="absolute inset-x-0 top-0 h-48 bg-white/85 backdrop-blur-sm border-b border-rose-100/60" aria-hidden="true"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-5 sm:px-8">
+    <div class="text-center">
+      <div class="inline-flex items-center px-4 py-1 mb-5 text-xs sm:text-sm font-semibold uppercase tracking-wide rounded-full bg-rose-100 text-rose-600">
+        Guided onboarding
+      </div>
+      <h2 id="how-it-works-heading" class="font-heading font-bold text-[28px] sm:text-4xl lg:text-5xl leading-tight text-neutral-900">
+        Launch StudioLoop in Three Guided Steps
       </h2>
-      <p class="text-base sm:text-lg lg:text-xl text-neutral-600 leading-relaxed max-w-2xl mx-auto px-4">
-        Three simple steps to transform your member engagement.
+      <p class="mt-4 font-body text-base sm:text-lg lg:text-xl text-neutral-600 leading-relaxed max-w-3xl mx-auto">
+        Connect MindBody, invite instructors, and start tracking engagement—each step is designed to work perfectly on mobile so your team can set up StudioLoop in minutes.
       </p>
     </div>
 
-    <!-- Steps Container -->
-    <div class="max-w-3xl mx-auto">
-      <ol class="space-y-8 sm:space-y-12" role="list" aria-label="Setup process steps">
-        {steps.map((step, index) => (
-          <li class="relative">
-            {/* Connector (except for last step) */}
-            {index < steps.length - 1 && (
-              <div 
-                class="absolute left-[30px] sm:left-1/2 sm:-translate-x-1/2 top-full h-8 sm:h-12 w-0.5 bg-gradient-to-b from-pink-200 to-pink-100 -mt-[2px]" 
-                aria-hidden="true"
-              >
+    <ol class="mt-12 sm:mt-14 grid gap-6 sm:gap-7 lg:gap-9 lg:grid-cols-3" role="list" aria-label="StudioLoop onboarding steps">
+      {steps.map((step, index) => (
+        <li class="relative">
+          {index < steps.length - 1 && (
+            <div
+              class="pointer-events-none absolute left-1/2 top-[calc(100%-14px)] h-12 w-px -translate-x-1/2 bg-gradient-to-b from-rose-200/70 to-transparent sm:hidden"
+              aria-hidden="true"
+            ></div>
+          )}
+          {index < steps.length - 1 && (
+            <div
+              class="pointer-events-none absolute top-1/2 right-[-54px] hidden h-px w-24 -translate-y-1/2 bg-gradient-to-r from-rose-100 via-rose-200 to-transparent lg:block"
+              aria-hidden="true"
+            ></div>
+          )}
+
+          <article class="relative flex h-full flex-col rounded-3xl border border-rose-100 bg-white/90 px-6 pt-14 pb-8 sm:px-8 sm:pt-16 sm:pb-10 shadow-[0_18px_55px_rgba(251,113,133,0.14)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_30px_80px_rgba(251,113,133,0.2)]">
+            <div
+              class="absolute left-1/2 -top-9 flex h-16 w-16 -translate-x-1/2 items-center justify-center rounded-full bg-gradient-to-br from-[rgb(251,113,133)] to-[rgb(244,63,94)] text-2xl font-bold text-white shadow-lg shadow-pink-200/60"
+              aria-label={`Step ${step.number}`}
+            >
+              {step.number}
+            </div>
+
+            <div class="flex flex-col items-center text-center">
+              <div class="inline-flex h-14 w-14 items-center justify-center rounded-full border border-rose-100 bg-rose-50/80 shadow-sm" aria-hidden="true">
+                <div class="scale-90" set:html={step.icon}></div>
               </div>
-            )}
+              <h3 class="mt-6 font-heading text-xl sm:text-2xl lg:text-[28px] font-bold text-neutral-900 leading-snug">
+                {step.title}
+              </h3>
+              <p class="mt-4 font-body text-sm sm:text-base text-neutral-600 leading-relaxed">
+                {step.description}
+              </p>
+              <p class="mt-5 text-xs sm:text-sm text-neutral-400 italic">
+                {step.imageAlt}
+              </p>
+            </div>
+          </article>
+        </li>
+      ))}
+    </ol>
 
-            {/* Step Card */}
-            <article class="relative bg-white rounded-xl sm:rounded-2xl shadow-md hover:shadow-xl border border-neutral-100 p-5 sm:p-8 lg:p-10 transition-all duration-300 hover:border-pink-200">
-              {/* Mobile Layout: Number centered at top */}
-              <div class="flex sm:hidden flex-col items-center mb-5">
-                <div 
-                  class="w-[60px] h-[60px] bg-gradient-to-br from-[rgb(251,113,133)] to-[rgb(244,63,94)] text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg shadow-pink-200/50" 
-                  aria-label={`Step ${step.number}`}
-                >
-                  {step.number}
-                </div>
-              </div>
-
-              {/* Mobile Layout: Icon and Content */}
-              <div class="flex sm:hidden gap-4">
-                {/* Icon on left */}
-                <div class="flex-shrink-0 pt-1" aria-hidden="true">
-                  <div class="inline-flex items-center justify-center w-[40px] h-[40px]" set:html={step.icon}></div>
-                </div>
-                
-                {/* Content on right */}
-                <div class="flex-1 min-w-0">
-                  <h3 class="text-xl font-heading font-bold text-neutral-900 mb-3 leading-tight">
-                    {step.title}
-                  </h3>
-                  <p class="text-sm text-neutral-600 leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-              </div>
-
-              {/* Desktop Layout */}
-              <div class="hidden sm:flex sm:flex-row sm:items-start gap-6 lg:gap-8">
-                {/* Left: Number Badge */}
-                <div class="flex-shrink-0">
-                  <div 
-                    class="w-[72px] h-[72px] bg-gradient-to-br from-[rgb(251,113,133)] to-[rgb(244,63,94)] text-white rounded-full flex items-center justify-center text-3xl font-bold shadow-lg shadow-pink-200/50" 
-                    aria-label={`Step ${step.number}`}
-                  >
-                    {step.number}
-                  </div>
-                </div>
-
-                {/* Right: Content */}
-                <div class="flex-1 min-w-0">
-                  <div class="mb-5" aria-hidden="true">
-                    <div class="inline-flex items-center justify-center w-[48px] h-[48px]" set:html={step.icon}></div>
-                  </div>
-                  
-                  <h3 class="text-2xl lg:text-[28px] font-heading font-bold text-neutral-900 mb-4 leading-tight">
-                    {step.title}
-                  </h3>
-                  
-                  <p class="text-base lg:text-lg text-neutral-600 leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-              </div>
-            </article>
-          </li>
-        ))}
-      </ol>
-    </div>
-
-    {/* Call to Action */}
-    <div class="mt-12 sm:mt-16 lg:mt-20 text-center px-4">
-      <button
-        onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})"
-        class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 min-h-[56px] text-white text-base sm:text-lg font-semibold rounded-full transition-all duration-200 active:scale-95 hover:shadow-xl hover:shadow-pink-400/30 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 cursor-pointer"
-        style="background-color: rgb(251, 113, 133);"
-        onmouseover="this.style.backgroundColor='rgb(244, 63, 94)'"
-        onmouseout="this.style.backgroundColor='rgb(251, 113, 133)'"
+    <div class="mt-14 sm:mt-16 lg:mt-20 text-center">
+      <a
+        href="#waitlist"
+        class="inline-flex items-center justify-center w-full sm:w-auto rounded-full bg-rose-500 px-8 py-4 text-base sm:text-lg font-semibold text-white shadow-lg shadow-rose-500/30 transition hover:bg-rose-600"
+        data-astro-interactive
         aria-label="Start your free setup - Navigate to waitlist signup form"
       >
         Start Your Free Setup
-      </button>
-      <p class="text-xs sm:text-sm text-neutral-500 mt-4">
+      </a>
+      <p class="mt-4 text-xs sm:text-sm text-neutral-500">
         No credit card required • Setup in under 5 minutes
       </p>
     </div>
