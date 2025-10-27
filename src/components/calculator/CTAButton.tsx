@@ -28,27 +28,12 @@ export const CTAButton: React.FC<CTAButtonProps> = ({
       onClick={onClick}
       whileHover={{ scale: 1.02, y: -2 }}
       whileTap={{ scale: 0.98 }}
-      className="w-full py-4 px-8 text-white font-semibold text-lg
-                 rounded-full shadow-lg hover:shadow-xl
-                 transition-all duration-200 flex items-center justify-center gap-3
-                 focus:outline-none focus:ring-2 focus:ring-offset-2"
-      style={{
-        backgroundColor: 'rgb(251, 113, 133)',
-        boxShadow: '0 4px 14px rgba(251, 113, 133, 0.3)',
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.backgroundColor = 'rgb(225, 83, 103)';
-        e.currentTarget.style.boxShadow = '0 6px 20px rgba(251, 113, 133, 0.4)';
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.backgroundColor = 'rgb(251, 113, 133)';
-        e.currentTarget.style.boxShadow = '0 4px 14px rgba(251, 113, 133, 0.3)';
-      }}
+      className="w-full h-14 sm:h-16 px-8 text-white font-semibold text-lg rounded-2xl shadow-[0_14px_32px_rgba(244,63,94,0.35)] transition-all duration-200 flex items-center justify-center gap-3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-200 bg-gradient-to-r from-rose-500 via-rose-500 to-rose-400 hover:shadow-[0_18px_40px_rgba(244,63,94,0.4)]"
       aria-label={`Recover ${formatCurrency(recoveryLow)} to ${formatCurrency(
         recoveryHigh
       )} annually`}
     >
-      <span>
+      <span className="drop-shadow-sm">
         Recover My {formatShort(recoveryLow)}-{formatShort(recoveryHigh)}
       </span>
       <svg

@@ -1,6 +1,6 @@
 // src/components/calculator/InfoTooltip.tsx
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface InfoTooltipProps {
@@ -30,6 +30,22 @@ export const InfoTooltip: React.FC<InfoTooltipProps> = ({
       'right-full top-1/2 -translate-y-1/2 -mr-1 border-t-[6px] border-b-[6px] border-r-[6px] border-t-transparent border-b-transparent border-r-neutral-800',
   };
 
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      window.addEventListener('keydown', handleEscape);
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleEscape);
+    };
+  }, [isOpen]);
+
   return (
     <div className="relative inline-block">
       <button
@@ -37,9 +53,12 @@ export const InfoTooltip: React.FC<InfoTooltipProps> = ({
         onClick={() => setIsOpen(!isOpen)}
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
+        onFocus={() => setIsOpen(true)}
+        onBlur={() => setIsOpen(false)}
         className="inline-flex items-center justify-center w-5 h-5 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-1"
         style={{ color: 'rgb(161, 161, 170)' }}
         aria-label="More information"
+        aria-expanded={isOpen}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

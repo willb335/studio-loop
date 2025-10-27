@@ -47,23 +47,65 @@ export const SliderInput: React.FC<SliderInputProps> = ({
     }
   }, [percentage]);
 
+  const formatWithAffixes = (val: number) => {
+    const formatted = val.toLocaleString();
+    return `${prefix}${formatted}${suffix}`;
+  };
+
   return (
-    <div className="slider-input-wrapper">
-      <div className="flex items-center gap-2 mb-3">
+    <div className="slider-input-wrapper space-y-4">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <label
-          className="block text-sm font-medium"
-          style={{ color: 'rgb(63, 63, 70)' }}
+          className="text-xs font-semibold uppercase tracking-wide text-rose-500"
         >
           {label}
         </label>
-        {tooltip && (
-          <InfoTooltip content={tooltip} position={tooltipPosition} />
-        )}
+        <div className="flex items-center gap-2">
+          <span
+            className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold text-rose-600 bg-rose-50 border border-rose-100"
+          >
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="text-rose-500"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 6V12"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+              <circle
+                cx="12"
+                cy="16"
+                r="1"
+                fill="currentColor"
+              />
+              <path
+                d="M4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12Z"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              />
+            </svg>
+            {formatWithAffixes(value)}
+          </span>
+          {tooltip && (
+            <InfoTooltip content={tooltip} position={tooltipPosition} />
+          )}
+        </div>
       </div>
 
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
         {/* Slider Container */}
-        <div className="flex-1 relative py-2">
+        <div className="flex-1">
+          <div className="flex items-center justify-between text-[11px] font-medium uppercase tracking-wide text-neutral-400 mb-2">
+            <span>{formatWithAffixes(config.min)}</span>
+            <span>{formatWithAffixes(config.max)}</span>
+          </div>
           <input
             ref={sliderRef}
             type="range"
@@ -72,17 +114,16 @@ export const SliderInput: React.FC<SliderInputProps> = ({
             step={config.step}
             value={value}
             onChange={handleSliderChange}
-            className="calculator-slider w-full h-2 rounded-full appearance-none cursor-pointer
-                       transition-all focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2"
+            className="calculator-slider w-full h-2 rounded-full appearance-none cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2"
             aria-label={label}
           />
         </div>
 
         {/* Number Input */}
-        <div className="relative flex-shrink-0">
+        <div className="relative flex-shrink-0 w-full sm:w-auto">
           {prefix && (
             <span
-              className="absolute left-3 top-1/2 -translate-y-1/2 font-semibold text-sm"
+              className="absolute left-4 top-1/2 -translate-y-1/2 font-semibold text-sm"
               style={{ color: 'rgb(82, 82, 91)' }}
             >
               {prefix}
@@ -95,10 +136,7 @@ export const SliderInput: React.FC<SliderInputProps> = ({
             step={config.step}
             value={value}
             onChange={handleInputChange}
-            className={`w-full sm:w-28 text-center text-xl sm:text-2xl font-bold border-2 rounded-lg py-2.5 sm:py-2 transition-all
-                       focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-1
-                       hover:border-pink-400
-                       ${prefix ? 'pl-6' : 'pl-3'} pr-3`}
+            className={`w-full sm:w-32 md:w-36 min-h-[52px] text-center text-xl font-bold border-2 rounded-2xl transition-all focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-1 hover:border-pink-400 ${prefix ? 'pl-8' : 'pl-3'} pr-4 bg-white/90`}
             style={{
               borderColor: 'rgb(249, 168, 212)',
             }}
@@ -106,7 +144,7 @@ export const SliderInput: React.FC<SliderInputProps> = ({
           />
           {suffix && (
             <span
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-sm"
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-sm"
               style={{ color: 'rgb(82, 82, 91)' }}
             >
               {suffix}

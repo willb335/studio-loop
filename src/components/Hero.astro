@@ -10,8 +10,6 @@
  * - Hero image with subtle shadow
  */
 
-import { Image } from 'astro:assets';
-import heroImage from '../assets/app/hero.png';
 import ChurnCalculator from './calculator/ChurnCalculator';
 ---
 
@@ -23,17 +21,36 @@ import ChurnCalculator from './calculator/ChurnCalculator';
       
       <!-- Content -->
       <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-        <h1 id="hero-heading" class="font-heading font-bold text-3xl sm:text-5xl lg:text-6xl leading-tight mb-5 sm:mb-6" style="color: var(--neutral-900);">
-          What's Your Studio's Silent Churn Number?
+        <div class="inline-flex items-center px-3 py-1 mb-4 text-xs font-medium rounded-full bg-rose-100 text-rose-700">
+         Limited Beta - 38 spots left
+        </div>
+        <h1 id="hero-heading" class="font-heading font-bold text-2xl sm:text-5xl lg:text-6xl leading-tight mb-4 sm:mb-6" style="color: var(--neutral-900);">
+          Stop Losing New Members After Their First Class
         </h1>
         
-        <p class="font-body text-lg sm:text-xl leading-relaxed mb-8 sm:mb-10" style="color: var(--neutral-600);">
-          Most owners don't realize how much first-class dropout costs them. Industry average: 37% of new members never return. Use our calculator below to see your real number—and what automated follow-ups could recover.
+        <p class="font-body text-base sm:text-xl leading-relaxed mb-6 sm:mb-10" style="color: var(--neutral-600);">
+          Automated post-class follow-ups that drive 87% more revenue per client. Built for boutique studios, live in 5 minutes, just $29/month.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-6">
+          <a href="#waitlist" class="w-full sm:w-auto inline-flex justify-center items-center px-6 py-3 text-base font-semibold text-white bg-rose-500 hover:bg-rose-600 transition rounded-lg shadow-lg" data-astro-interactive>
+          Get Early Access - Save $1,800/yr
+          </a>
+          <a href="#calculator" class="w-full sm:w-auto inline-flex justify-center items-center px-6 py-3 text-base font-semibold border border-rose-200 text-rose-600 bg-white hover:border-rose-300 transition rounded-lg">
+            See Real Results
+          </a>
+        </div>
+        <div class="flex flex-wrap justify-center gap-3 text-sm text-neutral-600">
+          <span class="flex items-center gap-1"><span aria-hidden="true">✓</span> Mindbody Sync</span>
+          <span class="flex items-center gap-1"><span aria-hidden="true">✓</span> Cancel Anytime</span>
+          <span class="flex items-center gap-1"><span aria-hidden="true">✓</span> Instructor-Friendly</span>
+        </div>
+        <p class="mt-4 text-xs text-neutral-500">
+         Pre-launch beta: we're onboarding 50 studios to shape the final product.
         </p>
       </div>
       
       <!-- Interactive Calculator -->
-      <div class="mb-12 sm:mb-16">
+      <div id="calculator" class="mb-12 sm:mb-16">
         <ChurnCalculator client:load />
       </div>
       
@@ -83,6 +100,10 @@ import ChurnCalculator from './calculator/ChurnCalculator';
 
 
 <style>
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+
   .shadow-hero {
     box-shadow: 0 20px 50px rgba(251, 113, 133, 0.15);
   }

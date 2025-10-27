@@ -12,22 +12,15 @@ interface ResultsDisplayProps {
 
 export const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ results }) => {
   return (
-    <div
-      className="bg-white rounded-xl p-5 sm:p-6 space-y-4 border-2"
-      style={{ borderColor: 'rgb(252, 231, 243)' }}
-    >
-      {/* Annual Loss */}
-      <div>
-        <div className="flex items-center gap-2 mb-2">
-          <p className="text-sm" style={{ color: 'rgb(82, 82, 91)' }}>
-            Annual churn loss{' '}
-            <span style={{ color: 'rgb(161, 161, 170)' }}>
-              (37% dropout rate)
-            </span>
+    <div className="rounded-2xl border border-rose-100/80 bg-white/90 backdrop-blur-sm p-5 sm:p-6 space-y-5 shadow-[0_16px_38px_rgba(244,63,94,0.09)]">
+      <div className="space-y-3">
+        <div className="flex items-center justify-between gap-2">
+          <p className="text-xs font-semibold uppercase tracking-wide text-rose-500">
+            Annual churn loss
           </p>
           <InfoTooltip
-            content="This is how much revenue you're losing each year from members who sign up but never return after their first class. Based on the industry average 37% first-class dropout rate."
-            position="left"
+            content="This is how much revenue you are losing each year from members who sign up but never return after their first class. Based on the industry average 37 percent first-class dropout rate."
+            position="top"
           />
         </div>
         <motion.div
@@ -35,85 +28,81 @@ export const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ results }) => {
           initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.3, ease: 'easeOut' }}
-          className="text-4xl sm:text-5xl font-bold leading-tight"
-          style={{ color: 'rgb(225, 29, 72)' }}
+          className="text-3xl sm:text-4xl font-bold leading-tight text-rose-600"
         >
           {formatCurrency(results.annualLoss)}
         </motion.div>
-        <p className="text-xs mt-2" style={{ color: 'rgb(161, 161, 170)' }}>
-          {results.churnedMembers} lost members × $
-          {Math.round(results.annualLoss / results.churnedMembers)} avg LTV
+        <p className="text-xs text-neutral-500 leading-relaxed">
+          {results.churnedMembers} lost members x ${
+            Math.round(results.annualLoss / results.churnedMembers)
+          } average LTV
         </p>
       </div>
 
-      {/* Recovery Potential */}
-      <div
-        className="rounded-lg p-4 sm:p-5 border-2"
-        style={{
-          backgroundColor: 'rgb(240, 253, 244)',
-          borderColor: 'rgb(187, 247, 208)',
-        }}
-      >
-        <div className="flex items-center gap-2 mb-2">
-          <p
-            className="text-sm font-medium"
-            style={{ color: 'rgb(63, 63, 70)' }}
-          >
-            With automated follow-ups
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div className="rounded-xl border border-rose-100 bg-rose-50/80 px-4 py-4 space-y-1">
+          <p className="text-[11px] font-semibold uppercase tracking-wide text-rose-500">
+            Members lost per year
           </p>
-          <InfoTooltip
-            content="StudioLoop sends personalized text messages to members after their first class. Based on FitGrid case studies, this reduces churn by 35-46%, recovering thousands in lost revenue."
-            position="left"
-          />
+          <p className="text-xl font-semibold text-neutral-900">
+            {results.churnedMembers}
+          </p>
+          <p className="text-xs text-rose-500/80">
+            Calculated from your member volume
+          </p>
         </div>
-        <motion.div
-          key={`${results.recoveryLow}-${results.recoveryHigh}`}
-          initial={{ x: -10, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.4, ease: 'easeOut' }}
-          className="text-xl sm:text-2xl font-semibold"
-          style={{ color: 'rgb(21, 128, 61)' }}
-        >
-          Recover {formatCurrency(results.recoveryLow)} -{' '}
-          {formatCurrency(results.recoveryHigh)}/year
-        </motion.div>
-        <div className="flex items-center gap-2 mt-3">
-          <p
-            className="text-xs flex items-center gap-2"
-            style={{ color: 'rgb(22, 163, 74)' }}
+        <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-4 space-y-2">
+          <div className="flex items-center justify-between gap-2">
+            <p className="text-[11px] font-semibold uppercase tracking-wide text-emerald-600">
+              Revenue you can recover
+            </p>
+            <InfoTooltip
+              content="StudioLoop sends personalized follow-ups after class. Based on FitGrid case studies, studios recover 35-46 percent of would-be churned revenue."
+              position="top"
+            />
+          </div>
+          <motion.p
+            key={`${results.recoveryLow}-${results.recoveryHigh}`}
+            initial={{ x: -10, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
+            className="text-lg sm:text-xl font-semibold text-emerald-600"
           >
-            <svg
-              className="w-4 h-4 flex-shrink-0"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                clipRule="evenodd"
-              />
-            </svg>
-            <span className="font-medium">
-              Your ROI: {results.roiLow}x-{results.roiHigh}x in year one
-            </span>
+            {formatCurrency(results.recoveryLow)} - {formatCurrency(results.recoveryHigh)} per year
+          </motion.p>
+          <p className="text-xs text-emerald-600/80">
+            ROI range: {results.roiLow}x - {results.roiHigh}x in year one
           </p>
-          <InfoTooltip
-            content={`At $29/month ($348/year), StudioLoop pays for itself many times over. Your estimated return: ${results.roiLow}-${results.roiHigh} times your investment in the first year alone.`}
-            position="left"
-          />
         </div>
       </div>
 
-      {/* Industry Data Attribution */}
-      <p
-        className="text-xs text-center pt-2 border-t"
-        style={{
-          color: 'rgb(161, 161, 170)',
-          borderColor: 'rgb(228, 228, 231)',
-        }}
-      >
-        Based on IHRSA industry data and FitGrid case studies
-      </p>
+      <div className="flex items-start gap-2 text-[11px] text-neutral-400">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="mt-[2px] flex-shrink-0"
+          aria-hidden="true"
+        >
+          <path
+            d="M12 7V12"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+          />
+          <circle cx="12" cy="16" r="1" fill="currentColor" />
+          <path
+            d="M4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12Z"
+            stroke="currentColor"
+            strokeWidth="1.5"
+          />
+        </svg>
+        <span>
+          Calibrated using IHRSA churn benchmarks and FitGrid retention studies.
+        </span>
+      </div>
     </div>
   );
 };
