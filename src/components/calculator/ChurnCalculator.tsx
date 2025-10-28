@@ -97,7 +97,7 @@ export const ChurnCalculator: React.FC = () => {
               </h3>
               <p className="text-sm text-neutral-500 leading-relaxed">
                 We estimate how many members quietly churn and how much
-                StudioLoop could recover using proven IHRSA and FitGrid
+                FitnessFollowup could recover using proven IHRSA and FitGrid
                 benchmarks.
               </p>
             </header>

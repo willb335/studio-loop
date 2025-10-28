@@ -1,4 +1,4 @@
-# Quick Start Guide - StudioLoop Redesign Implementation
+# Quick Start Guide - FitnessFollowup Redesign Implementation
 
 This is your **TL;DR** guide for implementing the aboardhr.com-inspired redesign with Rose Pink palette.
 
@@ -20,21 +20,25 @@ This is your **TL;DR** guide for implementing the aboardhr.com-inspired redesign
 All images should be **1200x800px PNG** with shadcn/ui design and Rose Pink accents.
 
 ### 1. Instructor Dashboard (`instructor-dashboard.png`)
+
 - **Used in**: Hero section (main visual)
 - **Shows**: Dashboard with stats, recent classes, quick actions
 - **Note**: Use placeholder during development (pink-100 background with text label)
 
 ### 2. Client Feedback Page (`client-feedback.png`)
+
 - **Used in**: Features section (row 2)
 - **Shows**: Member feedback cards with 10-star ratings
 - **Note**: Use placeholder during development (pink-100 background with text label)
 
 ### 3. Email Follow-Up Page (`email-followup.png`)
+
 - **Used in**: Features section (row 1)
 - **Shows**: Email composer with templates and personalization
 - **Note**: Use placeholder during development (pink-100 background with text label)
 
 ### 4. Additional Placeholders for How It Works
+
 - Connection interface (Step 1)
 - Instructor dashboard/template editor (Step 2)
 - Analytics dashboard with stats (Step 3)
@@ -46,22 +50,23 @@ All images should be **1200x800px PNG** with shadcn/ui design and Rose Pink acce
 ## 🎯 Implementation Checklist
 
 ### Phase 1: Foundation (Start Here)
+
 - [ ] Update [`tailwind.config.mjs`](../tailwind.config.mjs) with Rose Pink colors
 - [ ] Create `/src/assets/app/` directory
 - [ ] Add placeholder images (or final screenshots if ready)
 - [ ] Update [`src/styles/global.css`](../src/styles/global.css) if needed
 
 ### Phase 2: Core Components
+
 - [ ] Redesign [`Hero.astro`](../src/components/Hero.astro)
   - New headline: "Your Members Deserve Better Follow-Ups"
   - Add large dashboard screenshot
   - Dual CTAs (primary + secondary)
-  
 - [ ] Update [`Navigation.astro`](../src/components/Navigation.astro)
   - Cleaner, minimal design
   - Rose pink CTA button
-  
 - [ ] Redesign [`Features.astro`](../src/components/Features.astro)
+
   - Alternating text/image layout
   - 3 main features with screenshots
   - 3 smaller feature cards
@@ -72,26 +77,27 @@ All images should be **1200x800px PNG** with shadcn/ui design and Rose Pink acce
   - Better visual hierarchy
 
 ### Phase 3: Secondary Components
+
 - [ ] Redesign [`HowItWorks.astro`](../src/components/HowItWorks.astro)
   - Simplify to 3 steps
   - Add app screenshots
   - Visual flow with connectors
-  
 - [ ] Update [`ComparisonTable.astro`](../src/components/ComparisonTable.astro)
   - Rose pink highlights
   - Pink checkmarks
-  - Enhanced StudioLoop column
-  
+  - Enhanced FitnessFollowup column
 - [ ] Simplify [`Footer.astro`](../src/components/Footer.astro)
   - Minimal design
   - Pink hover states
 
 ### Phase 4: Cleanup
+
 - [ ] Delete [`ProblemStatement.astro`](../src/components/ProblemStatement.astro)
 - [ ] Delete [`Pricing.astro`](../src/components/Pricing.astro)
 - [ ] Update [`index.astro`](../src/pages/index.astro) - remove old components
 
 ### Phase 5: Testing
+
 - [ ] Test on mobile (< 640px)
 - [ ] Test on tablet (640px - 1024px)
 - [ ] Test on desktop (> 1024px)
@@ -121,23 +127,27 @@ neutral-500: '#737373'  // Secondary text
 ## 📐 Key Design Specifications
 
 ### Typography
+
 - **Headlines**: Poppins Bold/SemiBold
 - **Body**: Inter Regular/Medium
 - **Hero H1**: 56px desktop / 36px mobile
 - **Section H2**: 44px desktop / 32px mobile
 
 ### Spacing
+
 - **Section Padding**: 120px vertical (desktop), 80px (mobile)
 - **Max Content Width**: 1200px
 - **Hero Image Max Width**: 1100px
 
 ### Border Radius
+
 - **Buttons**: 12px
-- **Cards**: 16px  
+- **Cards**: 16px
 - **Images**: 16px
 - **Small elements**: 8px
 
 ### Shadows
+
 - **Images**: `shadow-pink` (custom)
 - **Cards**: Tailwind `shadow-lg`
 - **Buttons on hover**: Tailwind `shadow-xl`
@@ -146,17 +156,17 @@ neutral-500: '#737373'  // Secondary text
 
 ## 🔄 Component Changes Summary
 
-| Component | Change Type | Key Updates |
-|-----------|-------------|-------------|
-| **Hero** | Major Redesign | New headline, large screenshot, dual CTAs |
-| **Features** | Major Redesign | Alternating layout with images, 6 features total |
-| **How It Works** | Moderate Update | 3 steps instead of 5, add screenshots |
-| **Comparison** | Minor Update | Rose pink accents, enhanced highlights |
-| **Navigation** | Minor Update | Cleaner design, pink CTA |
-| **Waitlist Form** | Moderate Update | Enhanced visuals, prominent pink button |
-| **Footer** | Minor Update | Simplified, pink hover states |
-| **Problem Statement** | ❌ DELETE | Removed entirely |
-| **Pricing** | ❌ DELETE | Removed entirely |
+| Component             | Change Type     | Key Updates                                      |
+| --------------------- | --------------- | ------------------------------------------------ |
+| **Hero**              | Major Redesign  | New headline, large screenshot, dual CTAs        |
+| **Features**          | Major Redesign  | Alternating layout with images, 6 features total |
+| **How It Works**      | Moderate Update | 3 steps instead of 5, add screenshots            |
+| **Comparison**        | Minor Update    | Rose pink accents, enhanced highlights           |
+| **Navigation**        | Minor Update    | Cleaner design, pink CTA                         |
+| **Waitlist Form**     | Moderate Update | Enhanced visuals, prominent pink button          |
+| **Footer**            | Minor Update    | Simplified, pink hover states                    |
+| **Problem Statement** | ❌ DELETE       | Removed entirely                                 |
+| **Pricing**           | ❌ DELETE       | Removed entirely                                 |
 
 ---
 
@@ -173,6 +183,7 @@ Ready to switch to Code mode? I'll start with Phase 1 (Foundation) and work thro
 ### Questions Before Starting?
 
 Common questions addressed:
+
 - ✅ Colors: Rose Pink (#fb7185) primary
 - ✅ Images: Placeholder or AI-generated, 1200x800px
 - ✅ Headlines: "Your Members Deserve Better Follow-Ups"
@@ -184,6 +195,7 @@ Common questions addressed:
 ## 📚 Full Documentation
 
 For complete details, see:
+
 - [`REDESIGN_PLAN.md`](REDESIGN_PLAN.md) - Full architectural plan
 - [`REDESIGN_PAGE_FLOW.md`](REDESIGN_PAGE_FLOW.md) - Visual page flow diagrams
 - [`ARCHITECTURE.md`](ARCHITECTURE.md) - Original architecture (for reference)
@@ -193,17 +205,20 @@ For complete details, see:
 ## 🎯 Success Criteria
 
 **Visual Impact:**
+
 - ✅ App screenshots prominent throughout
 - ✅ Rose pink color consistently applied
 - ✅ Clean, modern aesthetic matching aboardhr.com
 
 **User Experience:**
+
 - ✅ Clear benefit-driven messaging
 - ✅ Multiple conversion opportunities (5 CTAs)
 - ✅ Smooth scrolling navigation
 - ✅ Mobile-responsive design
 
 **Technical:**
+
 - ✅ TailwindCSS for all styling
 - ✅ Optimized images (<200KB each)
 - ✅ Fast page load times
@@ -211,4 +226,4 @@ For complete details, see:
 
 ---
 
-Ready to build this? Let's make StudioLoop's landing page amazing! 🚀
+Ready to build this? Let's make FitnessFollowup's landing page amazing! 🚀

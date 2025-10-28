@@ -1,4 +1,4 @@
-# StudioLoop Landing Page Flow & Structure
+# FitnessFollowup Landing Page Flow & Structure
 
 ## Visual Page Flow
 
@@ -13,20 +13,20 @@ graph TD
     A --> H[Pricing Section]
     A --> I[Waitlist Form]
     A --> J[Footer]
-    
+
     C --> C1[Headline]
     C --> C2[Subheadline]
     C --> C3[Primary CTA Button]
     C --> C4[Social Proof]
-    
+
     E --> E1[For Instructors Card]
     E --> E2[For Studio Owners Card]
     E --> E3[For Members Card]
-    
+
     G --> G1[Feature Comparison]
     G --> G2[Price Highlight]
     G --> G3[Best For Context]
-    
+
     I --> I1[Email Field]
     I --> I2[Studio Name Field]
     I --> I3[Role Dropdown]
@@ -47,11 +47,11 @@ graph LR
     Index --> Pricing[Pricing.astro]
     Index --> Waitlist[WaitlistForm.astro]
     Index --> Footer[Footer.astro]
-    
+
     Features --> Card1[FeatureCard.astro]
     Features --> Card2[FeatureCard.astro]
     Features --> Card3[FeatureCard.astro]
-    
+
     Layout --> GlobalCSS[global.css]
 ```
 
@@ -62,20 +62,20 @@ flowchart TD
     Start[User Lands on Page] --> Hero{Interested?}
     Hero -->|Yes| ScrollDown[Scrolls Down]
     Hero -->|No| Bounce[Leaves Site]
-    
+
     ScrollDown --> ReadProblem[Reads Problem Statement]
     ReadProblem --> CheckFeatures[Reviews Features]
     CheckFeatures --> CompareOptions[Compares vs FitGrid]
     CompareOptions --> CheckPrice[Sees Pricing]
-    
+
     CheckPrice --> Decision{Convinced?}
     Decision -->|Yes| FillForm[Fills Waitlist Form]
     Decision -->|No| Reconsider[Scrolls Back Up]
-    
+
     FillForm --> Submit[Submits Form]
     Submit --> Success[Success Message]
     Success --> Share[May Share with Network]
-    
+
     Reconsider --> Hero
 ```
 
@@ -88,7 +88,7 @@ graph TB
     V3 -->|50%| V4[240 Scroll to Pricing]
     V4 -->|40%| V5[96 Start Form]
     V5 -->|80%| V6[77 Complete Signup]
-    
+
     style V6 fill:#10B981,stroke:#059669,color:#fff
 ```
 
@@ -97,18 +97,21 @@ graph TB
 ## Mobile vs Desktop Layout
 
 ### Desktop Layout (> 1024px)
+
 - Three-column feature cards
 - Side-by-side comparison table
 - Wide hero with large typography
 - Sticky navigation
 
 ### Tablet Layout (640px - 1024px)
+
 - Two-column feature cards
 - Condensed comparison table
 - Medium-sized hero
 - Standard navigation
 
 ### Mobile Layout (< 640px)
+
 - Single-column stacked layout
 - Card-based comparison (no table)
 - Compact hero with smaller text
@@ -116,24 +119,24 @@ graph TB
 
 ## Color Usage Map
 
-| Section | Primary Color | Secondary Color | Accent Color |
-|---------|---------------|-----------------|--------------|
-| Navigation | White BG | Indigo (CTA) | - |
-| Hero | White BG | Indigo (CTA) | Pink (gradient) |
-| Problem | Gray 50 BG | - | Emerald (savings) |
-| Features | White BG | Indigo (icons) | - |
-| How It Works | Gray 50 BG | Indigo (numbers) | - |
-| Comparison | White BG | Indigo (highlight) | Emerald (checkmarks) |
-| Pricing | Gradient BG | Pink | Emerald (included) |
-| Waitlist | White BG | Indigo (button) | - |
-| Footer | Gray 900 BG | White text | - |
+| Section      | Primary Color | Secondary Color    | Accent Color         |
+| ------------ | ------------- | ------------------ | -------------------- |
+| Navigation   | White BG      | Indigo (CTA)       | -                    |
+| Hero         | White BG      | Indigo (CTA)       | Pink (gradient)      |
+| Problem      | Gray 50 BG    | -                  | Emerald (savings)    |
+| Features     | White BG      | Indigo (icons)     | -                    |
+| How It Works | Gray 50 BG    | Indigo (numbers)   | -                    |
+| Comparison   | White BG      | Indigo (highlight) | Emerald (checkmarks) |
+| Pricing      | Gradient BG   | Pink               | Emerald (included)   |
+| Waitlist     | White BG      | Indigo (button)    | -                    |
+| Footer       | Gray 900 BG   | White text         | -                    |
 
 ## Interaction Points
 
 1. **Navigation CTA** → Smooth scroll to waitlist form
 2. **Hero CTA** → Smooth scroll to waitlist form
 3. **Feature Cards** → Hover effects, subtle animations
-4. **Comparison Table** → Highlight StudioLoop column
+4. **Comparison Table** → Highlight FitnessFollowup column
 5. **Pricing CTA** → Scroll to waitlist form
 6. **Form Fields** → Real-time validation
 7. **Submit Button** → Loading state → Success message
@@ -170,6 +173,7 @@ graph TB
 ## Implementation Priority
 
 ### Phase 1: Foundation (Must Have)
+
 1. Layout.astro with proper meta tags
 2. Navigation component
 3. Hero section
@@ -179,6 +183,7 @@ graph TB
 7. Footer
 
 ### Phase 2: Enhancement (Should Have)
+
 1. Problem statement section
 2. How it works section
 3. Pricing section with visual appeal
@@ -186,6 +191,7 @@ graph TB
 5. Smooth scrolling
 
 ### Phase 3: Polish (Nice to Have)
+
 1. Micro-interactions
 2. Animations on scroll
 3. Loading states

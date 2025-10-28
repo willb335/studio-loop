@@ -1,8 +1,8 @@
-# StudioLoop Implementation Guide
+# FitnessFollowup Implementation Guide
 
 ## Quick Start
 
-This guide provides a step-by-step implementation plan for building the StudioLoop landing page based on the architecture defined in [ARCHITECTURE.md](ARCHITECTURE.md).
+This guide provides a step-by-step implementation plan for building the FitnessFollowup landing page based on the architecture defined in [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ---
 
@@ -17,7 +17,7 @@ src/
 │   ├── Features.astro         ← Three-column features
 │   ├── FeatureCard.astro      ← Reusable feature card
 │   ├── HowItWorks.astro       ← 5-step process
-│   ├── ComparisonTable.astro  ← StudioLoop vs FitGrid
+│   ├── ComparisonTable.astro  ← FitnessFollowup vs FitGrid
 │   ├── Pricing.astro          ← $29/month pricing card
 │   ├── WaitlistForm.astro     ← Form with Formspark
 │   └── Footer.astro           ← Footer with links
@@ -45,7 +45,7 @@ interface Props {
 }
 
 const {
-  title = "StudioLoop - Affordable FitGrid Alternative | $29/month",
+  title = "FitnessFollowup - Affordable FitGrid Alternative | $29/month",
   description = "Connect with your fitness members through automated post-class follow-ups. Built for boutique studios using MindBody. Just $29/month, no contract."
 } = Astro.props;
 ---
@@ -66,7 +66,7 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://studioloop.vercel.app" />
+    <meta property="og:url" content="https://FitnessFollowup.vercel.app" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -194,7 +194,7 @@ import Footer from '../components/Footer.astro';
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
       <div class="flex items-center">
-        <span class="text-2xl font-semibold text-indigo-600">StudioLoop</span>
+        <span class="text-2xl font-semibold text-indigo-600">FitnessFollowup</span>
       </div>
       <button
         onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})"
@@ -398,7 +398,7 @@ Then use on buttons:
 
 ```bash
 git add .
-git commit -m "Initial StudioLoop landing page"
+git commit -m "Initial FitnessFollowup landing page"
 git push origin main
 ```
 
@@ -413,7 +413,7 @@ git push origin main
 ### 3. Configure Custom Domain (Optional)
 
 1. Vercel dashboard → Project → Settings → Domains
-2. Add: `studioloop.vercel.app` (or custom domain)
+2. Add: `FitnessFollowup.vercel.app` (or custom domain)
 3. Follow DNS instructions
 
 ### 4. Enable Vercel Analytics

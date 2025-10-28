@@ -1,8 +1,8 @@
-# StudioLoop Landing Page Architecture
+# FitnessFollowup Landing Page Architecture
 
 ## Overview
 
-A modern, conversion-focused single-page landing site designed to validate interest in StudioLoop - an affordable FitGrid alternative for boutique fitness studios.
+A modern, conversion-focused single-page landing site designed to validate interest in FitnessFollowup - an affordable FitGrid alternative for boutique fitness studios.
 
 ---
 
@@ -33,32 +33,40 @@ A modern, conversion-focused single-page landing site designed to validate inter
 ### Typography
 
 **Font Pairing: Inter + Poppins**
+
 - **Headings**: [Poppins](https://fonts.google.com/specimen/Poppins) - Modern, geometric, confident
   - Weights: 600 (SemiBold) for H1/H2, 500 (Medium) for H3
 - **Body**: [Inter](https://fonts.google.com/specimen/Inter) - Highly readable, professional
   - Weights: 400 (Regular) for body, 500 (Medium) for emphasis
 
 **Why This Pairing?**
+
 - Poppins provides bold, attention-grabbing headlines
 - Inter offers exceptional readability for longer content
 - Both are optimized for screen display
 - Professional yet approachable (perfect for fitness tech)
 
 **Scale**:
-  - H1: 3.5rem (56px) desktop, 2.5rem (40px) mobile - Poppins SemiBold
-  - H2: 2.5rem (40px) desktop, 2rem (32px) mobile - Poppins SemiBold
-  - H3: 1.875rem (30px) - Poppins Medium
-  - Body: 1.125rem (18px) - Inter Regular
-  - Small: 0.875rem (14px) - Inter Regular
+
+- H1: 3.5rem (56px) desktop, 2.5rem (40px) mobile - Poppins SemiBold
+- H2: 2.5rem (40px) desktop, 2rem (32px) mobile - Poppins SemiBold
+- H3: 1.875rem (30px) - Poppins Medium
+- Body: 1.125rem (18px) - Inter Regular
+- Small: 0.875rem (14px) - Inter Regular
 
 **Implementation**:
+
 ```html
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
+  rel="stylesheet"
+/>
 ```
 
 **CSS Configuration**:
+
 ```css
 :root {
   --font-heading: 'Poppins', system-ui, sans-serif;
@@ -106,7 +114,7 @@ Following Tailwind's 4px base scale:
 │  - 5-step process               │
 ├─────────────────────────────────┤
 │  Comparison Table               │
-│  - StudioLoop vs FitGrid        │
+│  - FitnessFollowup vs FitGrid        │
 ├─────────────────────────────────┤
 │  Pricing Section                │
 │  - Single clear price           │
@@ -205,7 +213,7 @@ Following Tailwind's 4px base scale:
 **Table Structure**:
 
 ```
-| Feature              | FitGrid      | StudioLoop  |
+| Feature              | FitGrid      | FitnessFollowup  |
 |---------------------|--------------|-------------|
 | Price               | $169-325/mo  | $29/mo      |
 | Setup Time          | 2-3 weeks    | 5 minutes   |
@@ -218,7 +226,7 @@ Following Tailwind's 4px base scale:
 
 **Design**:
 
-- Highlight StudioLoop column with subtle background color
+- Highlight FitnessFollowup column with subtle background color
 - Use checkmarks and x-marks (not just text)
 - Mobile: Stack into card format
 
@@ -250,8 +258,8 @@ Following Tailwind's 4px base scale:
 1. Email (required, validated)
 2. Studio Name (required)
 3. Studio Website (optional)
-3. Role (dropdown: Studio Owner / Instructor / Other)
-4. Optional: Studio size (1-5, 6-10, 11-20, 21+ instructors)
+4. Role (dropdown: Studio Owner / Instructor / Other)
+5. Optional: Studio size (1-5, 6-10, 11-20, 21+ instructors)
 
 **Form Behavior**:
 
@@ -347,14 +355,14 @@ src/
 ### Meta Tags & SEO
 
 ```html
-<title>StudioLoop - Affordable FitGrid Alternative | $29/month</title>
+<title>FitnessFollowup - Affordable FitGrid Alternative | $29/month</title>
 <meta
   name="description"
   content="Connect with your fitness members through automated post-class follow-ups. Built for boutique studios using MindBody. Just $29/month, no contract."
 />
 <meta
   property="og:title"
-  content="StudioLoop - The Affordable FitGrid Alternative"
+  content="FitnessFollowup - The Affordable FitGrid Alternative"
 />
 <meta
   property="og:description"
@@ -372,7 +380,6 @@ src/
 - Compress images
 
 ---
-
 
 ## Development Phases
 
@@ -433,7 +440,7 @@ Once launched, track:
 ## Project Details (Confirmed)
 
 1. **Logo**: User will create custom logo
-2. **Domain**: studioloop.vercel.app
+2. **Domain**: FitnessFollowup.vercel.app
 3. **Analytics**: Vercel Analytics + Microsoft Clarity (both free) - see ANALYTICS_AND_TRACKING.md
 4. **Form Service**: Formspark.io
 5. **Launch Timeline**: 1 week from now

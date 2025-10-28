@@ -1,4 +1,4 @@
-# StudioLoop Redesign - Page Flow & Visual Hierarchy
+# FitnessFollowup Redesign - Page Flow & Visual Hierarchy
 
 This document provides a visual overview of the redesigned page structure inspired by aboardhr.com.
 
@@ -30,30 +30,30 @@ graph LR
     B --> C[Navigation]
     B --> D[Main Content]
     B --> E[Footer]
-    
+
     D --> F[Hero]
     D --> G[Features]
     D --> H[How It Works]
     D --> I[Comparison]
     D --> J[Waitlist Form]
-    
+
     F --> F1[Headline: Your Members Deserve Better Follow-Ups]
     F --> F2[Large Dashboard Screenshot]
     F --> F3[Dual CTAs]
-    
+
     G --> G1[Feature Row 1: Automated Emails + Screenshot]
     G --> G2[Feature Row 2: Feedback + Screenshot]
     G --> G3[Feature Row 3: Integration + Screenshot]
     G --> G4[3 Small Feature Cards with Emojis]
-    
+
     H --> H1[Step 1: Connect + Visual]
     H --> H2[Step 2: Customize + Email Screenshot]
     H --> H3[Step 3: Engage + Dashboard Screenshot]
-    
+
     I --> I1[Desktop Table View]
     I --> I2[Mobile Card View]
     I --> I3[Savings Highlight]
-    
+
     J --> J1[Form Fields]
     J --> J2[Rose Pink Submit Button]
     J --> J3[Social Proof]
@@ -65,7 +65,7 @@ graph LR
 
 ```
 ╔════════════════════════════════════════════════════════════╗
-║  📱 StudioLoop Logo                    [Join Waitlist]     ║ ← Navigation (Sticky, White)
+║  📱 FitnessFollowup Logo                    [Join Waitlist]     ║ ← Navigation (Sticky, White)
 ╠════════════════════════════════════════════════════════════╣
 ║                                                            ║
 ║              Your Members Deserve                          ║
@@ -135,14 +135,14 @@ graph LR
 ║   All the features you need, none of the complexity...     ║  ← Comparison Table
 ║                                                            ║  (White BG)
 ║   ┌──────────────────────────────────────────────┐        ║
-║   │ Feature    │  FitGrid   │  StudioLoop (Pink) │        ║
+║   │ Feature    │  FitGrid   │  FitnessFollowup (Pink) │        ║
 ║   ├──────────────────────────────────────────────┤        ║
 ║   │ Price      │ $169-325   │  $29 (Large/Bold)  │        ║
 ║   │ Features   │  ✓ Gray    │  ✓ Pink            │        ║
 ║   │ Contract   │  Required  │  No Contract ✓     │        ║
 ║   └──────────────────────────────────────────────┘        ║
 ║                                                            ║
-║     Save $1,800+ per year with StudioLoop                  ║
+║     Save $1,800+ per year with FitnessFollowup                  ║
 ║              [Start Saving Today →]                        ║
 ║                                                            ║
 ╠════════════════════════════════════════════════════════════╣
@@ -161,9 +161,9 @@ graph LR
 ║   └─────────────────────────────────────────┘             ║
 ║                                                            ║
 ╠════════════════════════════════════════════════════════════╣
-║  StudioLoop                   Contact: hello@studioloop.io ║
+║  FitnessFollowup                   Contact: hello@FitnessFollowup.io ║
 ║  Built with ❤️ for boutique   Privacy | Terms             ║  ← Footer (Minimal)
-║  fitness studios              © 2024 StudioLoop           ║
+║  fitness studios              © 2024 FitnessFollowup           ║
 ╚════════════════════════════════════════════════════════════╝
 ```
 
@@ -229,7 +229,7 @@ graph LR
 ║  Comparison               ║
 ║                           ║
 ║  ┌─────────────────────┐  ║
-║  │ StudioLoop (Pink)   │  ║
+║  │ FitnessFollowup (Pink)   │  ║
 ║  │ $29/month           │  ║ ← Card-based
 ║  │ ✓ Features          │  ║   Comparison
 ║  │ ✓ No contract       │  ║
@@ -263,18 +263,20 @@ graph LR
 ### Rose Pink (#fb7185) - Primary Brand Color
 
 **Used in:**
+
 - Navigation: "Join Waitlist" button background
 - Hero: Primary CTA button background
 - Features: App UI elements in screenshots (buttons, accents)
 - Features: Checkmarks and highlights
 - How It Works: Step number circles background
-- Comparison: StudioLoop column highlights, checkmarks, price emphasis
+- Comparison: FitnessFollowup column highlights, checkmarks, price emphasis
 - Waitlist: Submit button background
 - Footer: Link hover states
 
 ### Pink-50 (#fff1f2) - Subtle Backgrounds
 
 **Used in:**
+
 - Hero: Optional subtle gradient background
 - Features: Alternating row backgrounds
 - Waitlist: Section background
@@ -282,20 +284,24 @@ graph LR
 ### Pink-100 (#ffe4e6) - Hover States
 
 **Used in:**
+
 - Button hover states (slightly darker than base pink)
 - Interactive element highlights
 
 ### Neutral Grays
 
 **Primary Text** (Neutral-900 #171717):
+
 - All headlines
 - Important copy
 
 **Body Text** (Neutral-600 #525252):
+
 - Descriptions
 - Supporting copy
 
 **Backgrounds**:
+
 - White: Main sections
 - Neutral-50: Subtle section variations
 
@@ -313,11 +319,13 @@ graph LR
 ### Placeholder Strategy
 
 **During Development:**
+
 - Use solid color rectangles with dimensions noted
 - Add text overlay: "Dashboard Screenshot - 1200x800"
 - Background color: Pink-100 with border
 
 **Final Assets:**
+
 - Generate with AI using provided prompts
 - Or create actual screenshots from built app
 - Optimize for web (compress to ~150-200KB per image)
@@ -354,6 +362,7 @@ journey
 ### Call-to-Action Hierarchy
 
 **Primary CTAs** (Rose Pink buttons):
+
 1. Navigation: "Join Waitlist"
 2. Hero: "Join the Waitlist"
 3. How It Works: "Start Your Free Setup"
@@ -361,6 +370,7 @@ journey
 5. Waitlist Form: "Join Waitlist"
 
 **Secondary CTAs** (Outlined buttons):
+
 1. Hero: "See How It Works" (scrolls to How It Works section)
 
 ### Scroll Behavior
@@ -380,18 +390,21 @@ All "Join Waitlist" buttons → Smooth scroll to Waitlist Form section
 ## Responsive Breakpoints Summary
 
 ### Desktop (≥ 1024px)
+
 - Two-column feature layouts
 - Wide comparison table
 - Large hero image (1100px max-width)
 - Generous spacing
 
 ### Tablet (640px - 1023px)
+
 - Single column features (image stacked on text)
 - Comparison table starts to condense
 - Medium spacing
 - Maintain visual hierarchy
 
 ### Mobile (< 640px)
+
 - All single column
 - Card-based comparison
 - Stacked navigation elements
@@ -403,16 +416,19 @@ All "Join Waitlist" buttons → Smooth scroll to Waitlist Form section
 ## Success Indicators
 
 **Visual Impact:**
+
 - User sees app within 2 seconds
 - Clear value proposition immediately visible
 - Strong color consistency (rose pink throughout)
 
 **User Understanding:**
+
 - Can explain product in 30 seconds after viewing
 - Understands pricing instantly
 - Knows how to get started
 
 **Conversion Optimization:**
+
 - Multiple CTA opportunities (5 main buttons)
 - Clear next step at every section
 - Minimal friction to join waitlist

@@ -1,9 +1,8 @@
-
-# StudioLoop Landing Page Redesign Plan
+# FitnessFollowup Landing Page Redesign Plan
 
 ## Overview
 
-Complete redesign of the StudioLoop landing page inspired by [aboardhr.com](https://www.aboardhr.com), focusing on visual impact through app screenshots, benefit-driven messaging, and a modern Rose Pink color palette. This redesign prioritizes showing the product through images to grab user attention immediately.
+Complete redesign of the FitnessFollowup landing page inspired by [aboardhr.com](https://www.aboardhr.com), focusing on visual impact through app screenshots, benefit-driven messaging, and a modern Rose Pink color palette. This redesign prioritizes showing the product through images to grab user attention immediately.
 
 ---
 
@@ -34,39 +33,39 @@ Complete redesign of the StudioLoop landing page inspired by [aboardhr.com](http
 
 ```css
 /* Rose Pink Shades (Primary Brand) */
---pink-50: #fff1f2;    /* Lightest - backgrounds */
---pink-100: #ffe4e6;   /* Light - hover states */
---pink-200: #fecdd3;   /* Soft accents */
---pink-300: #fda4af;   /* Medium light */
---pink-400: #fb7185;   /* PRIMARY BRAND COLOR - Rose Pink */
---pink-500: #f43f5e;   /* Darker pink */
---pink-600: #e11d48;   /* Dark pink */
---pink-700: #be123c;   /* Very dark */
---pink-800: #9f1239;   /* Almost red */
+--pink-50: #fff1f2; /* Lightest - backgrounds */
+--pink-100: #ffe4e6; /* Light - hover states */
+--pink-200: #fecdd3; /* Soft accents */
+--pink-300: #fda4af; /* Medium light */
+--pink-400: #fb7185; /* PRIMARY BRAND COLOR - Rose Pink */
+--pink-500: #f43f5e; /* Darker pink */
+--pink-600: #e11d48; /* Dark pink */
+--pink-700: #be123c; /* Very dark */
+--pink-800: #9f1239; /* Almost red */
 ```
 
 ### Neutral Colors
 
 ```css
 /* Grays - Based on Tailwind neutral palette */
---neutral-50: #fafafa;   /* Background */
---neutral-100: #f5f5f5;  /* Light background */
---neutral-200: #e5e5e5;  /* Border */
---neutral-300: #d4d4d4;  /* Light text */
---neutral-400: #a3a3a3;  /* Muted text */
---neutral-500: #737373;  /* Secondary text */
---neutral-600: #525252;  /* Body text */
---neutral-700: #404040;  /* Dark text */
---neutral-800: #262626;  /* Darker */
---neutral-900: #171717;  /* Darkest - headlines */
+--neutral-50: #fafafa; /* Background */
+--neutral-100: #f5f5f5; /* Light background */
+--neutral-200: #e5e5e5; /* Border */
+--neutral-300: #d4d4d4; /* Light text */
+--neutral-400: #a3a3a3; /* Muted text */
+--neutral-500: #737373; /* Secondary text */
+--neutral-600: #525252; /* Body text */
+--neutral-700: #404040; /* Dark text */
+--neutral-800: #262626; /* Darker */
+--neutral-900: #171717; /* Darkest - headlines */
 ```
 
 ### Semantic Colors
 
 ```css
---success: #10b981;   /* Green - Emerald 500 */
---warning: #f59e0b;   /* Amber 500 */
---error: #ef4444;     /* Red 500 */
+--success: #10b981; /* Green - Emerald 500 */
+--warning: #f59e0b; /* Amber 500 */
+--error: #ef4444; /* Red 500 */
 ```
 
 ### Color Usage Guidelines
@@ -123,6 +122,7 @@ All screenshots will be **1200x800px PNG** format with Rose Pink (#fb7185) accen
 ### Image Treatment
 
 All app screenshots in the hero and throughout the page should be displayed with:
+
 - **Rounded corners**: `border-radius: 1rem` (16px)
 - **Subtle shadow**: `box-shadow: 0 20px 60px rgba(251, 113, 133, 0.15)`
 - **Gradient border** (optional): Subtle pink gradient overlay on edges
@@ -146,6 +146,7 @@ All app screenshots in the hero and throughout the page should be displayed with
 ```
 
 **Removed Sections**:
+
 - ❌ Problem Statement
 - ❌ Pricing Section
 
@@ -158,6 +159,7 @@ All app screenshots in the hero and throughout the page should be displayed with
 **File**: `src/components/Navigation.astro`
 
 **Design Changes**:
+
 - Clean, minimal navbar with white background
 - Rose pink accent for hover states
 - Prominent "Join Waitlist" button in rose pink
@@ -165,14 +167,16 @@ All app screenshots in the hero and throughout the page should be displayed with
 - Sticky positioning with subtle shadow on scroll
 
 **Layout**:
+
 ```
 ┌─────────────────────────────────────────────┐
-│ [StudioLoop Logo]          [Join Waitlist]  │
+│ [FitnessFollowup Logo]          [Join Waitlist]  │
 │                              (Pink Button)   │
 └─────────────────────────────────────────────┘
 ```
 
 **Visual Specs**:
+
 - Height: 80px
 - Background: White with border-bottom on scroll
 - Logo: Text-based or icon (left-aligned)
@@ -189,6 +193,7 @@ All app screenshots in the hero and throughout the page should be displayed with
 Large, benefit-focused headline with massive app screenshot below, similar to aboardhr's hero treatment. The screenshot should be the dominant visual element.
 
 **Layout**:
+
 ```
 ┌─────────────────────────────────────────────┐
 │                                             │
@@ -213,19 +218,23 @@ Large, benefit-focused headline with massive app screenshot below, similar to ab
 ```
 
 **Content**:
-- **Headline**: "Your Members Deserve Better Follow-Ups" 
+
+- **Headline**: "Your Members Deserve Better Follow-Ups"
+
   - Font: Poppins Bold, 56px (desktop) / 36px (mobile)
   - Color: Neutral-900
   - Max-width: 900px
   - Line height: 1.1
 
 - **Subheadline**: "Strengthen connections with automated, personalized post-class emails. Built for boutique fitness studios. Just $29/month."
+
   - Font: Inter Regular, 20px (desktop) / 18px (mobile)
   - Color: Neutral-600
   - Max-width: 700px
   - Line height: 1.6
 
 - **Primary CTA**: "Join the Waitlist"
+
   - Background: Rose pink (#fb7185)
   - Padding: 16px 32px
   - Border-radius: 12px
@@ -239,6 +248,7 @@ Large, benefit-focused headline with massive app screenshot below, similar to ab
   - Color: Neutral-700
 
 **App Screenshot Treatment**:
+
 - Image: Instructor Dashboard (instructor-dashboard.png)
 - Max-width: 1100px
 - Border-radius: 16px
@@ -248,6 +258,7 @@ Large, benefit-focused headline with massive app screenshot below, similar to ab
 - Responsive: Full width on mobile with 20px horizontal padding
 
 **Background**:
+
 - Clean white background
 - Optional: Very subtle radial gradient from pink-50 to white
 - Padding: 120px top, 100px bottom (desktop)
@@ -262,6 +273,7 @@ Large, benefit-focused headline with massive app screenshot below, similar to ab
 Instead of simple icon-text cards, create a more visual section with app screenshot snippets and emoji placeholders. Alternate layout: text-left with image-right, then flip.
 
 **Layout Pattern** (Alternating):
+
 ```
 ┌─────────────────────────────────────────────┐
 │  Feature 1: Text Left / Image Right          │
@@ -283,6 +295,7 @@ Instead of simple icon-text cards, create a more visual section with app screens
 **Features** (6 total - showcase in 3 rows):
 
 **Row 1**: Automated Post-Class Emails
+
 - Emoji: 📧 (placeholder for mail icon)
 - Title: "Automated Post-Class Emails"
 - Description: "Send personalized follow-ups automatically after every class. Your members feel valued without any manual work."
@@ -290,6 +303,7 @@ Instead of simple icon-text cards, create a more visual section with app screens
 - Layout: Text left, image right
 
 **Row 2**: 10-Star Member Feedback
+
 - Emoji: ⭐ (placeholder for star icon)
 - Title: "Detailed Member Feedback"
 - Description: "Collect meaningful insights with our 10-star rating system. Understand what your members love and where to improve."
@@ -297,6 +311,7 @@ Instead of simple icon-text cards, create a more visual section with app screens
 - Layout: Image left, text right
 
 **Row 3**: Seamless MindBody Integration
+
 - Emoji: 🔗 (placeholder for integration icon)
 - Title: "One-Click MindBody Sync"
 - Description: "Connect your MindBody account in minutes. We automatically sync classes, instructors, and member lists."
@@ -306,11 +321,13 @@ Instead of simple icon-text cards, create a more visual section with app screens
 **Additional Features** (Smaller cards grid below):
 
 Display 3 more features in simple cards with emojis:
+
 - 💰 Affordable Pricing - "Just $29/month. No contracts, no surprises."
 - ⚡ 5-Minute Setup - "Get started faster than brewing coffee."
 - 📊 Simple Analytics - "Track engagement without complexity."
 
 **Visual Specs**:
+
 - Section Background: White
 - Alternating row backgrounds: White / Pink-50
 - Section padding: 120px vertical
@@ -331,9 +348,10 @@ Display 3 more features in simple cards with emojis:
 Clean, numbered steps with app screenshots showing the actual process. Make it feel like a journey through the product.
 
 **Layout**:
+
 ```
 ┌─────────────────────────────────────────────┐
-│          "How StudioLoop Works"              │
+│          "How FitnessFollowup Works"              │
 │         [Section Headline + Description]     │
 │                                             │
 │   ┌──[1]────────────────────────┐          │
@@ -361,24 +379,28 @@ Clean, numbered steps with app screenshots showing the actual process. Make it f
 **Steps** (3-step process):
 
 **Step 1**: Connect Your Studio
+
 - Emoji: 🔗 (placeholder for connect icon)
 - Title: "Connect Your Studio"
 - Description: "Link your MindBody account with one click. We'll automatically import your classes, instructors, and member list. Setup takes just minutes."
 - Visual: Placeholder image showing connection/integration interface
 
 **Step 2**: Alert Your Instructors
+
 - Emoji: 👥 (placeholder for users/instructors icon)
 - Title: "Invite Your Instructors"
 - Description: "Notify your instructors to sign into the instructor email template dashboard. They can customize their follow-up messages and make them personal."
 - Visual: Placeholder image showing instructor dashboard/template editor
 
 **Step 3**: Track Engagement
+
 - Emoji: 📊 (placeholder for analytics icon)
 - Title: "Monitor Results"
 - Description: "Track all emails sent and member reviews via your dashboard. See engagement metrics, response rates, and member feedback in real-time."
 - Visual: Placeholder image showing analytics dashboard with email stats and reviews
 
 **Visual Specs**:
+
 - Section Background: Light gradient (white to pink-50)
 - Section padding: 120px vertical
 - Max-width: 900px for content
@@ -398,13 +420,15 @@ Clean, numbered steps with app screenshots showing the actual process. Make it f
 **File**: `src/components/ComparisonTable.astro`
 
 **Design Changes**:
+
 - Rose pink highlights instead of generic green/blue
-- More visual emphasis on StudioLoop column
+- More visual emphasis on FitnessFollowup column
 - Cleaner, more modern table design
 - Better mobile experience
 
 **Key Updates**:
-- StudioLoop column background: Subtle pink-50
+
+- FitnessFollowup column background: Subtle pink-50
 - Checkmarks: Rose pink color (#fb7185) instead of generic green
 - Price row: Large, bold "$29" in rose pink
 - "Recommended" badge: Rose pink with white text
@@ -412,6 +436,7 @@ Clean, numbered steps with app screenshots showing the actual process. Make it f
 - Hover effects: Subtle pink tint on rows
 
 **Content** (Keep existing comparison points):
+
 - Monthly Price: $169-325 vs **$29**
 - Post-class emails: ✓ vs ✓ (pink)
 - MindBody integration: ✓ vs ✓ (pink)
@@ -420,8 +445,9 @@ Clean, numbered steps with app screenshots showing the actual process. Make it f
 - Built for boutique studios: Enterprise focus vs ✓ (pink)
 
 **Visual Specs**:
+
 - Section background: White
-- Table background: White with pink-50 for StudioLoop column
+- Table background: White with pink-50 for FitnessFollowup column
 - Border-radius on table: 16px
 - Section padding: 100px vertical
 - Max-width: 1100px
@@ -434,6 +460,7 @@ Clean, numbered steps with app screenshots showing the actual process. Make it f
 **File**: `src/components/WaitlistForm.astro`
 
 **Design Improvements**:
+
 - Larger, more prominent form
 - Rose pink submit button
 - Better visual hierarchy
@@ -441,6 +468,7 @@ Clean, numbered steps with app screenshots showing the actual process. Make it f
 - Clear value proposition above form
 
 **Layout**:
+
 ```
 ┌─────────────────────────────────────────────┐
 │     "Ready to Transform Member Engagement?"  │
@@ -460,6 +488,7 @@ Clean, numbered steps with app screenshots showing the actual process. Make it f
 ```
 
 **Visual Specs**:
+
 - Section background: Pink-50
 - Form container: White, rounded (20px), shadow
 - Max-width: 600px
@@ -476,11 +505,13 @@ Clean, numbered steps with app screenshots showing the actual process. Make it f
 **File**: `src/components/Footer.astro`
 
 **Design**:
+
 - Minimal, clean footer
 - Rose pink accent for links on hover
 - Simple layout with essential links only
 
 **Content**:
+
 - Logo/Brand name
 - Contact email
 - Links: Privacy, Terms
@@ -506,7 +537,7 @@ export default {
           100: '#ffe4e6',
           200: '#fecdd3',
           300: '#fda4af',
-          400: '#fb7185',  // Primary Brand Color
+          400: '#fb7185', // Primary Brand Color
           500: '#f43f5e',
           600: '#e11d48',
           700: '#be123c',
@@ -519,7 +550,7 @@ export default {
         body: ['Inter', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        'pink': '0 25px 70px rgba(251, 113, 133, 0.2)',
+        pink: '0 25px 70px rgba(251, 113, 133, 0.2)',
         'pink-lg': '0 30px 80px rgba(251, 113, 133, 0.25)',
       },
       backgroundImage: {
@@ -529,7 +560,7 @@ export default {
     },
   },
   plugins: [],
-}
+};
 ```
 
 ---
@@ -539,12 +570,14 @@ export default {
 ### Phase 1: Foundation & Assets (Day 1)
 
 **Tasks**:
+
 1. ✅ Update TailwindCSS configuration with Rose Pink palette
 2. ✅ Create placeholder images with correct dimensions
 3. ✅ Add image generation prompts to code comments
 4. ✅ Update global styles with new color variables
 
 **Files to Update**:
+
 - `tailwind.config.mjs`
 - `src/styles/global.css`
 - Create `/src/assets/app/` directory
@@ -553,12 +586,14 @@ export default {
 ### Phase 2: Core Components (Day 2)
 
 **Tasks**:
+
 1. ✅ Redesign Hero section with new headline and image
 2. ✅ Update Navigation with cleaner design
 3. ✅ Redesign Features section with alternating layout
 4. ✅ Update Waitlist Form with enhanced design
 
 **Files to Create/Update**:
+
 - `src/components/Hero.astro` (major redesign)
 - `src/components/Navigation.astro` (cleanup)
 - `src/components/Features.astro` (complete redesign)
@@ -567,12 +602,14 @@ export default {
 ### Phase 3: Secondary Components (Day 3)
 
 **Tasks**:
+
 1. ✅ Redesign How It Works with visual flow
 2. ✅ Update Comparison Table with pink accents
 3. ✅ Simplify Footer
 4. ✅ Update page structure (remove Problem Statement & Pricing)
 
 **Files to Update**:
+
 - `src/components/HowItWorks.astro` (redesign)
 - `src/components/ComparisonTable.astro` (refresh)
 - `src/components/Footer.astro` (simplify)
@@ -583,6 +620,7 @@ export default {
 ### Phase 4: Polish & Testing (Day 4)
 
 **Tasks**:
+
 1. ✅ Responsive design testing
 2. ✅ Cross-browser testing
 3. ✅ Performance optimization
@@ -603,30 +641,35 @@ export default {
 ### Mobile-Specific Considerations
 
 **Hero Section**:
+
 - Stack headline and image vertically
 - Reduce headline size: 36px → 28px
 - Single column CTAs
 - Smaller app screenshot with maintained aspect ratio
 
 **Features Section**:
+
 - All text-image rows become stacked (image on top, text below)
 - Maintain order for reading flow
 - Full-width images with horizontal padding
 - Smaller emoji size: 36px
 
 **How It Works**:
+
 - Vertical-only layout
 - Smaller step numbers: 48px diameter
 - Remove connector arrows or simplify
 - Stack content in logical order
 
 **Comparison Table**:
+
 - Convert to card-based layout
-- Show FitGrid vs StudioLoop in alternating cards
-- Maintain pink highlights for StudioLoop
+- Show FitGrid vs FitnessFollowup in alternating cards
+- Maintain pink highlights for FitnessFollowup
 - Easier to scan vertically
 
 **Navigation**:
+
 - Simplified header with logo and button only
 - Button might become icon on very small screens
 - Sticky behavior maintained
@@ -640,6 +683,7 @@ export default {
 All emojis are **temporary** and will be replaced with HugeIcons SVGs later.
 
 **Features**:
+
 - 📧 → HugeIcons: Mail/Email icon
 - ⭐ → HugeIcons: Star icon
 - 🔗 → HugeIcons: Link/Integration icon
@@ -648,6 +692,7 @@ All emojis are **temporary** and will be replaced with HugeIcons SVGs later.
 - 📊 → HugeIcons: Chart/Analytics icon
 
 **How It Works**:
+
 - 🔗 → HugeIcons: Plugin/Connect icon
 - 👥 → HugeIcons: Users/Instructors icon
 - 📊 → HugeIcons: Chart/Analytics icon
@@ -670,21 +715,25 @@ All emojis are **temporary** and will be replaced with HugeIcons SVGs later.
 ### Hero Section
 
 **Primary Headline**: "Your Members Deserve Better Follow-Ups"
+
 - **Why this works**: Benefit-focused, emotional, emphasizes member value
-- **Alternative options**: 
+- **Alternative options**:
   - "Build Stronger Connections After Every Class"
   - "Turn Every Class Into a Lasting Relationship"
 
 **Subheadline**: "Strengthen connections with automated, personalized post-class emails. Built for boutique fitness studios. Just $29/month."
+
 - **Tone**: Professional but approachable
 - **Focus**: Benefit + target audience + price point
 
 ### Features Section
 
 **Headline**: "Everything You Need to Connect with Members"
+
 - **Subheadline**: "Simple, powerful features that help you build stronger relationships with your fitness community."
 
 **Feature Copy Principles**:
+
 - Start with benefit, not feature
 - Use active voice
 - Keep under 2 sentences per feature
@@ -693,9 +742,11 @@ All emojis are **temporary** and will be replaced with HugeIcons SVGs later.
 ### How It Works Section
 
 **Headline**: "Get Started in Minutes"
+
 - **Subheadline**: "Three simple steps to transform your member engagement."
 
 **Step Copy**:
+
 - Use action verbs
 - Emphasize speed and simplicity
 - Include member benefit in each step
@@ -703,6 +754,7 @@ All emojis are **temporary** and will be replaced with HugeIcons SVGs later.
 ### Comparison Section
 
 **Headline**: "The Smart Choice for Boutique Studios"
+
 - **Subheadline**: "All the features you need, none of the complexity you don't."
 
 ---
