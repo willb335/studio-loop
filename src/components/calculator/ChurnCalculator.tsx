@@ -97,7 +97,7 @@ export const ChurnCalculator: React.FC = () => {
               </h3>
               <p className="text-sm text-neutral-500 leading-relaxed">
                 We estimate how many members quietly churn and how much
-                FitnessFollowup could recover using proven Health & Fitness
+                FitnessFollowups could recover using proven Health & Fitness
                 Association and FitGrid benchmarks.
               </p>
             </header>

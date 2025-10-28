@@ -1,8 +1,8 @@
-# FitnessFollowup Landing Page Redesign Plan
+# FitnessFollowups Landing Page Redesign Plan
 
 ## Overview
 
-Complete redesign of the FitnessFollowup landing page inspired by [aboardhr.com](https://www.aboardhr.com), focusing on visual impact through app screenshots, benefit-driven messaging, and a modern Rose Pink color palette. This redesign prioritizes showing the product through images to grab user attention immediately.
+Complete redesign of the FitnessFollowups landing page inspired by [aboardhr.com](https://www.aboardhr.com), focusing on visual impact through app screenshots, benefit-driven messaging, and a modern Rose Pink color palette. This redesign prioritizes showing the product through images to grab user attention immediately.
 
 ---
 
@@ -170,7 +170,7 @@ All app screenshots in the hero and throughout the page should be displayed with
 
 ```
 ┌─────────────────────────────────────────────┐
-│ [FitnessFollowup Logo]          [Join Waitlist]  │
+│ [FitnessFollowups Logo]          [Join Waitlist]  │
 │                              (Pink Button)   │
 └─────────────────────────────────────────────┘
 ```
@@ -351,7 +351,7 @@ Clean, numbered steps with app screenshots showing the actual process. Make it f
 
 ```
 ┌─────────────────────────────────────────────┐
-│          "How FitnessFollowup Works"              │
+│          "How FitnessFollowups Works"              │
 │         [Section Headline + Description]     │
 │                                             │
 │   ┌──[1]────────────────────────┐          │
@@ -422,13 +422,13 @@ Clean, numbered steps with app screenshots showing the actual process. Make it f
 **Design Changes**:
 
 - Rose pink highlights instead of generic green/blue
-- More visual emphasis on FitnessFollowup column
+- More visual emphasis on FitnessFollowups column
 - Cleaner, more modern table design
 - Better mobile experience
 
 **Key Updates**:
 
-- FitnessFollowup column background: Subtle pink-50
+- FitnessFollowups column background: Subtle pink-50
 - Checkmarks: Rose pink color (#fb7185) instead of generic green
 - Price row: Large, bold "$29" in rose pink
 - "Recommended" badge: Rose pink with white text
@@ -447,7 +447,7 @@ Clean, numbered steps with app screenshots showing the actual process. Make it f
 **Visual Specs**:
 
 - Section background: White
-- Table background: White with pink-50 for FitnessFollowup column
+- Table background: White with pink-50 for FitnessFollowups column
 - Border-radius on table: 16px
 - Section padding: 100px vertical
 - Max-width: 1100px
@@ -664,8 +664,8 @@ export default {
 **Comparison Table**:
 
 - Convert to card-based layout
-- Show FitGrid vs FitnessFollowup in alternating cards
-- Maintain pink highlights for FitnessFollowup
+- Show FitGrid vs FitnessFollowups in alternating cards
+- Maintain pink highlights for FitnessFollowups
 - Easier to scan vertically
 
 **Navigation**:

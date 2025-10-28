@@ -1,4 +1,4 @@
-# FitnessFollowup Landing Page Flow & Structure
+# FitnessFollowups Landing Page Flow & Structure
 
 ## Visual Page Flow
 
@@ -136,7 +136,7 @@ graph TB
 1. **Navigation CTA** → Smooth scroll to waitlist form
 2. **Hero CTA** → Smooth scroll to waitlist form
 3. **Feature Cards** → Hover effects, subtle animations
-4. **Comparison Table** → Highlight FitnessFollowup column
+4. **Comparison Table** → Highlight FitnessFollowups column
 5. **Pricing CTA** → Scroll to waitlist form
 6. **Form Fields** → Real-time validation
 7. **Submit Button** → Loading state → Success message

@@ -1,6 +1,6 @@
-# Landing Page Optimization Strategy: FitnessFollowup Waitlist Conversion
+# Landing Page Optimization Strategy: FitnessFollowups Waitlist Conversion
 
-**Document Purpose:** Comprehensive strategy for optimizing the FitnessFollowup landing page to maximize waitlist conversions from Reddit traffic, focused on validating market demand before building the app.
+**Document Purpose:** Comprehensive strategy for optimizing the FitnessFollowups landing page to maximize waitlist conversions from Reddit traffic, focused on validating market demand before building the app.
 
 **Last Updated:** October 22, 2025
 **Target Audience:** Boutique fitness studio owners on Reddit (r/pilates, r/boutiquefitness, r/entrepreneur)
@@ -155,19 +155,19 @@
 ```
 🎯 FITGRID WEAKNESS: Pro App rated 2.4 stars on Google Play
    PAIN: "Buggy, user-hostile pile of burning trash" (instructor review)
-   FitnessFollowup POSITION: "Studio Engagement Tools That Just Work"
+   FitnessFollowups POSITION: "Studio Engagement Tools That Just Work"
 
 🎯 FITGRID WEAKNESS: $169-325/month pricing
    PAIN: "Not a good use of money" (user review)
-   FitnessFollowup POSITION: "$29/month. No contracts, no surprises."
+   FitnessFollowups POSITION: "$29/month. No contracts, no surprises."
 
 🎯 FITGRID WEAKNESS: Complex setup and onboarding
    PAIN: "Became more of a chore" after initial novelty
-   FitnessFollowup POSITION: "Setup in under 5 minutes. Seriously."
+   FitnessFollowups POSITION: "Setup in under 5 minutes. Seriously."
 
 🎯 FITGRID WEAKNESS: Feature bloat, enterprise focus
    PAIN: "Messy and complicated" for boutique studios
-   FitnessFollowup POSITION: "Built exclusively for boutique studios"
+   FitnessFollowups POSITION: "Built exclusively for boutique studios"
 ```
 
 ### 2.3 Target Audience Pain Points (Reddit)
@@ -512,8 +512,8 @@ A: We're launching to waitlist members in January 2026. Early access
   <h4>Annual Cost Comparison</h4>
   <div class="bars">
     <div class="bar fitgrid" data-value="$3,552">FitGrid: $3,552/year</div>
-    <div class="bar FitnessFollowup" data-value="$348">
-      FitnessFollowup: $348/year
+    <div class="bar FitnessFollowups" data-value="$348">
+      FitnessFollowups: $348/year
     </div>
   </div>
   <p class="savings-callout">
@@ -1003,9 +1003,9 @@ A: Fair question. I'm open-sourcing our email templates and sharing
 #### **URL Structure:**
 
 ```
-Main: https://FitnessFollowup.com/
-Reddit: https://FitnessFollowup.com/reddit
-Subreddit-specific: https://FitnessFollowup.com/r/boutiquefitness
+Main: https://FitnessFollowups.com/
+Reddit: https://FitnessFollowups.com/reddit
+Subreddit-specific: https://FitnessFollowups.com/r/boutiquefitness
 ```
 
 #### **Reddit Landing Page Differences:**

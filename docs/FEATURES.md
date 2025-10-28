@@ -27,7 +27,7 @@ The current Features section describes **what the product does** but fails to co
 
 ### The Solution
 
-Reorder features by business impact, lead with data-backed ROI claims, and position FitnessFollowup against FitGrid's documented weaknesses. Transform each feature from a capability description into a compelling business case.
+Reorder features by business impact, lead with data-backed ROI claims, and position FitnessFollowups against FitGrid's documented weaknesses. Transform each feature from a capability description into a compelling business case.
 
 ### Key Changes
 
@@ -210,7 +210,7 @@ All statistics used:
 - **FitGrid pricing:** $169-325/month (average $238/month)
 - **Monthly savings calculation:** $238/month average savings ($169-325 range minus $29)
 - **2.4 star rating:** FitGrid Pro app Google Play
-- **60-day money-back guarantee:** FitnessFollowup policy
+- **60-day money-back guarantee:** FitnessFollowups policy
 - **50% quit rate:** Industry research on gym retention
 
 ---

@@ -1,8 +1,8 @@
-# FitnessFollowup Landing Page Architecture
+# FitnessFollowups Landing Page Architecture
 
 ## Overview
 
-A modern, conversion-focused single-page landing site designed to validate interest in FitnessFollowup - an affordable FitGrid alternative for boutique fitness studios.
+A modern, conversion-focused single-page landing site designed to validate interest in FitnessFollowups - an affordable FitGrid alternative for boutique fitness studios.
 
 ---
 
@@ -114,7 +114,7 @@ Following Tailwind's 4px base scale:
 │  - 5-step process               │
 ├─────────────────────────────────┤
 │  Comparison Table               │
-│  - FitnessFollowup vs FitGrid        │
+│  - FitnessFollowups vs FitGrid        │
 ├─────────────────────────────────┤
 │  Pricing Section                │
 │  - Single clear price           │
@@ -213,7 +213,7 @@ Following Tailwind's 4px base scale:
 **Table Structure**:
 
 ```
-| Feature              | FitGrid      | FitnessFollowup  |
+| Feature              | FitGrid      | FitnessFollowups  |
 |---------------------|--------------|-------------|
 | Price               | $169-325/mo  | $29/mo      |
 | Setup Time          | 2-3 weeks    | 5 minutes   |
@@ -226,7 +226,7 @@ Following Tailwind's 4px base scale:
 
 **Design**:
 
-- Highlight FitnessFollowup column with subtle background color
+- Highlight FitnessFollowups column with subtle background color
 - Use checkmarks and x-marks (not just text)
 - Mobile: Stack into card format
 
@@ -355,14 +355,14 @@ src/
 ### Meta Tags & SEO
 
 ```html
-<title>FitnessFollowup - Affordable FitGrid Alternative | $29/month</title>
+<title>FitnessFollowups - Affordable FitGrid Alternative | $29/month</title>
 <meta
   name="description"
   content="Connect with your fitness members through automated post-class follow-ups. Built for boutique studios using MindBody. Just $29/month, no contract."
 />
 <meta
   property="og:title"
-  content="FitnessFollowup - The Affordable FitGrid Alternative"
+  content="FitnessFollowups - The Affordable FitGrid Alternative"
 />
 <meta
   property="og:description"
@@ -440,7 +440,7 @@ Once launched, track:
 ## Project Details (Confirmed)
 
 1. **Logo**: User will create custom logo
-2. **Domain**: FitnessFollowup.vercel.app
+2. **Domain**: FitnessFollowups.vercel.app
 3. **Analytics**: Vercel Analytics + Microsoft Clarity (both free) - see ANALYTICS_AND_TRACKING.md
 4. **Form Service**: Formspark.io
 5. **Launch Timeline**: 1 week from now

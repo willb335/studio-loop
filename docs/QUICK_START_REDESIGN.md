@@ -1,4 +1,4 @@
-# Quick Start Guide - FitnessFollowup Redesign Implementation
+# Quick Start Guide - FitnessFollowups Redesign Implementation
 
 This is your **TL;DR** guide for implementing the aboardhr.com-inspired redesign with Rose Pink palette.
 
@@ -85,7 +85,7 @@ All images should be **1200x800px PNG** with shadcn/ui design and Rose Pink acce
 - [ ] Update [`ComparisonTable.astro`](../src/components/ComparisonTable.astro)
   - Rose pink highlights
   - Pink checkmarks
-  - Enhanced FitnessFollowup column
+  - Enhanced FitnessFollowups column
 - [ ] Simplify [`Footer.astro`](../src/components/Footer.astro)
   - Minimal design
   - Pink hover states
@@ -226,4 +226,4 @@ For complete details, see:
 
 ---
 
-Ready to build this? Let's make FitnessFollowup's landing page amazing! 🚀
+Ready to build this? Let's make FitnessFollowups's landing page amazing! 🚀

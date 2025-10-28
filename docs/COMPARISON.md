@@ -1,6 +1,6 @@
 # COMPARISON: High‑Converting Comparison Table Design and Implementation Guide
 
-Document purpose: An authoritative guide to design, implement, and optimize a high‑converting comparison table for the FitnessFollowup landing page, synthesizing component analysis and research insights.
+Document purpose: An authoritative guide to design, implement, and optimize a high‑converting comparison table for the FitnessFollowups landing page, synthesizing component analysis and research insights.
 
 Audience: Developers, designers, and stakeholders focused on conversion.
 
@@ -29,9 +29,9 @@ Table of contents
 
 1. Executive summary
 
-- Goal: Increase consideration‑to‑conversion by making the preferred choice (FitnessFollowup) the default, obvious selection while maintaining transparency.
+- Goal: Increase consideration‑to‑conversion by making the preferred choice (FitnessFollowups) the default, obvious selection while maintaining transparency.
 - Core levers: visual emphasis, clear differentiators, quantified savings and ROI, reduced friction, credible proof, and repeated CTAs.
-- What we have: A solid baseline with semantic table markup, desktop and mobile variants, and color emphasis on FitnessFollowup.
+- What we have: A solid baseline with semantic table markup, desktop and mobile variants, and color emphasis on FitnessFollowups.
 - What to add next: reliability row, social proof, annual cost visual, refined copy, analytics instrumentation, and a badge/label system aligned with urgency and exclusivity.
 - Expected outcome: +10‑20% uplift from table changes alone; larger gains when combined with FAQ and CTA optimizations noted in ['LANDING_PAGE_OPTIMIZATION_STRATEGY.md'](docs/LANDING_PAGE_OPTIMIZATION_STRATEGY.md).
 
@@ -43,14 +43,14 @@ Table of contents
 Strengths
 
 - Semantics: Proper use of section + aria-labelledby and table roles (see header id at ['h2'](src/components/ComparisonTable.astro:14) and table at ['table'](src/components/ComparisonTable.astro:24)).
-- Clear column emphasis: Recommended label and brand color on FitnessFollowup column header (['thead'](src/components/ComparisonTable.astro:25) → ['th'](src/components/ComparisonTable.astro:29)).
+- Clear column emphasis: Recommended label and brand color on FitnessFollowups column header (['thead'](src/components/ComparisonTable.astro:25) → ['th'](src/components/ComparisonTable.astro:29)).
 - Benefit‑led highlights: Price and setup time emphasized with color and weight (e.g., ['$29 cell'](src/components/ComparisonTable.astro:39), ['5 minutes'](src/components/ComparisonTable.astro:89)).
-- Responsive variant: Desktop table + mobile card stack with highlighted FitnessFollowup card (['mobile container'](src/components/ComparisonTable.astro:106), ['FitnessFollowup card'](src/components/ComparisonTable.astro:145)).
+- Responsive variant: Desktop table + mobile card stack with highlighted FitnessFollowups card (['mobile container'](src/components/ComparisonTable.astro:106), ['FitnessFollowups card'](src/components/ComparisonTable.astro:145)).
 - Accessible icons: sr‑only text for availability markers (e.g., ['span.sr-only'](src/components/ComparisonTable.astro:47)).
 
 Weaknesses and gaps
 
-- Missing reliability/UX row: No row for FitGrid Pro App rating and FitnessFollowup simplicity (add “Instructor App Rating / Automation” row as per ['LANDING_PAGE_OPTIMIZATION_STRATEGY.md'](docs/LANDING_PAGE_OPTIMIZATION_STRATEGY.md)).
+- Missing reliability/UX row: No row for FitGrid Pro App rating and FitnessFollowups simplicity (add “Instructor App Rating / Automation” row as per ['LANDING_PAGE_OPTIMIZATION_STRATEGY.md'](docs/LANDING_PAGE_OPTIMIZATION_STRATEGY.md)).
 - Social proof absent: No testimonial pull‑quote adjacent to the table; lacks trust‑building context.
 - Annual cost framing: Savings claim exists below table, but no visual price bars to anchor the delta.
 - Copy specificity: Feature labels are terse; they should connect to outcomes (retention, spend) referenced in ['CHATGPT_DEEP_RESEARCH.md'](docs/CHATGPT_DEEP_RESEARCH.md).
@@ -61,7 +61,7 @@ Weaknesses and gaps
 Must‑keep implementation patterns
 
 - Retain semantic table on desktop for scan efficiency.
-- Retain card‑based mobile layout with a highlighted FitnessFollowup card for pre‑selection effect.
+- Retain card‑based mobile layout with a highlighted FitnessFollowups card for pre‑selection effect.
 - Keep brand color for emphasis but ensure sufficient contrast per WCAG 2.2.
 
 ---
@@ -72,17 +72,17 @@ Must‑keep implementation patterns
 Techniques
 
 - Column pre‑selection: Use brand color header, subtle column background striping, and “Recommended” badge to anchor attention.
-- Row contrast for differentiators: Apply tinted background only in FitnessFollowup column for key wins (price, setup, contract) to create a consistent pattern of “wins”.
+- Row contrast for differentiators: Apply tinted background only in FitnessFollowups column for key wins (price, setup, contract) to create a consistent pattern of “wins”.
 - Anchoring: Show higher competitor price first, then our price with a “Save $X/year” sublabel. This leverages price anchoring and contrast effect.
 - Social proof proximity: Place a short pull‑quote just above the table to reduce perceived risk before comparison.
-- Scarcity/urgency: Add “Launch pricing – limited to first 50 studios” as a badge near the FitnessFollowup header and replicate below with small print to avoid banner blindness.
+- Scarcity/urgency: Add “Launch pricing – limited to first 50 studios” as a badge near the FitnessFollowups header and replicate below with small print to avoid banner blindness.
 - Eye‑flow helpers: Left‑align feature labels, center values; widen the preferred column slightly on desktop to create mild dominance.
 - Decoy avoidance: Avoid adding a third column unless intentionally designing a decoy; keep two‑column comparison to reduce cognitive load at this stage.
 
 Color and typography
 
 - Use the existing rose/pink brand as the sole accent for wins and CTAs; neutrals for FitGrid cells to avoid accidental emphasis.
-- Typography ladder: Feature labels at 0.875–1rem, values at 1rem, FitnessFollowup key value at 1.25–1.5rem bold; maintain consistent leading for readability.
+- Typography ladder: Feature labels at 0.875–1rem, values at 1rem, FitnessFollowups key value at 1.25–1.5rem bold; maintain consistent leading for readability.
 - Spacing rhythm: 16–20px vertical rhythm between rows; extra 4–8px within the emphasized column cells for tactile feel.
 
 Accessibility overlays
@@ -114,10 +114,10 @@ flowchart LR
 Feature label patterns
 
 - Monthly Price → “$29” with sublabel “Save $1,680–$3,552/yr”
-- Annual contract → FitnessFollowup: “No contract” label; FitGrid: “Required” label
-- Setup time → FitnessFollowup: “Live in 5 minutes”; FitGrid: “Complex”
-- Reliability → FitGrid: “Instructor app 2.4★” vs FitnessFollowup: “No extra app needed – automated”
-- Integration → “Mindbody certified” badge near FitnessFollowup cell
+- Annual contract → FitnessFollowups: “No contract” label; FitGrid: “Required” label
+- Setup time → FitnessFollowups: “Live in 5 minutes”; FitGrid: “Complex”
+- Reliability → FitGrid: “Instructor app 2.4★” vs FitnessFollowups: “No extra app needed – automated”
+- Integration → “Mindbody certified” badge near FitnessFollowups cell
 
 Evidence hooks
 
@@ -135,11 +135,11 @@ Copy tone
 
 - Keep table layout with sticky header on scroll within the component container for long lists (optional).
 - Consider sticky first column at lg+ to keep features visible.
-- Slightly increase width of the FitnessFollowup column (e.g., w‑[40%] vs w‑[35%]).
+- Slightly increase width of the FitnessFollowups column (e.g., w‑[40%] vs w‑[35%]).
 
 Mobile
 
-- Preserve separate cards for FitGrid and FitnessFollowup with the preferred card second but visually dominant (colored header, border‑2).
+- Preserve separate cards for FitGrid and FitnessFollowups with the preferred card second but visually dominant (colored header, border‑2).
 - Add a compact comparison summary chip group above the cards (e.g., “$29”, “No contract”, “5‑min setup”).
 - Add a sticky CTA at the bottom of the viewport when the comparison section is in view.
 
@@ -152,7 +152,7 @@ Content priority
 6. Micro‑interactions that aid conversion
 
 - Row hover tint at desktop to guide scan (already present); ensure reduced motion respects prefers‑reduced‑motion.
-- On focus within the table, highlight the entire row and the FitnessFollowup cell to aid keyboard users.
+- On focus within the table, highlight the entire row and the FitnessFollowups cell to aid keyboard users.
 - Tooltip or info icons for claim substantiation (e.g., “Why 87%?”) opening a small dialog with a cite and link to case study.
 - Animated annual cost bars on reveal below the table with a subtle grow animation (<300ms).
 - CTA press state with slight scale and shadow for affordance; keep within 1.02 scale to avoid distraction.
@@ -169,14 +169,14 @@ Content priority
 Visual emphasis recipes
 
 - Preferred column header: brand background with white text and a smaller sublabel “Recommended”.
-- Preferred wins: apply bg‑pink‑50 to FitnessFollowup win cells only to create a consistent stripe of success.
-- Price row: use 1.5–1.75rem bold type on FitnessFollowup; fit grid price stays small and neutral.
+- Preferred wins: apply bg‑pink‑50 to FitnessFollowups win cells only to create a consistent stripe of success.
+- Price row: use 1.5–1.75rem bold type on FitnessFollowups; fit grid price stays small and neutral.
 
 Feature comparison methodology
 
 - Maintain transparency: for each differentiator, include the competitor’s factual state without exaggeration.
 - Show parity items as neutral (same icons, same copy) to enhance credibility.
-- Include a reliability row citing public ratings (FitGrid Pro 2.4★) and clarify FitnessFollowup removes the instructor app dependency.
+- Include a reliability row citing public ratings (FitGrid Pro 2.4★) and clarify FitnessFollowups removes the instructor app dependency.
 
 Pricing presentation strategies
 
@@ -245,7 +245,7 @@ Implementation sequence (suggested)
 
 9. Strategic marketing synthesis and positioning
 
-- Competitive contrast: Leverage FitGrid weaknesses documented in ['GEMINI_DEEP_RESEARCH.md'](docs/GEMINI_DEEP_RESEARCH.md) around Pro App reliability and pricing to position FitnessFollowup as simple, reliable, and affordable.
+- Competitive contrast: Leverage FitGrid weaknesses documented in ['GEMINI_DEEP_RESEARCH.md'](docs/GEMINI_DEEP_RESEARCH.md) around Pro App reliability and pricing to position FitnessFollowups as simple, reliable, and affordable.
 - Target segments: Boutique studios with Mindbody who value “set‑and‑forget” automation over breadth; Reddit audience prefers transparent, data‑backed claims.
 - Messaging pillars:
   1. Affordable retention (+87% spend signal; 90% cheaper)
@@ -302,7 +302,7 @@ Acceptance criteria
 
 - Reliability row visible on both breakpoints; text contrasts ≥ 4.5:1
 - Annual cost bars rendering without layout shift; labelled values
-- FitnessFollowup column visibly dominant but compliant with WCAG
+- FitnessFollowups column visibly dominant but compliant with WCAG
 - GA4 events firing for comparison CTA and annual cost visual
 - No inline JS used for hover/active states
 
@@ -319,7 +319,7 @@ export type ComparisonRow = {
   key: string; // e.g., 'price', 'setup', 'contract', 'reliability', 'integration', 'niche'
   label: string;
   fitgrid: { type: 'text' | 'icon'; value: string; sr?: string };
-  FitnessFollowup: {
+  FitnessFollowups: {
     type: 'text' | 'icon';
     value: string;
     sr?: string;
@@ -338,10 +338,10 @@ export const rows: ComparisonRow[] = [
     key: 'price',
     label: 'Monthly Price',
     fitgrid: { type: 'text', value: '$169–$325', sr: 'FitGrid monthly price' },
-    FitnessFollowup: {
+    FitnessFollowups: {
       type: 'text',
       value: '$29',
-      sr: 'FitnessFollowup monthly price',
+      sr: 'FitnessFollowups monthly price',
       highlight: true,
       badge: 'Launch pricing',
     },
@@ -355,7 +355,7 @@ export const rows: ComparisonRow[] = [
       value: 'Required',
       sr: 'Annual contract required',
     },
-    FitnessFollowup: {
+    FitnessFollowups: {
       type: 'text',
       value: 'No contract',
       sr: 'No annual contract',
@@ -367,7 +367,7 @@ export const rows: ComparisonRow[] = [
     key: 'setup',
     label: 'Setup time',
     fitgrid: { type: 'text', value: 'Complex', sr: 'Complex setup' },
-    FitnessFollowup: {
+    FitnessFollowups: {
       type: 'text',
       value: '5 minutes',
       sr: 'Five minute setup',
@@ -382,7 +382,7 @@ export const rows: ComparisonRow[] = [
       value: 'Pro App 2.4★',
       sr: 'Instructor app rated 2.4 stars',
     },
-    FitnessFollowup: {
+    FitnessFollowups: {
       type: 'text',
       value: 'Not needed – automated',
       sr: 'No extra app required',

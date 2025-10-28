@@ -1,4 +1,4 @@
-# FitnessFollowup Redesign - Page Flow & Visual Hierarchy
+# FitnessFollowups Redesign - Page Flow & Visual Hierarchy
 
 This document provides a visual overview of the redesigned page structure inspired by aboardhr.com.
 
@@ -65,7 +65,7 @@ graph LR
 
 ```
 ╔════════════════════════════════════════════════════════════╗
-║  📱 FitnessFollowup Logo                    [Join Waitlist]     ║ ← Navigation (Sticky, White)
+║  📱 FitnessFollowups Logo                    [Join Waitlist]     ║ ← Navigation (Sticky, White)
 ╠════════════════════════════════════════════════════════════╣
 ║                                                            ║
 ║              Your Members Deserve                          ║
@@ -135,14 +135,14 @@ graph LR
 ║   All the features you need, none of the complexity...     ║  ← Comparison Table
 ║                                                            ║  (White BG)
 ║   ┌──────────────────────────────────────────────┐        ║
-║   │ Feature    │  FitGrid   │  FitnessFollowup (Pink) │        ║
+║   │ Feature    │  FitGrid   │  FitnessFollowups (Pink) │        ║
 ║   ├──────────────────────────────────────────────┤        ║
 ║   │ Price      │ $169-325   │  $29 (Large/Bold)  │        ║
 ║   │ Features   │  ✓ Gray    │  ✓ Pink            │        ║
 ║   │ Contract   │  Required  │  No Contract ✓     │        ║
 ║   └──────────────────────────────────────────────┘        ║
 ║                                                            ║
-║     Save $1,800+ per year with FitnessFollowup                  ║
+║     Save $1,800+ per year with FitnessFollowups                  ║
 ║              [Start Saving Today →]                        ║
 ║                                                            ║
 ╠════════════════════════════════════════════════════════════╣
@@ -161,9 +161,9 @@ graph LR
 ║   └─────────────────────────────────────────┘             ║
 ║                                                            ║
 ╠════════════════════════════════════════════════════════════╣
-║  FitnessFollowup                   Contact: hello@FitnessFollowup.io ║
+║  FitnessFollowups                   Contact: hello@FitnessFollowups.io ║
 ║  Built with ❤️ for boutique   Privacy | Terms             ║  ← Footer (Minimal)
-║  fitness studios              © 2024 FitnessFollowup           ║
+║  fitness studios              © 2024 FitnessFollowups           ║
 ╚════════════════════════════════════════════════════════════╝
 ```
 
@@ -229,7 +229,7 @@ graph LR
 ║  Comparison               ║
 ║                           ║
 ║  ┌─────────────────────┐  ║
-║  │ FitnessFollowup (Pink)   │  ║
+║  │ FitnessFollowups (Pink)   │  ║
 ║  │ $29/month           │  ║ ← Card-based
 ║  │ ✓ Features          │  ║   Comparison
 ║  │ ✓ No contract       │  ║
@@ -269,7 +269,7 @@ graph LR
 - Features: App UI elements in screenshots (buttons, accents)
 - Features: Checkmarks and highlights
 - How It Works: Step number circles background
-- Comparison: FitnessFollowup column highlights, checkmarks, price emphasis
+- Comparison: FitnessFollowups column highlights, checkmarks, price emphasis
 - Waitlist: Submit button background
 - Footer: Link hover states
 

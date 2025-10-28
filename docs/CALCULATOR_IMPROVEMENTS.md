@@ -29,7 +29,7 @@ Created a new `InfoTooltip` component with:
 - **New members per month**: Explains how to calculate monthly member acquisition
 - **Average lifetime value**: Details about LTV calculation and industry averages
 - **Annual churn loss**: Describes the 37% dropout rate impact
-- **Automated follow-ups**: Explains how FitnessFollowup reduces churn
+- **Automated follow-ups**: Explains how FitnessFollowups reduces churn
 - **ROI calculation**: Shows the return on investment breakdown
 
 ### 3. **Mobile-First Design Enhancements** ✅
@@ -244,11 +244,11 @@ Desktop: > 1024px
 
 **Automated follow-ups:**
 
-> "FitnessFollowup sends personalized text messages to members who don't return after their first class. Based on FitGrid case studies, this reduces churn by 35-46%, recovering thousands in lost revenue."
+> "FitnessFollowups sends personalized text messages to members who don't return after their first class. Based on FitGrid case studies, this reduces churn by 35-46%, recovering thousands in lost revenue."
 
 **ROI calculation:**
 
-> "At $29/month ($348/year), FitnessFollowup pays for itself many times over. Your estimated return: [X-Y] times your investment in the first year alone."
+> "At $29/month ($348/year), FitnessFollowups pays for itself many times over. Your estimated return: [X-Y] times your investment in the first year alone."
 
 ---
 

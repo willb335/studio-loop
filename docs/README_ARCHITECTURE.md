@@ -1,8 +1,8 @@
-# FitnessFollowup Landing Page - Architecture Summary
+# FitnessFollowups Landing Page - Architecture Summary
 
 ## 🎯 Project Overview
 
-A modern, conversion-focused landing page for **FitnessFollowup** - an affordable FitGrid alternative for boutique fitness studios. The goal is to validate market interest before building the full product.
+A modern, conversion-focused landing page for **FitnessFollowups** - an affordable FitGrid alternative for boutique fitness studios. The goal is to validate market interest before building the full product.
 
 **Target**: 50+ waitlist signups in first week  
 **Timeline**: 1 week to launch  
@@ -92,7 +92,7 @@ Accent:    #10B981 (Emerald)   - Success, growth
 3. **Problem Statement** - Cost comparison ($169 vs $29)
 4. **Features** - For Instructors, Owners, Members
 5. **How It Works** - 5-step process
-6. **Comparison Table** - FitnessFollowup vs FitGrid
+6. **Comparison Table** - FitnessFollowups vs FitGrid
 7. **Pricing** - $29/month highlighted
 8. **Waitlist Form** - Email, Studio Name, Role
 9. **Footer** - Links and contact info
@@ -106,7 +106,7 @@ Accent:    #10B981 (Emerald)   - Success, growth
 - **Framework**: Astro 5.x
 - **Styling**: Tailwind CSS 4.x
 - **Icons**: Lucide React
-- **Hosting**: Vercel (FitnessFollowup.vercel.app)
+- **Hosting**: Vercel (FitnessFollowups.vercel.app)
 
 ### Tools (All Free Tier)
 
@@ -237,7 +237,7 @@ Accent:    #10B981 (Emerald)   - Success, growth
 
 ## 📞 Contact & Support
 
-**Project Domain**: FitnessFollowup.vercel.app  
+**Project Domain**: FitnessFollowups.vercel.app  
 **Form Service**: Formspark.io  
 **Analytics**: Vercel + Microsoft Clarity  
 **Launch Date**: ~1 week from start
@@ -279,4 +279,4 @@ All architecture and planning is complete. When ready:
 **Estimated Setup Time**: 1 hour  
 **Total Time to Launch**: 1 day of focused work
 
-Good luck with FitnessFollowup! 🚀
+Good luck with FitnessFollowups! 🚀

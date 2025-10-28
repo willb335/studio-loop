@@ -1,6 +1,6 @@
 # Objection Handler FAQ: Comprehensive Response Guide
 
-**Document Purpose:** Evidence-based responses to the most challenging objections potential users raise about FitnessFollowup, designed for boutique fitness studio owners who are skeptical, informed, and have been burned by similar products before.
+**Document Purpose:** Evidence-based responses to the most challenging objections potential users raise about FitnessFollowups, designed for boutique fitness studio owners who are skeptical, informed, and have been burned by similar products before.
 
 **Last Updated:** October 23, 2025
 **Target Audience:** Skeptical boutique fitness studio owners (Reddit, r/pilates, r/boutiquefitness)
@@ -200,7 +200,7 @@ studies, revenue data, and thousands of customers. That's a massive advantage.
 **The honest comparison:**
 
 - **FitGrid:** Proven, expensive, complex, buggy app (2.4 stars on Google Play)
-- **FitnessFollowup:** Unproven, affordable, simple, not yet built
+- **FitnessFollowups:** Unproven, affordable, simple, not yet built
 
 **Who should choose us:** Studios willing to take a calculated risk for 90% cost savings. Who should choose FitGrid: Studios with $3,000+ annual software budgets who need enterprise features.
 

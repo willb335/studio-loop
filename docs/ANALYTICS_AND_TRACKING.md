@@ -1,8 +1,8 @@
-# FitnessFollowup Analytics & Tracking Setup
+# FitnessFollowups Analytics & Tracking Setup
 
 ## Overview
 
-This document outlines the analytics tools, tracking setup, and success metrics for the FitnessFollowup landing page.
+This document outlines the analytics tools, tracking setup, and success metrics for the FitnessFollowups landing page.
 
 ---
 
@@ -316,14 +316,14 @@ Last updated: [DATE]
 
 ## Information We Collect
 
-We collect email addresses, studio names, and roles through our waitlist form to notify you when FitnessFollowup launches.
+We collect email addresses, studio names, and roles through our waitlist form to notify you when FitnessFollowups launches.
 
 ## How We Use Your Information
 
 Your information is used solely to:
 
 - Add you to our product launch waitlist
-- Send you updates about FitnessFollowup
+- Send you updates about FitnessFollowups
 - Contact you about early access opportunities
 
 ## Data Storage
@@ -332,7 +332,7 @@ Your information is securely stored via Formspark and is not shared with third p
 
 ## Your Rights
 
-You can request deletion of your information at any time by emailing contact@FitnessFollowup.com
+You can request deletion of your information at any time by emailing contact@FitnessFollowups.com
 
 ## Analytics
 
@@ -340,7 +340,7 @@ We use Vercel Analytics and Microsoft Clarity to understand how visitors use our
 
 ## Contact
 
-Questions? Email us at contact@FitnessFollowup.com
+Questions? Email us at contact@FitnessFollowups.com
 ```
 
 ### Cookie Consent

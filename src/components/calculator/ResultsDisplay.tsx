@@ -56,7 +56,7 @@ export const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ results }) => {
               Revenue you can recover
             </p>
             <InfoTooltip
-              content="FitnessFollowup sends personalized follow-ups after class. Based on FitGrid case studies, studios recover 35-46 percent of would-be churned revenue."
+              content="FitnessFollowups sends personalized follow-ups after class. Based on FitGrid case studies, studios recover 35-46 percent of would-be churned revenue."
               position="top"
             />
           </div>

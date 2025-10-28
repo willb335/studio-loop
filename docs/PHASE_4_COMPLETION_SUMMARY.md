@@ -2,7 +2,7 @@
 
 ## Overview
 
-Completed Phase 4 tasks 4, 5, and 6 of the FitnessFollowup landing page redesign, focusing on accessibility improvements, copy refinement, and final design review.
+Completed Phase 4 tasks 4, 5, and 6 of the FitnessFollowups landing page redesign, focusing on accessibility improvements, copy refinement, and final design review.
 
 ---
 
@@ -274,7 +274,7 @@ Completed Phase 4 tasks 4, 5, and 6 of the FitnessFollowup landing page redesign
 
 - ✅ Desktop table layout
 - ✅ Mobile card-based layout
-- ✅ Pink highlights on FitnessFollowup column
+- ✅ Pink highlights on FitnessFollowups column
 - ✅ "Recommended" badge
 - ✅ Clear pricing comparison ($169-325 vs $29)
 - ✅ Visual checkmarks/crosses
@@ -336,7 +336,7 @@ Completed Phase 4 tasks 4, 5, and 6 of the FitnessFollowup landing page redesign
 ### Design Philosophy Match
 
 - **aboardhr.com**: Shows HR software with clean screenshots, benefit-focused headlines
-- **FitnessFollowup**: Shows fitness studio software with clean screenshots, benefit-focused headlines
+- **FitnessFollowups**: Shows fitness studio software with clean screenshots, benefit-focused headlines
 - **Alignment**: ✅ Strong visual and messaging alignment
 
 ---
