@@ -100,7 +100,8 @@ export const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ results }) => {
           />
         </svg>
         <span>
-          Calibrated using IHRSA churn benchmarks and FitGrid retention studies.
+          Calibrated using Health & Fitness Association churn benchmarks and
+          FitGrid retention studies.
         </span>
       </div>
     </div>

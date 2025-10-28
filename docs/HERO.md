@@ -467,7 +467,8 @@ export const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ results }) => {
 
       {/* Industry Data Attribution */}
       <p className="text-xs text-neutral-500 text-center pt-2 border-t border-neutral-200">
-        Based on IHRSA industry data and FitGrid case studies
+        Based on Health & Fitness Association industry data and FitGrid case
+        studies
       </p>
     </div>
   );
@@ -716,7 +717,7 @@ import ChurnCalculator from './calculator/ChurnCalculator';
           <svg class="w-5 h-5" style="color: rgb(251, 113, 133);" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
           </svg>
-          <span>Based on IHRSA data</span>
+          <span>Based on Health & Fitness Association data</span>
         </div>
         <div class="flex items-center gap-2">
           <svg class="w-5 h-5" style="color: rgb(251, 113, 133);" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -1024,7 +1025,7 @@ Track these KPIs:
 
 ## References
 
-- IHRSA Industry Benchmarks: [Source needed]
+- Health & Fitness Association Industry Benchmarks: [Source needed]
 - FitGrid Case Studies: [fitgrid.com/case-studies](https://www.fitgrid.com/case-studies)
 - React TypeScript Best Practices: [react-typescript-cheatsheet.netlify.app](https://react-typescript-cheatsheet.netlify.app)
 - Framer Motion Docs: [framer.com/motion](https://www.framer.com/motion/)

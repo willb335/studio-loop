@@ -97,8 +97,8 @@ export const ChurnCalculator: React.FC = () => {
               </h3>
               <p className="text-sm text-neutral-500 leading-relaxed">
                 We estimate how many members quietly churn and how much
-                FitnessFollowup could recover using proven IHRSA and FitGrid
-                benchmarks.
+                FitnessFollowup could recover using proven Health & Fitness
+                Association and FitGrid benchmarks.
               </p>
             </header>
 
@@ -122,7 +122,7 @@ export const ChurnCalculator: React.FC = () => {
                 }
                 config={LTV_CONFIG}
                 prefix="$"
-                tooltip="Total revenue from one member across all purchases: memberships, packages, retail, etc. Industry average: $212 (IHRSA data). Your number depends on pricing and how long members stay."
+                tooltip="Total revenue from one member across all purchases: memberships, packages, retail, etc. Industry average: $212 (Health & Fitness Association data). Your number depends on pricing and how long members stay."
                 tooltipPosition="bottom"
               />
             </div>

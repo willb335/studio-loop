@@ -145,7 +145,7 @@ These headline figures are substantiated through a library of case studies and p
 
 ### **Industry Context and Benchmarking**
 
-The potency of FitGrid's claims is amplified when viewed within the context of the broader fitness industry's economic realities. Third-party research, including reports from the Health & Fitness Association (HFA/IHRSA), validates the critical importance of the problems FitGrid claims to solve.
+The potency of FitGrid's claims is amplified when viewed within the context of the broader fitness industry's economic realities. Third-party research, including reports from the Health & Fitness Association (HFA/Health & Fitness Association), validates the critical importance of the problems FitGrid claims to solve.
 
 - **The High Cost of Churn:** The fitness industry faces a significant retention challenge. Research shows that nearly 50% of new gym members quit within the first six months, and the average health club has an annual attrition rate of 28.6%.20 This makes retention the single biggest challenge for many operators.
 - **The Economics of Retention vs. Acquisition:** Acquiring a new customer is estimated to be five to nine times more expensive than retaining an existing one.21 Furthermore, increasing customer retention rates by just 5% can increase profits by a staggering 25-95%.21 These figures provide a powerful economic justification for investing in a retention-focused platform like FitGrid.
