@@ -255,7 +255,9 @@ const AssumptionsDialog: React.FC<AssumptionsDialogProps> = ({ onClose }) => {
               aria-label="Close assumptions dialog"
               className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-500 transition hover:border-slate-300 hover:text-slate-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-400 cursor-pointer"
             >
-              <span aria-hidden="true" className="text-lg font-semibold">×</span>
+              <span aria-hidden="true" className="text-lg font-semibold">
+                ×
+              </span>
             </button>
           </div>
           <div className="mt-5 space-y-4">
@@ -406,7 +408,7 @@ export const FitGridCalculator: React.FC = () => {
       transition={{ duration: 0.5, ease: 'easeOut' }}
       className="mx-auto w-full max-w-[640px]"
     >
-  <div className="relative rounded-[24px] border border-[var(--pink-200)] bg-white shadow-[0_24px_60px_rgba(2,6,23,0.06)]">
+      <div className="relative rounded-[24px] border border-[var(--pink-200)] bg-white shadow-[0_24px_60px_rgba(2,6,23,0.06)]">
         <div className="relative flex flex-col gap-6 rounded-[24px] p-6 sm:p-7 lg:p-8">
           <header className="space-y-2">
             <p className="text-[22px] font-semibold text-neutral-900">
