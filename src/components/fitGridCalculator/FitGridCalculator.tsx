@@ -208,7 +208,8 @@ const AssumptionsDialog: React.FC<AssumptionsDialogProps> = ({ onClose }) => {
 
   return (
     <motion.div
-      className="fixed inset-0 z-[80] overflow-y-auto"
+      className="fixed inset-0 overflow-y-auto"
+      style={{ zIndex: 9999 }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -219,7 +220,7 @@ const AssumptionsDialog: React.FC<AssumptionsDialogProps> = ({ onClose }) => {
         aria-hidden="true"
         onClick={onClose}
       />
-      <div className="flex min-h-full items-center justify-center p-4 sm:p-6">
+      <div className="flex min-h-full items-start justify-center p-4 pt-20 sm:items-center sm:p-6 sm:pt-6">
         <motion.div
           role="dialog"
           aria-modal="true"
@@ -229,7 +230,7 @@ const AssumptionsDialog: React.FC<AssumptionsDialogProps> = ({ onClose }) => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.2, ease: 'easeOut' }}
-          className="relative z-10 w-full max-w-[420px] max-h-[calc(100vh-3rem)] overflow-y-auto rounded-2xl bg-white p-5 shadow-2xl sm:p-6"
+          className="relative z-10 w-full max-w-[420px] max-h-[calc(100vh-7rem)] overflow-y-auto rounded-2xl bg-white p-5 shadow-2xl sm:max-h-[calc(100vh-3rem)] sm:p-6"
         >
           <div className="flex items-start justify-between gap-4">
             <div>
